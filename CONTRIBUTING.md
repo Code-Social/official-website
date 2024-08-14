@@ -21,7 +21,7 @@
 ###  Listen to Moderators
 - Follow the instructions of the server moderators. Failure to comply with their requests may result in appropriate actions.
 
-- ## Contributing to Our Website
+- ### Contributing to Our Website
 
 We believe in the power of community and open-source collaboration. Our website is a reflection of this, and we invite community members to contribute to its development. Here's how you can get involved:
 
