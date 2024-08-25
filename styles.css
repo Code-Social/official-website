@@ -24,6 +24,15 @@ body {
     height: 40px;
 }
 
+.website-name{
+    margin-right: auto;
+    font-size: 40px;
+    color: #fff;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
 .navbar ul {
     list-style: none;
     display: flex;
