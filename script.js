@@ -1,5 +1,3 @@
-// JavaScript for dropdown menu functionality
-
 document.addEventListener('DOMContentLoaded', () => {
     const navbarItems = document.querySelectorAll('.navbar ul li');
 
@@ -16,6 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (dropdown) {
                 dropdown.style.display = 'none';
             }
+        });
+    });
+    // Toggle hamburger menu on small screens
+    const toggleButton = document.querySelector('.toggle-button');
+    const navbarLinks = document.querySelectorAll('.navbar ul li');
+
+    toggleButton.addEventListener('click', () => {
+        navbarLinks.forEach(link => {
+            link.classList.toggle('active');
         });
     });
 });

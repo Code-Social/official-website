@@ -1,16 +1,3 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
 /* Navbar Styling */
 .navbar {
     background-color: #333;
@@ -24,18 +11,18 @@ body {
     height: 40px;
 }
 
-.website-name{
+.website-name {
     margin-right: auto;
-    font-size: 40px;
+    font-size: 1.5rem;
     color: #fff;
     margin-left: 10px;
     font-weight: bold;
-    font-size: 1.5rem;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -53,6 +40,23 @@ body {
 .navbar ul li a:hover {
     background-color: #555;
     border-radius: 4px;
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu .toggle-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
 }
 
 /* Dropdown Menu */
@@ -81,25 +85,4 @@ body {
 .dropdown li a:hover {
     background-color: #555;
     border-radius: 4px;
-}
-
-/* Footer Styling */
-footer {
-    background-color: #333;
-    padding: 20px;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-footer ul li {
-    margin: 0 20px;
-    text-align: center;
 }
