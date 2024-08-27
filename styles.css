@@ -86,3 +86,21 @@
     background-color: #555;
     border-radius: 4px;
 }
+
+/* About Community Section */
+.about-community {
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.about-community h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center; /* Center the heading */
+}
