@@ -104,3 +104,22 @@
     color: #333;
     text-align: center; /* Center the heading */
 }
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
