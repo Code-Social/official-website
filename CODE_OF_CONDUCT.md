@@ -1,94 +1,65 @@
-# Citizen Code of Conduct
+# Code of Conduct
 
-## 1. Purpose
+This Code of Conduct outlines our expectations for all members of the Code Social Community, fostering a safe and inclusive environment for everyone.
 
-A primary goal of Code Social Community is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status, and religion (or lack thereof).
+## 1. Our Mission
 
-This code of conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behavior.
+Code Social Community strives to be a welcoming space for everyone, regardless of background. We value diversity and encourage active participation to build a thriving community.
 
-We invite all those who participate in Code Social Community to help us create safe and positive experiences for everyone.
+## 2. Open Source Citizenship
 
-## 2. Open [Source/Culture/Tech] Citizenship
-
-A supplemental goal of this Code of Conduct is to increase open [source/culture/tech] citizenship by encouraging participants to recognize and strengthen the relationships between our actions and their effects on our community.
-
-Communities mirror the societies in which they exist and positive action is essential to counteract the many forms of inequality and abuses of power that exist in society.
-
-If you see someone who is making an extra effort to ensure our community is welcoming, friendly, and encourages all participants to contribute to the fullest extent, we want to know.
+We believe in fostering open source citizenship, where members recognize their impact on the community. We encourage positive behavior and appreciate those who contribute to a welcoming atmosphere.
 
 ## 3. Expected Behavior
 
-The following behaviors are expected and requested of all community members:
-
- * Participate in an authentic and active way. In doing so, you contribute to the health and longevity of this community.
- * Exercise consideration and respect in your speech and actions.
- * Attempt collaboration before conflict.
- * Refrain from demeaning, discriminatory, or harassing behavior and speech.
- * Be mindful of your surroundings and of your fellow participants. Alert community leaders if you notice a dangerous situation, someone in distress, or violations of this Code of Conduct, even if they seem inconsequential.
- * Remember that community event venues may be shared with members of the public; please be respectful to all patrons of these locations.
+- Be respectful and considerate in your interactions with others.
+- Strive for collaboration and avoid resorting to conflict.
+- Be mindful of your surroundings and fellow members. Report any safety concerns or code of conduct violations to the community leaders.
+- Respect shared spaces: Be mindful of others if using community event venues open to the public.
 
 ## 4. Unacceptable Behavior
 
-The following behaviors are considered harassment and are unacceptable within our community:
+The following behaviors are considered harassment and are strictly prohibited:
 
- * Violence, threats of violence or violent language directed against another person.
- * Sexist, racist, homophobic, transphobic, ableist or otherwise discriminatory jokes and language.
- * Posting or displaying sexually explicit or violent material.
- * Posting or threatening to post other people's personally identifying information ("doxing").
- * Personal insults, particularly those related to gender, sexual orientation, race, religion, or disability.
- * Inappropriate photography or recording.
- * Inappropriate physical contact. You should have someone's consent before touching them.
- * Unwelcome sexual attention. This includes, sexualized comments or jokes; inappropriate touching, groping, and unwelcomed sexual advances.
- * Deliberate intimidation, stalking or following (online or in person).
- * Advocating for, or encouraging, any of the above behavior.
- * Sustained disruption of community events, including talks and presentations.
+- Violence, threats of violence, or violent language.
+- Discriminatory or offensive jokes, language, or behavior based on factors like gender, sexual orientation, race, religion, or ability.
+- Posting or sharing sexually explicit or violent material.
+- Doxing: Posting someone's personal information without consent.
+- Personal insults targeting someone's identity.
+- Inappropriate physical contact or photography/recording.
+- Unwelcome sexual attention, including comments, jokes, or advances.
+- Stalking or following someone online or in person.
+- Encouraging or advocating for any of the above behaviors.
+- Disrupting community events like talks or presentations.
 
 ## 5. Weapons Policy
 
-No weapons will be allowed at Code Social Community events, community spaces, or in other spaces covered by the scope of this Code of Conduct. Weapons include but are not limited to guns, explosives (including fireworks), and large knives such as those used for hunting or display, as well as any other item used for the purpose of causing injury or harm to others. Anyone seen in possession of one of these items will be asked to leave immediately, and will only be allowed to return without the weapon. Community members are further expected to comply with all state and local laws on this matter.
+Weapons of any kind, including firearms, explosives, and large knives, are strictly prohibited at Code Social Community events and spaces. Anyone found with a weapon will be asked to leave immediately and may be banned.
 
 ## 6. Consequences of Unacceptable Behavior
 
-Unacceptable behavior from any community member, including sponsors and those with decision-making authority, will not be tolerated.
-
-Anyone asked to stop unacceptable behavior is expected to comply immediately.
-
-If a community member engages in unacceptable behavior, the community organizers may take any action they deem appropriate, up to and including a temporary ban or permanent expulsion from the community without warning (and without refund in the case of a paid event).
+Unacceptable behavior from anyone, including sponsors and those with authority, will not be tolerated. Those asked to stop such behavior must comply immediately. Consequences for violations may include temporary bans or permanent expulsion from the community.
 
 ## 7. Reporting Guidelines
 
-If you are subject to or witness unacceptable behavior, or have any other concerns, please notify a community organizer as soon as possible. codesocialcommunity@gmail.com .
+If you experience or witness unacceptable behavior, please report it promptly to a community organizer at [codesocialcommunity@gmail.com](mailto:codesocialcommunity@gmail.com).
 
-
-
-Additionally, community organizers are available to help community members engage with local law enforcement or to otherwise help those experiencing unacceptable behavior feel safe. In the context of in-person events, organizers will also provide escorts as desired by the person experiencing distress.
+Organizers can also assist with contacting local law enforcement or providing support to those experiencing harassment. Organizers can also provide escorts if needed.
 
 ## 8. Addressing Grievances
 
-If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify Code-Social Community with a concise description of your grievance. Your grievance will be handled in accordance with our existing governing policies. 
-
-Please reach out to our moderators or team members in the case of such an event.
+If you believe you were unfairly accused of violating this code, you can submit a grievance with a detailed explanation to Code Social Community. Your grievance will be reviewed following our established policies.
 
 ## 9. Scope
 
-We expect all community participants (contributors, paid or otherwise; sponsors; and other guests) to abide by this Code of Conduct in all community venues--online and in-person--as well as in all one-on-one communications pertaining to community business.
+This code applies to all community participants, online and in-person, including contributors, sponsors, guests, and anyone involved in community business interactions. It also extends to situations outside of community activities if they have the potential to affect the safety and well-being of members.
 
-This code of conduct and its related procedures also applies to unacceptable behavior occurring outside the scope of community activities when such behavior has the potential to adversely affect the safety and well-being of community members.
+## 10. Contact Us
 
-## 10. Contact info
+[codesocialcommunity@gmail.com](mailto:codesocialcommunity@gmail.com)
 
-codesocialcommunity@gmail.com 
+## 11. License and Attribution
 
-## 11. License and attribution
+This Code of Conduct is adapted from the Citizen Code of Conduct by Stumptown Syndicate under a Creative Commons Attribution-ShareAlike License. It also references the Django Code of Conduct and the Geek Feminism Anti-Harassment Policy.
 
-The Citizen Code of Conduct is distributed by [Stumptown Syndicate](http://stumptownsyndicate.org) under a [Creative Commons Attribution-ShareAlike license](http://creativecommons.org/licenses/by-sa/3.0/). 
-
-Portions of text derived from the [Django Code of Conduct](https://www.djangoproject.com/conduct/) and the [Geek Feminism Anti-Harassment Policy](http://geekfeminism.wikia.com/wiki/Conference_anti-harassment/Policy).
-
-_Revision 2.3. Posted 6 March 2017._
-
-_Revision 2.2. Posted 4 February 2016._
-
-_Revision 2.1. Posted 23 June 2014._
-
-_Revision 2.0, adopted by the [Stumptown Syndicate](http://stumptownsyndicate.org) board on 10 January 2013. Posted 17 March 2013._
+**Revision Date:** *August 15, 2024*
