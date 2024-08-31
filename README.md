@@ -16,7 +16,7 @@ We believe in the power of community and open-source collaboration. Our website 
 
 1. **Fork the Repository**: Start by forking this repository to your GitHub account.
 2. **Clone the Repository**: Clone the forked repository to your local machine using `git clone`.
-3. **Create a Branch**: Create a new branch for your feature or bug fix using `git checkout -b branch-name`.
+3. **Create a Branch**: Create a new branch for your feature or bug fix using `git checkout -b branch-name`. (preferably, use a 4-letter word/first 4 letters of your name, similar to having a call sign)
 4. **Make Changes**: Implement your changes and commit them with clear and descriptive messages.
 5. **Push Changes**: Push your changes to your forked repository using `git push origin branch-name`.
 6. **Create a Pull Request**: Open a pull request to the main repository. Provide a detailed description of your changes and any relevant information.
