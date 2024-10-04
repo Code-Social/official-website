@@ -1,3 +1,10 @@
+
+/* Navbar Styling */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
   /* Navbar Styling */
 .navbar {
     background-color: #333;
@@ -65,9 +72,13 @@
 
 .hamburger-menu .bar {
     height: 3px;
-    width: 100%;
+    width: 30px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
     background-color: #fff;
     border-radius: 10px;
+    margin-left: 0;
     transition: all 0.3s ease;
 }
 
@@ -159,7 +170,8 @@
     font-size: 2rem;
     margin-bottom: 15px;
     color: #333;
-    text-align: center; /* Center the heading */
+    text-align: center;
+    /* Center the heading */
 }
 
 .social-icons {
@@ -253,3 +265,4 @@
     margin: 0;
     font-size: 14px;
 }
+
