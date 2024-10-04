@@ -123,3 +123,61 @@
 .social-icons img:hover {
     transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }
+/* Navbar Styling */
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+    position: relative; /* Ensure dropdown is properly positioned */
+}
+
+/* Dropdown Menu */
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .hamburger-menu {
+        display: block;
+        margin-left: auto;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+}
