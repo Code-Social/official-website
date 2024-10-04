@@ -1,27 +1,37 @@
+
 /* Navbar Styling */
 * {
     margin: 0px;
     padding: 0px;
 }
 
+  /* Navbar Styling */
 .navbar {
     background-color: #333;
-    padding: 8px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
     height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
 }
 
 .website-name {
     margin-right: auto;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #fff;
-    margin-left: 10px;
+    margin-left: 15px;
     font-weight: bold;
+    letter-spacing: 1.2px;
 }
 
 .navbar ul {
@@ -29,22 +39,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 .navbar ul li {
-    margin-left: 20px;
+    position: relative;
+    margin-left: 25px;
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: #fff;
     padding: 8px 15px;
-    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar ul li a:hover {
     background-color: #555;
-    border-radius: 4px;
+    color: #f1c40f; /* Add hover color effect */
 }
 
 /* Hamburger Menu Styling */
@@ -52,8 +65,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 80px;
-    height: 21px;
+    width: 25px;
+    height: 18px;
     cursor: pointer;
 }
 
@@ -66,6 +79,7 @@
     background-color: #fff;
     border-radius: 10px;
     margin-left: 0;
+    transition: all 0.3s ease;
 }
 
 /* Dropdown Menu */
@@ -80,6 +94,9 @@
     padding: 10px;
     border-radius: 4px;
     z-index: 1;
+    top: 100%; /* Position the dropdown below the parent link */
+    left: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown li {
@@ -89,12 +106,54 @@
 .dropdown li a {
     color: #fff;
     padding: 5px 10px;
+    display: block;
+    white-space: nowrap;
 }
 
 .dropdown li a:hover {
     background-color: #555;
     border-radius: 4px;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+        width: 100%;
+        background-color: #333;
+        padding: 20px 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .navbar ul li {
+        margin-left: 0;
+    }
+
+    .navbar ul li a {
+        display: block;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .hamburger-menu .toggle-button {
+        display: block;
+    }
+
+    .hamburger-menu.active + ul {
+        display: flex;
+    }
+
+    .navbar ul li:hover .dropdown {
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+}
+
 
 /* About Community Section */
 .about-community {
@@ -131,6 +190,79 @@
 }
 
 .social-icons img:hover {
-    transform: scale(1.1);
-    /* Slightly enlarge the icon on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }
+/* Footer Styles */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #f39c12; /* Accent color for hover effect */
+}
+
+.footer-social a {
+    margin-right: 10px;
+}
+
+.footer-social a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
