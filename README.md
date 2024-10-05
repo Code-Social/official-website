@@ -56,6 +56,11 @@ To set up the project locally, follow these steps:
    npm start
    ```
 
+## For GSSOC and Hacktober Fest participants :
+
+Please read the Contribution Guidelines and if you have any doubts ,feel free to connect with the project admins or mentors. We have set up a discord channel in our community server for the event to answer queries,foster discussions and enhance collaboration on the project. [Click here to join](https://discord.com/channels/1049667734025289729/1291810957563134105)
+
+
 ## Join Us
 
 We are excited to build and improve this website with the help of our community. Your contributions, no matter how big or small, are valuable and appreciated. Let's create something amazing together!
