@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+// Toggle hamburger menu
 document.querySelector('.toggle-button').addEventListener('click', function() {
-    document.querySelector('.navbar ul').classList.toggle('active');
+    const navbarLinks = document.querySelector('.navbar-links');
+    navbarLinks.classList.toggle('active');
 });
+
