@@ -10,6 +10,14 @@
 .logo {
     height: 40px;
 }
+.darkmode {
+    background-color: #fdf8f8;
+    color: #070707;
+    background-color: #401111;
+    background-color: #908989;
+    background-color: #2a2929;
+    color: #401111;
+}
 
 .website-name {
     margin-right: auto;
@@ -122,4 +130,18 @@
 
 .social-icons img:hover {
     transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+#theme-switch{
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
 }
