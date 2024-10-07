@@ -39,12 +39,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    margin-inline-end: 80px;
 }
 
 .navbar ul li {
     position: relative;
-    margin-left: 25px;
+    margin-left: 0 px;
 }
 
 .navbar ul li a {
@@ -53,6 +53,7 @@
     padding: 8px 15px;
     border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 20px;
 }
 
 .navbar ul li a:hover {
@@ -74,7 +75,7 @@
     height: 3px;
     width: 30px;
     display: flex;
-    align-items: start;
+    /*align-items: start;*/
     justify-content: start;
     background-color: #fff;
     border-radius: 10px;
@@ -91,12 +92,13 @@
     display: none;
     position: absolute;
     background-color: #333;
-    padding: 10px;
+    /*padding: 10px;*/
     border-radius: 4px;
     z-index: 1;
     top: 100%; /* Position the dropdown below the parent link */
-    left: 50%;
+    left: 10%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 .dropdown li {
@@ -131,11 +133,12 @@
 
     .navbar ul li {
         margin-left: 0;
+        margin-block-end: 20%;
     }
 
     .navbar ul li a {
         display: block;
-        padding: 10px 20px;
+        padding: 5px 20px;
         width: 100%;
     }
 
