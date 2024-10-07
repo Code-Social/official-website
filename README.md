@@ -41,11 +41,11 @@ To set up the project locally, follow these steps:
 
 1. **Clone the Repository**: 
    ```bash
-   git clone https://github.com/CodeSocialCommunity/website.git
+   git clone https://github.com/Code-Social/official-website.git
    ```
 2. **Navigate to the Project Directory**:
    ```bash
-   cd website
+   cd official-website
    ```
 3. **Install Dependencies**: 
    ```bash
