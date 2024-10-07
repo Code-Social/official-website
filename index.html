@@ -365,9 +365,24 @@
         themeSwitchButton.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
         });
-    </script>
+        // Simulated developer check
+    function checkIfDeveloper() {
+    // Simple password check (replace with real authentication if needed)
+        const isDeveloper = prompt('Enter developer password:') === 'devpassword';
+    
+    // If the user is a developer, show the event form
+    if (isDeveloper) {
+        document.querySelector('.event-form').style.display = 'flex'; // Make the form visible
+    }
+}
+
+// Hide the event form initially
+    document.querySelector('.event-form').style.display = 'none';
+
+// Call the developer check when page loads
+    window.addEventListener('DOMContentLoaded', checkIfDeveloper);
+
+</script>
 </body>
 </html>
-
-
 
