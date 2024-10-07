@@ -67,4 +67,9 @@ We are excited to build and improve this website with the help of our community.
 
 For any questions or further discussions, feel free to reach out to us on our Discord server: [Click here to join](https://discord.gg/MSTNyRSPYW)
 
-Happy coding!
+
+## Our Valuable Contributors ❤️✨
+
+[![Contributors](https://contrib.rocks/image?repo=Code-Social/official-website)](https://github.com/Code-Social/official-website/graphs/contributors)
+
+## Happy coding!
