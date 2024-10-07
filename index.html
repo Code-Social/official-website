@@ -30,22 +30,30 @@
             align-items: center;
             margin: 20px;
         }
+
         .calendar-header {
             font-size: 24px;
             margin-bottom: 10px;
         }
+
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 10px;
             margin-bottom: 20px;
+            width: 100%; /* Full width */
+            max-width: 800px; /* Maximum width for the grid */
         }
+
         .calendar-day {
             border: 1px solid #ccc;
-            padding: 10px;
+            padding: 20px; /* Increased padding */
             text-align: center;
             position: relative;
             background-color: #ffffff; /* Light mode day background */
+            height: 100px; /* Fixed height for uniformity */
+            border-radius: 8px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition */
         }
 
         body.dark-mode .calendar-day {
@@ -53,18 +61,29 @@
             border-color: #444; /* Dark mode border color */
         }
 
+        .calendar-day:hover {
+            background-color: #e0e0e0; /* Light hover effect */
+        }
+
+        body.dark-mode .calendar-day:hover {
+            background-color: #333; /* Dark hover effect */
+        }
+
         .event {
             background-color: #4CAF50;
             color: white;
-            padding: 2px 5px;
+            padding: 5px; /* Adjusted padding */
             border-radius: 3px;
-            font-size: 12px;
+            font-size: 14px; /* Increased font size */
             position: absolute;
             bottom: 5px;
             left: 5px;
             right: 5px;
             text-align: center;
             cursor: pointer; /* Makes the event clickable */
+            overflow: hidden; /* Prevents overflow of text */
+            white-space: nowrap; /* Keeps text in a single line */
+            text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
         }
 
         /* Form styles */
@@ -74,10 +93,13 @@
             flex-direction: column;
             align-items: center;
         }
+
         .event-form input, .event-form button {
             margin: 5px;
             padding: 10px;
             font-size: 16px;
+            width: 100%; /* Full width for inputs */
+            max-width: 300px; /* Maximum width for inputs */
         }
 
         /* Button styles */
@@ -90,9 +112,11 @@
             border-radius: 3px;
             cursor: pointer;
         }
+
         .edit-btn {
             background-color: #2196F3; /* Blue */
         }
+
         .delete-btn {
             background-color: #F44336; /* Red */
         }
@@ -283,4 +307,3 @@
     </script>
 </body>
 </html>
-
