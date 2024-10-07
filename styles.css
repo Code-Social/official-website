@@ -181,11 +181,15 @@
 .social-icons a {
     margin: 0 10px;
     display: inline-block;
-}
-
-.social-icons img {
     width: 40px;
     height: 40px;
+    object-fit: cover;
+    padding: 10px 20px;
+}
+
+.social-icons a img {
+    width: 100%;
+    height: 100%;
     transition: transform 0.3s ease;
 }
 
