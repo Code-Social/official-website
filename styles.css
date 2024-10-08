@@ -23,6 +23,14 @@
 .logo:hover {
     transform: scale(1.1);
 }
+.darkmode {
+    background-color: #fdf8f8;
+    color: #070707;
+    background-color: #401111;
+    background-color: #908989;
+    background-color: #2a2929;
+    color: #401111;
+}
 
 .website-name {
     font-size: 1.8rem;
@@ -209,9 +217,26 @@
 }
 
 
-.footer-section {
-    padding: 2.5rem 0;
-    background-color: #f9fafb;
+#theme-switch{
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
 }
 
 .container {
@@ -353,6 +378,7 @@
     text-decoration: none;
     transition: color 0.2s ease;
 }
+
 
 .footer-list a:hover {
     color: #2563EB;
