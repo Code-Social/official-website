@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navbarItems = document.querySelectorAll('.navbar ul li');
+    const toggleButton = document.querySelector('.toggle-button');
+    const navbar = document.querySelector('.navbar ul');
 
     navbarItems.forEach(item => {
         item.addEventListener('mouseover', () => {
@@ -17,12 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     // Toggle hamburger menu on small screens
-    const toggleButton = document.querySelector('.toggle-button');
-    const navbarLinks = document.querySelectorAll('.navbar ul li');
-
     toggleButton.addEventListener('click', () => {
-        navbarLinks.forEach(link => {
-            link.classList.toggle('active');
+        navbar.classList.toggle('active');
         });
     });
-});
