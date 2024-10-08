@@ -11,30 +11,23 @@
     
 </head>
 <body>
-    <header>
-        <button id="theme-switch">
-            <img src="file:///C:/Users/Dell/Downloads/dark_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="">
-            <img src="file:///C:/Users/Dell/Downloads/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="">
-        </button>
-    </header>
-
-
     <nav class="navbar">
         <a href="index.html"><img src="images/logo.png" class="logo"></a>
         <span class="website-name">Code Social</span>
         <ul>
             <li><a href="#">Live Events</a></li>
-            <li><a href="#">Join our Community</a>
+            <li class="community">
+                <a href="#">Join our Community</a>
                 <ul class="dropdown">
                     <li><a href="#">WhatsApp</a></li>
                     <li><a href="#">Discord</a></li>
                 </ul>
             </li>
             <li class="hamburger-menu">
-                <a href="javascript:void(0);" class="toggle-button">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                <a href="#" class="toggle-button">
+                    <button class="bar"></button>
+                    <button class="bar"></button>
+                    <button class="bar"></button>
                 </a>
                 <ul class="dropdown">
                     <li><a href="#">Meet Our Team</a></li>
@@ -42,6 +35,10 @@
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Follow Us</a></li>
                 </ul>
+            </li>
+            <li>
+                    <button id="theme-switch">
+                    </button> 
             </li>
         </ul>
     </nav>
