@@ -95,7 +95,8 @@
             align-items: center;
         }
 
-        .event-form input, .event-form button {
+        .event-form input,
+        .event-form button {
             margin: 5px;
             padding: 10px;
             font-size: 16px;
@@ -104,7 +105,8 @@
         }
 
         /* Button styles */
-        .edit-btn, .delete-btn {
+        .edit-btn,
+        .delete-btn {
             margin-top: 5px;
             padding: 2px 5px;
             font-size: 12px;
@@ -123,49 +125,32 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <button id="theme-switch">
-            <img src="file:///C:/Users/Dell/Downloads/dark_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="">
-            <img src="file:///C:/Users/Dell/Downloads/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            <img src="file:///C:/Users/Dell/Downloads/dark_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark Mode">
+            <img src="file:///C:/Users/Dell/Downloads/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Light Mode">
         </button>
     </header>
 
     <nav class="navbar">
-        <a href="index.html"><img src="/images/logo.png" class="logo"></a>
-
-    <link rel="stylesheet" href="styles.css" type="text/css">
-    <script src="script.js" defer></script>
-</head>
-
-<body>
-
-    <nav class="navbar">
-        <a href="index.html"><img src="images/logo.png"
-                class="logo"></a>
-
+        <a href="index.html"><img src="images/logo.png" class="logo" alt="Code Social logo"></a>
         <span class="website-name">Code Social</span>
         <ul>
             <li>
                 <a href="#">Live Events</a>
                 <ul class="dropdown">
-
                     <li><a href="#"> Why don't you react?</a></li>
                 </ul>
             </li>
-
-                    <li><a href="#">Why don't you react?</a></li>
-                </ul>
-            </li>
-
-            <!-- Dropdown -->
-
             <li>
                 <a href="#">Join our Community</a>
                 <ul class="dropdown">
-                    <li><a href="#"> Whatsapp</a></li>
+                    <li><a href="#">Whatsapp</a></li>
                     <li><a href="#">Discord</a></li>
                 </ul>
+            </li>
             <li class="hamburger-menu">
                 <a href="javascript:void(0);" class="toggle-button">
                     <span class="bar"></span>
@@ -173,21 +158,15 @@
                     <span class="bar"></span>
                 </a>
                 <ul class="dropdown">
-
                     <li><a href="#"> Meet Our Team</a></li>
-
-                    <li><a href="#">Meet Our Team</a></li>
-
                     <li><a href="#">Join Our Team</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Follow Us</a></li>
                 </ul>
             </li>
-            </li>
         </ul>
     </nav>
 
-    
     <section class="about-community">
         <h2>About Community</h2>
         <p>
@@ -198,59 +177,20 @@
             In addition to its learning and networking opportunities, Code Social Community also serves as a hub for resources, tools, and other materials that can help members enhance their skills and stay up-to-date with the latest trends and best practices in the tech industry.
 
             Whether you are just starting out in your career or are a seasoned professional looking to expand your knowledge and skills, this community offers something for everyone. With its focus on hands-on learning, mentorship, and networking opportunities, Code Social Community is an excellent place to connect with like-minded individuals, build your skills, and take your career to the next level.
-
-
-    <section class="about-community">
-        <h2>About Community</h2>
-        <p>
-            Code Social Community is a learning-focused community dedicated to providing individuals with resources,
-            opportunities to learn, grow, and develop their skills in various technologies. The community helps
-            individuals to explore their interests, expand their knowledge, and connect with like-minded people.
-
-            At Code Social Community, members have access to a wealth of resources and learning opportunities, including
-            free learning sessions, mentorship programs, and peer-to-peer learning sessions. The community also provides
-            opportunities for members to network and connect with others in the tech industry.
-
-            In addition to its learning and networking opportunities, Code Social Community also serves as a hub for
-            resources, tools, and other materials that can help members enhance their skills and stay up-to-date with
-            the latest trends and best practices in the tech industry.
-
-            Whether you are just starting out in your career or are a seasoned professional looking to expand your
-            knowledge and skills, this community offers something for everyone. With its focus on hands-on learning,
-            mentorship, and networking opportunities, Code Social Community is an excellent place to connect with
-            like-minded individuals, build your skills, and take your career to the next level.
-
         </p>
         <!-- Social Media Icons -->
         <div class="social-icons">
             <a href="https://wa.me/your-whatsapp-number" target="_blank">
-
-
-                <img src="/images/whatsapp-icon.png" alt="WhatsApp">
-            </a>
-            <a href="https://discord.gg/MSTNyRSPYW" target="_blank">
-                <img src="/images/discord-icon.png" alt="Discord">
-            </a>
-            <a href="https://www.linkedin.com/company/code-social/" target="_blank">
-                <img src="/images/linkedin-icon.png" alt="LinkedIn">
-
-                <img src="C:\Users\Ananya\OneDrive\Documents\GitHub\official-website\images\whatsapp-icon.png"
-                    alt="WhatsApp">
-
-
+                <img src="images/whatsapp-icon.png" alt="WhatsApp">
             </a>
             <a href="https://discord.gg/MSTNyRSPYW" target="_blank">
                 <img src="images/discord-icon.png" alt="Discord">
             </a>
             <a href="https://www.linkedin.com/company/code-social/" target="_blank">
-                <img src="C:\Users\Ananya\OneDrive\Documents\GitHub\official-website\images\linkedin-icon.png"
-                    alt="LinkedIn">
-
+                <img src="images/linkedin-icon.png" alt="LinkedIn">
             </a>
         </div>
-        
     </section>
-
 
     <!-- Event Calendar Section -->
     <section class="calendar">
@@ -294,10 +234,6 @@
                     const eventElement = document.createElement('div');
                     eventElement.className = 'event';
                     eventElement.innerText = event.title;
-
-                    // Click to edit the event
-                    eventElement.onclick = () => editEvent(day, event);
-
                     dayElement.appendChild(eventElement);
                 }
 
@@ -305,87 +241,19 @@
             }
         }
 
-        function addEvent() {
-            const dateInput = document.getElementById('event-date');
-            const titleInput = document.getElementById('event-title');
+        document.getElementById('add-event').addEventListener('click', () => {
+            const date = document.getElementById('event-date').value;
+            const title = document.getElementById('event-title').value;
 
-            const dateValue = dateInput.value;
-            const titleValue = titleInput.value;
-
-            if (dateValue && titleValue) {
-                events.push({ date: dateValue, title: titleValue });
+            if (date && title) {
+                events.push({ date, title });
                 generateCalendar();
-
-                // Clear input fields
-                dateInput.value = '';
-                titleInput.value = '';
-            } else {
-                alert('Please fill in both fields.');
+                document.getElementById('event-title').value = '';
             }
-        }
-
-        function editEvent(day, event) {
-            const dateInput = document.getElementById('event-date');
-            const titleInput = document.getElementById('event-title');
-
-            // Set the inputs with the current event details
-            dateInput.value = event.date;
-            titleInput.value = event.title;
-
-            // Change button to update event
-            document.getElementById('add-event').innerText = 'Update Event';
-            document.getElementById('add-event').onclick = () => updateEvent(event.date, day);
-        }
-
-        function updateEvent(oldDate, day) {
-            const dateInput = document.getElementById('event-date');
-            const titleInput = document.getElementById('event-title');
-
-            const newDate = dateInput.value;
-            const newTitle = titleInput.value;
-
-            const eventIndex = events.findIndex(e => e.date === oldDate);
-
-            if (eventIndex !== -1) {
-                events[eventIndex] = { date: newDate, title: newTitle };
-                generateCalendar();
-
-                // Reset the form
-                dateInput.value = '';
-                titleInput.value = '';
-                document.getElementById('add-event').innerText = 'Add Event';
-                document.getElementById('add-event').onclick = addEvent; // Reset to original function
-            } else {
-                alert('Event not found.');
-            }
-        }
-
-        document.getElementById('add-event').addEventListener('click', addEvent);
-        generateCalendar();
-
-        // Theme switcher functionality
-        const themeSwitchButton = document.getElementById('theme-switch');
-        themeSwitchButton.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
         });
-        // Simulated developer check
-    function checkIfDeveloper() {
-    // Simple password check (replace with real authentication if needed)
-        const isDeveloper = prompt('Enter developer password:') === 'devpassword';
-    
-    // If the user is a developer, show the event form
-    if (isDeveloper) {
-        document.querySelector('.event-form').style.display = 'flex'; // Make the form visible
-    }
-}
 
-// Hide the event form initially
-    document.querySelector('.event-form').style.display = 'none';
-
-// Call the developer check when page loads
-    window.addEventListener('DOMContentLoaded', checkIfDeveloper);
-
-</script>
+        document.addEventListener('DOMContentLoaded', generateCalendar);
+    </script>
 </body>
-</html>
 
+</html>
