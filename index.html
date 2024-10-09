@@ -13,119 +13,240 @@
     <style>
         /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5; /* Light mode background */
-            color: #000; /* Light mode text color */
+            background-color: #f5f5f5;
+            color: #000;
+            transition: background-color 0.5s, color 0.5s;
         }
-
+    
         /* Dark Mode Styles */
         body.dark-mode {
-            background-color: #121212; /* Dark mode background */
-            color: #ffffff; /* Dark mode text color */
+            background-color: #121212;
+            color: #ffffff;
         }
-
-        /* Calendar styles */
+    
+        /* Header styles */
+        header {
+            background-color: #4CAF50;
+            padding: 10px;
+            text-align: right;
+        }
+    
+        header img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    
+        /* Navbar Styles */
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+    
+        .navbar ul li {
+            position: relative;
+        }
+    
+        .navbar ul li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+    
+        .navbar ul li a:hover {
+            color: #4CAF50;
+        }
+    
+        .navbar .logo {
+            width: 120px;
+        }
+    
+        /* Dropdown Styles */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+    
+        .navbar ul li:hover .dropdown {
+            display: block;
+        }
+    
+        /* Calendar Styles */
         .calendar {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 20px;
         }
-
+    
         .calendar-header {
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+            font-weight: bold;
         }
-
+    
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-            width: 100%; /* Full width */
-            max-width: 800px; /* Maximum width for the grid */
+            gap: 15px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 1000px;
         }
-
+    
         .calendar-day {
-            border: 1px solid #ccc;
-            padding: 20px; /* Increased padding */
+            border: 1px solid #ddd;
+            padding: 20px;
             text-align: center;
             position: relative;
-            background-color: #ffffff; /* Light mode day background */
-            height: 100px; /* Fixed height for uniformity */
-            border-radius: 8px; /* Rounded corners */
-            transition: background-color 0.3s ease; /* Smooth transition */
+            background-color: #ffffff;
+            height: 100px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
-
+    
         body.dark-mode .calendar-day {
-            background-color: #1e1e1e; /* Dark mode day background */
-            border-color: #444; /* Dark mode border color */
+            background-color: #1e1e1e;
+            border-color: #444;
         }
-
+    
         .calendar-day:hover {
-            background-color: #e0e0e0; /* Light hover effect */
+            background-color: #e0e0e0;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
-
+    
         body.dark-mode .calendar-day:hover {
-            background-color: #333; /* Dark hover effect */
+            background-color: #333;
         }
-
+    
         .event {
             background-color: #4CAF50;
             color: white;
-            padding: 5px; /* Adjusted padding */
-            border-radius: 3px;
-            font-size: 14px; /* Increased font size */
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 16px;
             position: absolute;
             bottom: 5px;
             left: 5px;
             right: 5px;
             text-align: center;
-            cursor: pointer; /* Makes the event clickable */
-            overflow: hidden; /* Prevents overflow of text */
-            white-space: nowrap; /* Keeps text in a single line */
-            text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
+            cursor: pointer;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
-
-        /* Form styles */
+    
+        /* Form Styles */
         .event-form {
             margin: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
         }
-
+    
+        .event-form h3 {
+            margin-bottom: 20px;
+            color: #4CAF50;
+            font-size: 24px;
+        }
+    
         .event-form input,
         .event-form button {
-            margin: 5px;
-            padding: 10px;
+            margin: 10px;
+            padding: 15px;
             font-size: 16px;
-            width: 100%; /* Full width for inputs */
-            max-width: 300px; /* Maximum width for inputs */
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            transition: box-shadow 0.3s;
         }
-
-        /* Button styles */
-        .edit-btn,
-        .delete-btn {
-            margin-top: 5px;
-            padding: 2px 5px;
-            font-size: 12px;
+    
+        .event-form input:focus,
+        .event-form button:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .event-form button {
+            background-color: #4CAF50;
             color: white;
+            cursor: pointer;
             border: none;
-            border-radius: 3px;
+        }
+    
+        /* Social Media Icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+    
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+    
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+    
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 14px;
+            margin-top: 50px;
+        }
+    
+        /* Dark Mode Button */
+        #theme-switch {
+            background: none;
+            border: none;
             cursor: pointer;
         }
-
-        .edit-btn {
-            background-color: #2196F3; /* Blue */
-        }
-
-        .delete-btn {
-            background-color: #F44336; /* Red */
+    
+        .hamburger-menu .bar {
+            width: 35px;
+            height: 5px;
+            background-color: #4CAF50;
+            margin: 6px 0;
+            transition: 0.4s;
         }
     </style>
+    
 </head>
 
 <body>
@@ -145,6 +266,10 @@
                 <ul class="dropdown">
                     <li><a href="#"> Why don't you react?</a></li>
                 </ul>
+            </li>
+            <li>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Signup</a> 
             </li>
             <li>
                 <a href="#">Join our Community</a>
