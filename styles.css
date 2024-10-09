@@ -1,4 +1,5 @@
 
+
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
@@ -113,9 +114,11 @@
         }
 
 /* Navbar Styling */
+
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 #theme-switch{
     height: 25px;
@@ -129,8 +132,10 @@
     align-items: center;
     position: relative;
 
+
 }
   /* Navbar Styling */
+
 .navbar {
     background-color: #333;
     padding: 10px 10px;
@@ -163,19 +168,29 @@
 }
 
 .website-name {
-    margin-right: auto;
     font-size: 1.8rem;
     color: #fff;
-    margin-left: 15px;
     font-weight: bold;
     letter-spacing: 1.2px;
+    margin-right: auto;
+    margin-left: 15px;
 }
 
-.navbar ul {
+/* Center Links */
+.center-links {
     list-style: none;
     display: flex;
-    justify-content: center;
     align-items: center;
+
+    justify-content: center;
+    flex: 1;
+    position: relative; /* Added to position dropdowns correctly */
+}
+
+.center-links li {
+    margin-left: 25px;
+    position: relative; /* Added for dropdown positioning */
+
     margin: 0;
     z-index: 10;
 }
@@ -184,9 +199,10 @@
     position: relative;
     margin-left: 20px;
     display: inline-block;
+
 }
 
-.navbar ul li a {
+.center-links li a {
     text-decoration: none;
     color: #fff;
     padding: 8px 10px;
@@ -194,8 +210,9 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar ul li a:hover {
+.center-links li a:hover {
     background-color: #555;
+
     color: #f1c40f; /* Add hover color effect */
 }
 
@@ -229,23 +246,31 @@
 }
 
 /* Dropdown Menu */
-.navbar ul li:hover .dropdown {
-    display: block;
-}
-
 .dropdown {
-    display: none;
-    position: absolute;
+    display: none; 
+    position: absolute; 
     background-color: #333;
     padding: 10px;
     border-radius: 4px;
     z-index: 1;
+
+    top: 100%; 
+    right: 0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: calc(100vw - 40px); 
+    overflow: hidden; 
+}
+
+.center-links li:hover .dropdown {
+    display: block;
+
     top: 27px; 
     right: 0%; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
+
 }
 
 .navbar ul li:hover .dropdown {
@@ -255,6 +280,8 @@
 }
 .dropdown li {
     margin: 10px 0;
+    list-style-type: disc; 
+    padding-left: 20px; 
 }
 
 .dropdown li a {
@@ -274,12 +301,40 @@
 }
 
 
+/* Hamburger Menu */
+.hamburger-menu {
+    position: relative; /* Added for dropdown positioning */
+}
+
+.hamburger-menu .toggle-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    height: 3px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Show Dropdown on Hamburger Click */
+.hamburger-menu.active .dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar ul {
         flex-direction: column;
         align-items: flex-start;
-        display: none;
+        display: none; 
         width: 100%;
         background-color: #333;
         padding: 20px 0;
@@ -289,30 +344,34 @@
     }
 
     .navbar ul li {
-        margin-left: 0;
+        margin-left: 0; 
     }
 
     .navbar ul li a {
-        display: block;
         padding: 10px 20px;
         width: 100%;
     }
 
     .hamburger-menu .toggle-button {
-        display: block;
-    }
-
-    .hamburger-menu.active + ul {
-        display: flex;
+        display: block; 
     }
 
     .navbar ul li:hover .dropdown {
-        position: relative;
-        left: 0;
-        top: 0;
+        position: relative; 
+        top: 0; 
+        left: 0; 
+    }
+
+    .hamburger-menu.active + ul {
+        display: flex; 
+    }
+
+    /* Dropdown for Hamburger */
+    .hamburger-menu .dropdown {
+        top: 50px; 
+        right: 0; 
     }
 }
-
 
 /* About Community Section */
 .about-community {
@@ -330,9 +389,9 @@
     margin-bottom: 15px;
     color: #333;
     text-align: center;
-    /* Center the heading */
 }
 
+/* Social Icons */
 .social-icons {
     margin-top: 20px;
 }
@@ -349,7 +408,7 @@
 }
 
 .social-icons img:hover {
-    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    transform: scale(1.1);
 }
 
 
@@ -361,71 +420,161 @@
     padding: 20px 0;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+.container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
 }
 
 .footer-logo-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    grid-column: span 2;
 }
 
 .footer-logo {
-    width: 80px;
-    margin-bottom: 10px;
+    height: 8.25rem;
 }
 
-.footer-links ul {
-    list-style-type: none;
-    padding: 0;
+.footer-text {
+    margin-top: 1.75rem;
+    color: #4B5563;
+    line-height: 1.75rem;
 }
 
-.footer-links ul li {
-    margin: 5px 0;
+.social-icons {
+    display: flex;
+    margin-top: 2.25rem;
+    gap: 1rem;
 }
 
-.footer-links ul li a {
-    color: #fff;
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+
+    border-radius: 9999px;
+    transition: background-color 0.2s ease;
+}
+
+.social-icon:hover {
+    background-color: #2563EB;
+}
+
+.footer-section {
+    padding: 4rem 0;
+    background-color: #f9fafb;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* Create a 12-column grid for flexibility */
+    gap: 2rem; /* Space between grid items */
+    align-items: start; /* Align items to start */
+}
+
+.footer-logo-section {
+    grid-column: span 6; /* Logo section spans 6 columns on larger screens */
+}
+
+.footer-links {
+    grid-column: span 3; /* Links span 3 columns each */
+}
+
+
+/* Footer Logo */
+.footer-logo {
+    height: 2.25rem;
+}
+
+.footer-text {
+    margin-top: 1.75rem;
+    color: #4B5563;
+    line-height: 1.75rem;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    align-items: center; /* Center icons vertically */
+    gap: 15px; /* Adjust the spacing between the icons */
+    margin-top: 20px;
+    list-style: none;
+}
+
+.social-icons a {
     text-decoration: none;
-    transition: color 0.3s;
 }
 
-.footer-links ul li a:hover {
-    color: #f39c12; /* Accent color for hover effect */
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
 }
 
-.footer-social a {
-    margin-right: 10px;
-}
-
-.footer-social a img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s;
-}
-
-.footer-social a img:hover {
+.social-icons img:hover {
     transform: scale(1.1);
 }
 
-.footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #444;
+/* Remove any additional unwanted content */
+.social-icons::before,
+.social-icons::after {
+    content: none;
 }
 
-.footer-bottom p {
-    margin: 0;
-    font-size: 14px;
+
+/* Footer Links */
+.footer-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #9CA3AF;
+    margin-bottom: 1.5rem;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 1rem;
+}
+
+.footer-list a {
+    color: #111827;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+
+.footer-list a:hover {
+    color: #2563EB;
+}
+
+/* Divider and Footer Bottom Text */
+.footer-divider {
+    margin: 4rem 0;
+    border-top: 1px solid #E5E7EB;
+}
+
+.footer-bottom-text {
+    text-align: center;
+    color: #6B7280;
+    font-size: 0.875rem;
 }
 
 
