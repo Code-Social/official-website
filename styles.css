@@ -1,117 +1,135 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 64px;
+    padding: 0;
+    background-color: #f5f5f5; /* Light mode background */
+    color: #000; /* Light mode text color */
+}
 
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark mode background */
+    color: #ffffff; /* Dark mode text color */
+}
 
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin-top: 64px;
-            padding: 0;
-            background-color: #f5f5f5; /* Light mode background */
-            color: #000; /* Light mode text color */
-        }
+/* Calendar styles */
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
 
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #121212; /* Dark mode background */
-            color: #ffffff; /* Dark mode text color */
-        }
+.calendar-header {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
 
-        /* Calendar styles */
-        .calendar {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px;
-        }
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%; /* Full width */
+    max-width: 800px; /* Maximum width for the grid */
+}
 
-        .calendar-header {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+.calendar-day {
+    border: 1px solid #ccc;
+    padding: 20px; /* Increased padding */
+    text-align: center;
+    position: relative;
+    background-color: #ffffff; /* Light mode day background */
+    height: 100px; /* Fixed height for uniformity */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
 
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-            width: 100%; /* Full width */
-            max-width: 800px; /* Maximum width for the grid */
-        }
+body.dark-mode .calendar-day {
+    background-color: #1e1e1e; /* Dark mode day background */
+    border-color: #444; /* Dark mode border color */
+}
 
-        .calendar-day {
-            border: 1px solid #ccc;
-            padding: 20px; /* Increased padding */
-            text-align: center;
-            position: relative;
-            background-color: #ffffff; /* Light mode day background */
-            height: 100px; /* Fixed height for uniformity */
-            border-radius: 8px; /* Rounded corners */
-            transition: background-color 0.3s ease; /* Smooth transition */
-        }
+.calendar-day:hover {
+    background-color: #e0e0e0; /* Light hover effect */
+}
 
-        body.dark-mode .calendar-day {
-            background-color: #1e1e1e; /* Dark mode day background */
-            border-color: #444; /* Dark mode border color */
-        }
+body.dark-mode .calendar-day:hover {
+    background-color: #333; /* Dark hover effect */
+}
 
-        .calendar-day:hover {
-            background-color: #e0e0e0; /* Light hover effect */
-        }
+.event {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px; /* Adjusted padding */
+    border-radius: 3px;
+    font-size: 14px; /* Increased font size */
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    text-align: center;
+    cursor: pointer; /* Makes the event clickable */
+    overflow: hidden; /* Prevents overflow of text */
+    white-space: nowrap; /* Keeps text in a single line */
+    text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
+}
 
-        body.dark-mode .calendar-day:hover {
-            background-color: #333; /* Dark hover effect */
-        }
+/* Loader styles */
+.loader {
+    display: none; /* Hidden by default */
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    position: absolute; /* Centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-        .event {
-            background-color: #4CAF50;
-            color: white;
-            padding: 5px; /* Adjusted padding */
-            border-radius: 3px;
-            font-size: 14px; /* Increased font size */
-            position: absolute;
-            bottom: 5px;
-            left: 5px;
-            right: 5px;
-            text-align: center;
-            cursor: pointer; /* Makes the event clickable */
-            overflow: hidden; /* Prevents overflow of text */
-            white-space: nowrap; /* Keeps text in a single line */
-            text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
-        }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
-        /* Form styles */
-        .event-form {
-            margin: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+/* Form styles */
+.event-form {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .event-form input, .event-form button {
-            margin: 5px;
-            padding: 10px;
-            font-size: 16px;
-            width: 100%; /* Full width for inputs */
-            max-width: 300px; /* Maximum width for inputs */
-        }
+.event-form input, .event-form button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%; /* Full width for inputs */
+    max-width: 300px; /* Maximum width for inputs */
+}
 
-        /* Button styles */
-        .edit-btn, .delete-btn {
-            margin-top: 5px;
-            padding: 2px 5px;
-            font-size: 12px;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
+/* Button styles */
+.edit-btn, .delete-btn {
+    margin-top: 5px;
+    padding: 2px 5px;
+    font-size: 12px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
 
-        .edit-btn {
-            background-color: #2196F3; /* Blue */
-        }
+.edit-btn {
+    background-color: #2196F3; /* Blue */
+}
 
-        .delete-btn {
-            background-color: #F44336; /* Red */
-        }
+.delete-btn {
+    background-color: #F44336; /* Red */
+}
 
 /* Navbar Styling */
 
@@ -120,7 +138,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-#theme-switch{
+
+#theme-switch {
     height: 25px;
     width: 25px;
     margin: 10px 40px;
@@ -131,11 +150,9 @@
     justify-content: center;
     align-items: center;
     position: relative;
-
-
 }
-  /* Navbar Styling */
 
+/* Navbar Styling */
 .navbar {
     background-color: #333;
     padding: 10px 10px;
@@ -144,9 +161,9 @@
     justify-content: space-between;
     position: fixed;
     width: 100%;
-    top:0;
+    top: 0;
     margin-top: 0px;
-    z-index:1000;
+    z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -157,14 +174,6 @@
 
 .logo:hover {
     transform: scale(1.1);
-}
-.darkmode {
-    background-color: #fdf8f8;
-    color: #070707;
-    background-color: #401111;
-    background-color: #908989;
-    background-color: #2a2929;
-    color: #401111;
 }
 
 .website-name {
@@ -181,7 +190,6 @@
     list-style: none;
     display: flex;
     align-items: center;
-
     justify-content: center;
     flex: 1;
     position: relative; /* Added to position dropdowns correctly */
@@ -190,7 +198,6 @@
 .center-links li {
     margin-left: 25px;
     position: relative; /* Added for dropdown positioning */
-
     margin: 0;
     z-index: 10;
 }
@@ -199,7 +206,6 @@
     position: relative;
     margin-left: 20px;
     display: inline-block;
-
 }
 
 .center-links li a {
@@ -212,7 +218,6 @@
 
 .center-links li a:hover {
     background-color: #555;
-
     color: #f1c40f; /* Add hover color effect */
 }
 
@@ -233,44 +238,37 @@
     height: 5px;
     width: 30px;
     display: flex;
-    align-items: center ;
+    align-items: center;
     justify-content: center;
-    background-color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     margin: 0;
     transition: all 0.3s ease;
 }
-.my-svg {
-    width: 100px;
-    height: 100px;
-}
 
 /* Dropdown Menu */
 .dropdown {
-    display: none; 
-    position: absolute; 
+    display: none;
+    position: absolute;
     background-color: #333;
     padding: 10px;
     border-radius: 4px;
     z-index: 1;
-
-    top: 100%; 
-    right: 0; 
+    top: 100%;
+    right: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: calc(100vw - 40px); 
-    overflow: hidden; 
+    max-width: calc(100vw - 40px);
+    overflow: hidden;
 }
 
 .center-links li:hover .dropdown {
     display: block;
-
-    top: 27px; 
-    right: 0%; 
+    top: 27px;
+    right: 0%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-
 }
 
 .navbar ul li:hover .dropdown {
@@ -278,10 +276,11 @@
     opacity: 1;
     transform: translateY(0);
 }
+
 .dropdown li {
     margin: 10px 0;
-    list-style-type: disc; 
-    padding-left: 20px; 
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 .dropdown li a {
@@ -295,46 +294,13 @@
     background-color: #555;
     border-radius: 4px;
 }
-.dropdown li a span:hover {
-    background-color: #555;
-    border-radius: 4px;
-}
-
-
-/* Hamburger Menu */
-.hamburger-menu {
-    position: relative; /* Added for dropdown positioning */
-}
-
-.hamburger-menu .toggle-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 18px;
-    cursor: pointer;
-}
-
-.hamburger-menu .bar {
-    height: 3px;
-    width: 30px;
-    background-color: #fff;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-/* Show Dropdown on Hamburger Click */
-.hamburger-menu.active .dropdown {
-    display: flex;
-    flex-direction: column;
-}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar ul {
         flex-direction: column;
         align-items: flex-start;
-        display: none; 
+        display: none;
         width: 100%;
         background-color: #333;
         padding: 20px 0;
@@ -344,7 +310,7 @@
     }
 
     .navbar ul li {
-        margin-left: 0; 
+        margin-left: 0;
     }
 
     .navbar ul li a {
@@ -353,23 +319,23 @@
     }
 
     .hamburger-menu .toggle-button {
-        display: block; 
+        display: block;
     }
 
     .navbar ul li:hover .dropdown {
-        position: relative; 
-        top: 0; 
-        left: 0; 
+        position: relative;
+        top: 0;
+        left: 0;
     }
 
     .hamburger-menu.active + ul {
-        display: flex; 
+        display: flex;
     }
 
     /* Dropdown for Hamburger */
     .hamburger-menu .dropdown {
-        top: 50px; 
-        right: 0; 
+        top: 50px;
+        right: 0;
     }
 }
 
@@ -410,8 +376,6 @@
 .social-icons img:hover {
     transform: scale(1.1);
 }
-
-
 
 /* Footer Styles */
 .footer {
@@ -458,7 +422,6 @@
     align-items: center;
     width: 1.75rem;
     height: 1.75rem;
-
     border-radius: 9999px;
     transition: background-color 0.2s ease;
 }
@@ -492,7 +455,6 @@
 .footer-links {
     grid-column: span 3; /* Links span 3 columns each */
 }
-
 
 /* Footer Logo */
 .footer-logo {
@@ -535,7 +497,6 @@
     content: none;
 }
 
-
 /* Footer Links */
 .footer-title {
     font-size: 0.875rem;
@@ -560,7 +521,6 @@
     transition: color 0.2s ease;
 }
 
-
 .footer-list a:hover {
     color: #2563EB;
 }
@@ -576,5 +536,3 @@
     color: #6B7280;
     font-size: 0.875rem;
 }
-
-

@@ -9,7 +9,7 @@
 ###  Use Proper Language and Formatting
 - Communicate clearly using appropriate language and avoid excessive use of acronyms, jargon, or caps lock.
 ###  No Plagiarism
-- Do not claim someone else's work as your own. Give proper credit where due and respect intellectual property rights.
+- Do not claim someone else's work as your own. Give proper credit where it is due and respect intellectual property rights.
 ###  No NSFW Content
 - Keep the server free from any explicit, adult, or not-safe-for-work content.
 ### Avoid Personal Attacks
@@ -19,7 +19,7 @@
 ### No Illegal Activities
 - Do not share or promote any illegal content, tools, or activities.
 ###  Listen to Moderators
-- Follow the instructions of the server moderators. Failure to comply with their requests may result in appropriate actions.
+- Follow the instructions of the server moderators. Failure to comply with their requests may result in appropriate disciplinary actions.
 
 - ### Contributing to Our Website
 
