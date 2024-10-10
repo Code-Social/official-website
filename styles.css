@@ -195,12 +195,23 @@
     z-index: 10;
 }
 
+.navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    list-style: none;
+}
+
 .navbar ul li {
     position: relative;
-    margin-left: 20px;
     display: inline-block;
-
 }
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
 
 .center-links li a {
     text-decoration: none;
@@ -227,6 +238,7 @@
     cursor: pointer;
     padding: 4px 6px;
     padding-right: 10px;
+    
 }
 
 .hamburger-menu .bar {
@@ -537,6 +549,10 @@
 
 
 /* Footer Links */
+footer {
+    text-align: center;
+}
+
 .footer-title {
     font-size: 0.875rem;
     font-weight: 600;
@@ -576,5 +592,6 @@
     color: #6B7280;
     font-size: 0.875rem;
 }
+
 
 
