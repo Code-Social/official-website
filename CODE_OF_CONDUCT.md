@@ -14,7 +14,7 @@ We believe in fostering open source citizenship, where members recognize their i
 
 - Be respectful and considerate in your interactions with others.
 - Strive for collaboration and avoid resorting to conflict.
-- Be mindful of your surroundings and fellow members. Report any safety concerns or code of conduct violations to the community leaders.
+- Be mindful of your surroundings and fellow members. Report any safety concerns or code of conduct violations to the community organizers.
 - Respect shared spaces: Be mindful of others if using community event venues open to the public.
 
 ## 4. Unacceptable Behavior
@@ -38,13 +38,13 @@ Weapons of any kind, including firearms, explosives, and large knives, are stric
 
 ## 6. Consequences of Unacceptable Behavior
 
-Unacceptable behavior from anyone, including sponsors and those with authority, will not be tolerated. Those asked to stop such behavior must comply immediately. Consequences for violations may include temporary bans or permanent expulsion from the community.
+Unacceptable behavior from anyone, including sponsors and those with authority, will not be tolerated. Those who are asked to stop such behavior must comply immediately. Consequences for violations may include temporary bans or permanent expulsion from the community.
 
 ## 7. Reporting Guidelines
 
 If you experience or witness unacceptable behavior, please report it promptly to a community organizer at [codesocialcommunity@gmail.com](mailto:codesocialcommunity@gmail.com).
 
-Organizers can also assist with contacting local law enforcement or providing support to those experiencing harassment. Organizers can also provide escorts if needed.
+Organizers can assist with contacting local law enforcement or providing support to those experiencing harassment, including providing escorts for safety if needed.
 
 ## 8. Addressing Grievances
 
