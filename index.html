@@ -175,10 +175,10 @@
                 const calendarGrid = document.getElementById('calendar-grid');
                 const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
         
-                // Set current month in header
+                
                 document.getElementById('current-month').innerText = new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long', year: 'numeric' });
         
-                // Clear existing calendar
+                
                 calendarGrid.innerHTML = '';
         
                 for (let day = 1; day <= daysInMonth; day++) {
@@ -198,7 +198,7 @@
                         });
                     }
         
-                    // Highlight today
+                  
                     if (new Date().getDate() === day && new Date().getMonth() === currentMonth) {
                         dayElement.style.backgroundColor = '#d1ecf1';
                     }
@@ -207,7 +207,7 @@
                 }
             }
         
-            // Event listeners for month navigation
+            
             document.getElementById('prev-month').addEventListener('click', () => {
                 currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
                 currentYear = (currentMonth === 11) ? currentYear - 1 : currentYear;
