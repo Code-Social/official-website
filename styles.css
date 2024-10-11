@@ -1,4 +1,5 @@
 
+
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
@@ -15,122 +16,82 @@
         }
 
         /* Calendar styles */
-        .calendar-section {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            margin: 20px;
-            gap: 20px;
-        }
-    
-        /* Event form on the left */
-        .event-form {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 250px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            margin-top: 40px;
-        }
-    
-        .event-form h3 {
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-    
-        .event-form input, .event-form button {
-            margin: 5px 0;
-            padding: 10px;
-            font-size: 16px;
-            width: 100%;
-            max-width: 250px;
-            box-sizing: border-box;
-        }
-
-        .calendar-title{
-            text-align: center;
-        }
-    
-        /* Calendar on the right */
         .calendar {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
-            max-width: 700px;
+            margin: 20px;
         }
-    
+
         .calendar-header {
-            display: flex;
-            align-items: center; /* Center items vertically */
-            justify-content: center; /* Center items horizontally */
-            margin-bottom: 20px;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
-        .month-year-box {
-            padding: 10px 20px; /* Add padding for aesthetics */
-            background-color: #f0f0f0; /* Light background for the box */
-            border: 1px solid #ccc; /* Border around the box */
-            border-radius: 5px; /* Rounded corners */
-            font-weight: bold; /* Bold text for visibility */
-            margin: 0 10px; /* Spacing around the box */
-        }
-    
+
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 10px;
             margin-bottom: 20px;
-            width: 100%;
+            width: 100%; /* Full width */
+            max-width: 800px; /* Maximum width for the grid */
         }
-    
+
         .calendar-day {
             border: 1px solid #ccc;
-            padding: 10px;
+            padding: 20px; /* Increased padding */
             text-align: center;
             position: relative;
-            background-color: #ffffff;
-            height: 100px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
+            background-color: #ffffff; /* Light mode day background */
+            height: 100px; /* Fixed height for uniformity */
+            border-radius: 8px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition */
         }
-    
+
         body.dark-mode .calendar-day {
-            background-color: #1e1e1e;
-            border-color: #444;
+            background-color: #1e1e1e; /* Dark mode day background */
+            border-color: #444; /* Dark mode border color */
         }
-    
+
         .calendar-day:hover {
-            background-color: #e0e0e0;
+            background-color: #e0e0e0; /* Light hover effect */
         }
-    
+
         body.dark-mode .calendar-day:hover {
-            background-color: #333;
+            background-color: #333; /* Dark hover effect */
         }
-    
+
         .event {
+            background-color: #4CAF50;
             color: white;
-            padding: 5px;
+            padding: 5px; /* Adjusted padding */
             border-radius: 3px;
-            font-size: 12px;
+            font-size: 14px; /* Increased font size */
             position: absolute;
             bottom: 5px;
             left: 5px;
             right: 5px;
             text-align: center;
-            cursor: pointer;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
+            cursor: pointer; /* Makes the event clickable */
+            overflow: hidden; /* Prevents overflow of text */
+            white-space: nowrap; /* Keeps text in a single line */
+            text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
         }
+
+        /* Form styles */
+        .event-form {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .event-form input, .event-form button {
             margin: 5px;
             padding: 10px;
             font-size: 16px;
-            width: 100%;
-            max-width: 300px;
+            width: 100%; /* Full width for inputs */
+            max-width: 300px; /* Maximum width for inputs */
         }
 
         /* Button styles */
@@ -152,63 +113,96 @@
             background-color: #F44336; /* Red */
         }
 
-/* General Navbar Styling */
+/* Navbar Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#theme-switch{
+    height: 25px;
+    width: 25px;
+    margin: 10px 40px;
+    padding: 10;
+    border-radius: 50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+
+}
+  /* Navbar Styling */
+
 .navbar {
     background-color: #333;
-    padding: 10px 20px;
+    padding: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: fixed;
     width: 100%;
-    top: 0;
-    z-index: 1000;
+    top:0;
+    margin-top: 0px;
+    z-index:1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Center the menu items */
-.navbar ul {
-    display: flex;
-    justify-content: space-around;  /* evenly space the menu items */
-    align-items: center;
-    list-style: none;
-    flex: 1;
-}
-
-/* Move Hamburger Menu to Right */
-.hamburger-menu {
-    margin-left: auto;  /* Push hamburger menu to the right */
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-/* Logo Styling */
 .logo {
     height: 40px;
-    margin-right: 20px;
     transition: transform 0.3s ease;
 }
 
 .logo:hover {
     transform: scale(1.1);
 }
+.darkmode {
+    background-color: #fdf8f8;
+    color: #070707;
+    background-color: #401111;
+    background-color: #908989;
+    background-color: #2a2929;
+    color: #401111;
+}
 
-/* Website Name */
 .website-name {
     font-size: 1.8rem;
     color: #fff;
     font-weight: bold;
     letter-spacing: 1.2px;
     margin-right: auto;
+    margin-left: 15px;
 }
 
-/* Navbar Links */
+/* Center Links */
+.center-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    flex: 1;
+    position: relative; /* Added to position dropdowns correctly */
+}
+
+.center-links li {
+    margin-left: 25px;
+    position: relative; /* Added for dropdown positioning */
+
+    margin: 0;
+    z-index: 10;
+}
+
 .navbar ul li {
     position: relative;
+    margin-left: 20px;
+    display: inline-block;
+
 }
 
-.navbar ul li a {
+.center-links li a {
     text-decoration: none;
     color: #fff;
     padding: 8px 10px;
@@ -216,12 +210,102 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar ul li a:hover {
+.center-links li a:hover {
     background-color: #555;
-    color: #f1c40f;
+
+    color: #f1c40f; /* Add hover color effect */
 }
 
 /* Hamburger Menu Styling */
+.hamburger-menu .toggle-button {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+    padding: 4px 6px;
+    padding-right: 10px;
+}
+
+.hamburger-menu .bar {
+    height: 5px;
+    width: 30px;
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    background-color:rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+.my-svg {
+    width: 100px;
+    height: 100px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    display: none; 
+    position: absolute; 
+    background-color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1;
+
+    top: 100%; 
+    right: 0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: calc(100vw - 40px); 
+    overflow: hidden; 
+}
+
+.center-links li:hover .dropdown {
+    display: block;
+
+    top: 27px; 
+    right: 0%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+}
+
+.navbar ul li:hover .dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+.dropdown li {
+    margin: 10px 0;
+    list-style-type: disc; 
+    padding-left: 20px; 
+}
+
+.dropdown li a {
+    color: #fff;
+    padding: 5px 5px;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown li a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+.dropdown li a span:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: relative; /* Added for dropdown positioning */
+}
+
 .hamburger-menu .toggle-button {
     display: flex;
     flex-direction: column;
@@ -229,77 +313,20 @@
     width: 25px;
     height: 18px;
     cursor: pointer;
-    margin-left: 10px;
 }
 
 .hamburger-menu .bar {
     height: 3px;
-    width: 25px;
+    width: 30px;
     background-color: #fff;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
 
-/* Dropdown Styling */
-.hamburger-menu .dropdown {
-    display: none;
-    position: absolute;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 4px;
-    z-index: 1;
-    top: 100%;
-    right: 0;  /* Align dropdown with the right corner */
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
+/* Show Dropdown on Hamburger Click */
 .hamburger-menu.active .dropdown {
-    display: block;
-}
-
-/* Fix the dropdown text formatting */
-.hamburger-menu .dropdown li {
-    list-style: none;
-    margin: 10px 0;
-}
-
-.hamburger-menu .dropdown li a {
-    color: #fff;
-    padding: 10px 15px;  /* Increase padding for better spacing */
-    text-decoration: none;
-    display: block;
-    font-size: 1rem;   /* Set consistent font size */
-}
-
-.hamburger-menu .dropdown li a:hover {
-    background-color: #555;
-    color: #f1c40f;
-}
-
-/* Dark Mode Button */
-#theme-switch {
-    height: 40px;
-    width: 40px;
-    margin: 0 20px;
-    padding: 5px;
-    border-radius: 50%;
-    background-color: #fff;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-body.dark-mode #theme-switch {
-    background-color: #333;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-}
-
-#theme-switch:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    flex-direction: column;
 }
 
 /* Responsive Adjustments */
@@ -307,7 +334,7 @@ body.dark-mode #theme-switch {
     .navbar ul {
         flex-direction: column;
         align-items: flex-start;
-        display: none;
+        display: none; 
         width: 100%;
         background-color: #333;
         padding: 20px 0;
@@ -316,15 +343,35 @@ body.dark-mode #theme-switch {
         left: 0;
     }
 
-    .hamburger-menu.active + ul {
-        display: flex;
+    .navbar ul li {
+        margin-left: 0; 
     }
 
+    .navbar ul li a {
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .hamburger-menu .toggle-button {
+        display: block; 
+    }
+
+    .navbar ul li:hover .dropdown {
+        position: relative; 
+        top: 0; 
+        left: 0; 
+    }
+
+    .hamburger-menu.active + ul {
+        display: flex; 
+    }
+
+    /* Dropdown for Hamburger */
     .hamburger-menu .dropdown {
-        right: 10px; /* Ensure proper alignment for mobile */
+        top: 50px; 
+        right: 0; 
     }
 }
-
 
 /* About Community Section */
 .about-community {
