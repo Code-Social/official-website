@@ -224,7 +224,7 @@
 
 /* Dropdown Styling */
 .hamburger-menu .dropdown {
-    display: none;
+    display: block;
     position: absolute;
     background-color: #333;
     padding: 10px;
