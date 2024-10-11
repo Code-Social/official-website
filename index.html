@@ -11,13 +11,11 @@
 </head>
 
 <body>
-
     <nav class="navbar">
-
-        <a href="index.html"><img src="/official-website/images/logo.png"
+        <a href="index.html"><img src="images/logo1.svg"
                 class="logo"></a>
         <span class="website-name">Code Social</span>
-        <ul>
+        <ul class="nav-links">
             <li>
                 <a href="#">Live Events</a>
                 <ul class="dropdown">
@@ -32,11 +30,11 @@
                 </ul>
             </li>
             <li class="hamburger-menu">
-                <div class="toggle-button">
+                <a href="#" class="toggle-button">
                     <button class="bar"></button>
                     <button class="bar"></button>
                     <button class="bar"></button>
-                </div>
+                </a>
                 <ul class="dropdown">
                     <li><a href="#"> Meet Our Team</a></li>
                     <li><a href="#">Join Our Team</a></li>
@@ -83,13 +81,15 @@
     
     <h2 class="calendar-title">Event Calendar</h2>
   
-    <section class="calendar-section">
+   <section class="calendar">
+        <div class="calendar-header">Event Calendar</div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+
+        <!-- Event Customization Form -->
         <div class="event-form">
             <h3>Add Event</h3>
             <input type="date" id="event-date" required>
             <input type="text" id="event-title" placeholder="Event Title" required>
-            <label for="event-color">Pick color for event:</label>
-            <input type="color" id="event-color" value="#4CAF50">
             <button id="add-event">Add Event</button>
         </div>
     
@@ -115,20 +115,20 @@
                 <div class="footer-grid">
                     <!-- Logo and About Section -->
                     <div class="footer-logo-section">
-                        <img class="footer-logo" src="/official-website/images/logo.png" alt="Logo" />
+                        <img class="footer-logo" src="images/logo.png" alt="Logo" />
                         <p class="footer-text">Code Social Community is a vibrant and inclusive space for tech enthusiasts to learn, grow, and connect. Founded in 2023, our mission is to empower individuals with resources, mentorship, and 
                             opportunities to cultivate their skills, explore their interests, 
                             and collaborate with like-minded peers. Join us on our journey to create something extraordinary together!</p>
                         <ul class="social-icons">
                             <li><a href="https://wa.me/your-whatsapp-number" target="_blank">
-                                <img src="./images/whatsapp-icon.png" alt="WhatsApp"></a>
+                                <img src="./images/whatsapp.png" alt="WhatsApp"></a>
                             </li>
                             <li><a href="https://discord.gg/MSTNyRSPYW" target="_blank">
-                                <img src="./images/discord-icon.png" alt="Discord">
+                                <img src="./images/discord.png" alt="Discord">
                             </a>
                             </li>
                             <li><a href="https://www.linkedin.com/company/code-social/" target="_blank">
-                                <img src="./images/linkedin-icon.png" alt="LinkedIn">
+                                <img src="./images/linkedin.png" alt="LinkedIn">
                             </a>
                             </li>
                         </ul>
@@ -161,6 +161,10 @@
             </div>
         </section>    
 
+    <footer>
+        <p>&copy; 2024 Code Social. All rights reserved.</p>
+
+    </footer>
     
 
         <script>
@@ -207,6 +211,8 @@
         
                     calendarGrid.appendChild(dayElement);
                 }
+
+                calendarGrid.appendChild(dayElement);
             }
         
             
@@ -214,28 +220,12 @@
                 currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
                 currentYear = (currentMonth === 11) ? currentYear - 1 : currentYear;
                 generateCalendar();
-            });
-        
-            document.getElementById('next-month').addEventListener('click', () => {
-                currentMonth = (currentMonth === 11) ? 0 : currentMonth + 1;
-                currentYear = (currentMonth === 0) ? currentYear + 1 : currentYear;
-                generateCalendar();
-            });
-        
-            document.getElementById('add-event').addEventListener('click', () => {
-                const date = document.getElementById('event-date').value;
-                const title = document.getElementById('event-title').value;
-                const color = document.getElementById('event-color').value;
-        
-                if (date && title) {
-                    events.push({ date, title, color });
-                    generateCalendar();
-                    document.getElementById('event-title').value = '';
-                }
-            });
-        
-            document.addEventListener('DOMContentLoaded', generateCalendar);
-        </script>
+                document.getElementById('event-title').value = '';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', generateCalendar);
+    </script>
 </body>
 
 </html>
