@@ -32,11 +32,11 @@
                 </ul>
             </li>
             <li class="hamburger-menu">
-                <a href="#" class="toggle-button">
+                <div class="toggle-button">
                     <button class="bar"></button>
                     <button class="bar"></button>
                     <button class="bar"></button>
-                </a>
+                </div>
                 <ul class="dropdown">
                     <li><a href="#"> Meet Our Team</a></li>
                     <li><a href="#">Join Our Team</a></li>
@@ -74,21 +74,31 @@
                 <img src="images/linkedin-icon.png" alt="LinkedIn">
             </a>
             <a href="https://github.com/Code-Social" target="_blank"></a>
-                <img src="/images/gitHub.png" alt="Discord">
+                <img src="./images/gitHub.png" alt="Github">
             </a>
         </div>
     </section>
-  
-   <section class="calendar">
-        <div class="calendar-header">Event Calendar</div>
-        <div class="calendar-grid" id="calendar-grid"></div>
 
-        <!-- Event Customization Form -->
+    <h2 class="calendar-title">Event Calendar</h2>
+  
+    <section class="calendar-section">
         <div class="event-form">
             <h3>Add Event</h3>
             <input type="date" id="event-date" required>
             <input type="text" id="event-title" placeholder="Event Title" required>
+            <label for="event-color">Pick color for event:</label>
+            <input type="color" id="event-color" value="#4CAF50">
             <button id="add-event">Add Event</button>
+        </div>
+    
+        <!-- Calendar on the right -->
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="prev-month">◀</button>
+                <span id="current-month"></span>
+                <button id="next-month">▶</button>
+            </div>
+            <div class="calendar-grid" id="calendar-grid"></div>
         </div>
     </section>
 
@@ -147,56 +157,81 @@
             </div>
         </section>    
 
-    <footer>
-        <p>&copy; 2024 Code Social. All rights reserved.</p>
-
-    </footer>
     
 
-    <script>
-        const events = [
-            { date: '2024-10-06', title: 'React Workshop' },
-            { date: '2024-10-14', title: 'Node.js Webinar' },
-            { date: '2024-10-21', title: 'CSS Masterclass' },
-        ];
-
-        function generateCalendar() {
-            const calendarGrid = document.getElementById('calendar-grid');
-            const daysInMonth = new Date(2024, 9, 0).getDate(); // October 2024
-
-            // Clear existing calendar
-            calendarGrid.innerHTML = '';
-
-            for (let day = 1; day <= daysInMonth; day++) {
-                const dayElement = document.createElement('div');
-                dayElement.className = 'calendar-day';
-                dayElement.innerText = day;
-
-                const event = events.find(e => new Date(e.date).getDate() === day);
-                if (event) {
-                    const eventElement = document.createElement('div');
-                    eventElement.className = 'event';
-                    eventElement.innerText = event.title;
-                    dayElement.appendChild(eventElement);
+        <script>
+            const events = [
+                { date: '2024-10-06', title: 'React Workshop', color: '#4CAF50' },
+                { date: '2024-10-14', title: 'Node.js Webinar', color: '#FFC107' },
+                { date: '2024-10-21', title: 'CSS Masterclass', color: '#2196F3' },
+            ];
+        
+            let currentMonth = new Date().getMonth();
+            let currentYear = new Date().getFullYear();
+        
+            function generateCalendar() {
+                const calendarGrid = document.getElementById('calendar-grid');
+                const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        
+                // Set current month in header
+                document.getElementById('current-month').innerText = new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long', year: 'numeric' });
+        
+                // Clear existing calendar
+                calendarGrid.innerHTML = '';
+        
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day';
+                    dayElement.innerText = day;
+        
+                    const event = events.filter(e => new Date(e.date).getDate() === day && new Date(e.date).getMonth() === currentMonth);
+                    if (event.length) {
+                        event.forEach(ev => {
+                            const eventElement = document.createElement('div');
+                            eventElement.className = 'event';
+                            eventElement.style.backgroundColor = ev.color || '#4CAF50';
+                            eventElement.innerText = ev.title;
+                            eventElement.addEventListener('click', () => alert(ev.title)); // Simple alert for now, can be modal or tooltip.
+                            dayElement.appendChild(eventElement);
+                        });
+                    }
+        
+                    // Highlight today
+                    if (new Date().getDate() === day && new Date().getMonth() === currentMonth) {
+                        dayElement.style.backgroundColor = '#d1ecf1';
+                    }
+        
+                    calendarGrid.appendChild(dayElement);
                 }
-
-                calendarGrid.appendChild(dayElement);
             }
-        }
-
-        document.getElementById('add-event').addEventListener('click', () => {
-            const date = document.getElementById('event-date').value;
-            const title = document.getElementById('event-title').value;
-
-            if (date && title) {
-                events.push({ date, title });
+        
+            // Event listeners for month navigation
+            document.getElementById('prev-month').addEventListener('click', () => {
+                currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+                currentYear = (currentMonth === 11) ? currentYear - 1 : currentYear;
                 generateCalendar();
-                document.getElementById('event-title').value = '';
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', generateCalendar);
-    </script>
+            });
+        
+            document.getElementById('next-month').addEventListener('click', () => {
+                currentMonth = (currentMonth === 11) ? 0 : currentMonth + 1;
+                currentYear = (currentMonth === 0) ? currentYear + 1 : currentYear;
+                generateCalendar();
+            });
+        
+            document.getElementById('add-event').addEventListener('click', () => {
+                const date = document.getElementById('event-date').value;
+                const title = document.getElementById('event-title').value;
+                const color = document.getElementById('event-color').value;
+        
+                if (date && title) {
+                    events.push({ date, title, color });
+                    generateCalendar();
+                    document.getElementById('event-title').value = '';
+                }
+            });
+        
+            document.addEventListener('DOMContentLoaded', generateCalendar);
+        </script>
 </body>
 
 </html>
