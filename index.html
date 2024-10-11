@@ -11,11 +11,13 @@
 </head>
 
 <body>
+
     <nav class="navbar">
-        <a href="index.html"><img src="images/logo1.svg"
+
+        <a href="index.html"><img src="/official-website/images/logo.png"
                 class="logo"></a>
         <span class="website-name">Code Social</span>
-        <ul class="nav-links">
+        <ul>
             <li>
                 <a href="#">Live Events</a>
                 <ul class="dropdown">
@@ -30,11 +32,11 @@
                 </ul>
             </li>
             <li class="hamburger-menu">
-                <a href="#" class="toggle-button">
+                <div class="toggle-button">
                     <button class="bar"></button>
                     <button class="bar"></button>
                     <button class="bar"></button>
-                </a>
+                </div>
                 <ul class="dropdown">
                     <li><a href="#"> Meet Our Team</a></li>
                     <li><a href="#">Join Our Team</a></li>
@@ -48,48 +50,44 @@
             </li>
         </ul>
     </nav>
+
     <section class="about-community">
         <h2>About Community</h2>
-        <>
+        <p>
             Code Social Community is a learning-focused community dedicated to providing individuals with resources, opportunities to learn, grow, and develop their skills in various technologies. The community helps individuals to explore their interests, expand their knowledge, and connect with like-minded people.
-        
-        
+
             At Code Social Community, members have access to a wealth of resources and learning opportunities, including free learning sessions, mentorship programs, and peer-to-peer learning sessions. The community also provides opportunities for members to network and connect with others in the tech industry.
-        
-        
+
             In addition to its learning and networking opportunities, Code Social Community also serves as a hub for resources, tools, and other materials that can help members enhance their skills and stay up-to-date with the latest trends and best practices in the tech industry.
-        
-        
+
             Whether you are just starting out in your career or are a seasoned professional looking to expand your knowledge and skills, this community offers something for everyone. With its focus on hands-on learning, mentorship, and networking opportunities, Code Social Community is an excellent place to connect with like-minded individuals, build your skills, and take your career to the next level.
         </p>
         <!-- Social Media Icons -->
         <div class="social-icons">
-            <a href="https://wa.me/your-whatsapp-number" target="_blank" aria-label="WhatsApp">
+            <a href="https://wa.me/your-whatsapp-number" target="_blank">
                 <img src="images/whatsapp-icon.png" alt="WhatsApp">
             </a>
-            <a href="https://discord.gg/MSTNyRSPYW" target="_blank" aria-label="Discord">
+            <a href="https://discord.gg/MSTNyRSPYW" target="_blank">
                 <img src="images/discord-icon.png" alt="Discord">
             </a>
-            <a href="https://www.linkedin.com/company/code-social/" target="_blank" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/code-social/" target="_blank">
                 <img src="images/linkedin-icon.png" alt="LinkedIn">
             </a>
-            <a href="https://github.com/Code-Social" target="_blank" aria-label="GitHub">
+            <a href="https://github.com/Code-Social" target="_blank"></a>
                 <img src="./images/gitHub.png" alt="Github">
             </a>
         </div>
     </section>
-    
+
     <h2 class="calendar-title">Event Calendar</h2>
   
-   <section class="calendar">
-        <div class="calendar-header">Event Calendar</div>
-        <div class="calendar-grid" id="calendar-grid"></div>
-
-        <!-- Event Customization Form -->
+    <section class="calendar-section">
         <div class="event-form">
             <h3>Add Event</h3>
             <input type="date" id="event-date" required>
             <input type="text" id="event-title" placeholder="Event Title" required>
+            <label for="event-color">Pick color for event:</label>
+            <input type="color" id="event-color" value="#4CAF50">
             <button id="add-event">Add Event</button>
         </div>
     
@@ -115,20 +113,20 @@
                 <div class="footer-grid">
                     <!-- Logo and About Section -->
                     <div class="footer-logo-section">
-                        <img class="footer-logo" src="images/logo.png" alt="Logo" />
+                        <img class="footer-logo" src="/official-website/images/logo.png" alt="Logo" />
                         <p class="footer-text">Code Social Community is a vibrant and inclusive space for tech enthusiasts to learn, grow, and connect. Founded in 2023, our mission is to empower individuals with resources, mentorship, and 
                             opportunities to cultivate their skills, explore their interests, 
                             and collaborate with like-minded peers. Join us on our journey to create something extraordinary together!</p>
                         <ul class="social-icons">
                             <li><a href="https://wa.me/your-whatsapp-number" target="_blank">
-                                <img src="./images/whatsapp.png" alt="WhatsApp"></a>
+                                <img src="./images/whatsapp-icon.png" alt="WhatsApp"></a>
                             </li>
                             <li><a href="https://discord.gg/MSTNyRSPYW" target="_blank">
-                                <img src="./images/discord.png" alt="Discord">
+                                <img src="./images/discord-icon.png" alt="Discord">
                             </a>
                             </li>
                             <li><a href="https://www.linkedin.com/company/code-social/" target="_blank">
-                                <img src="./images/linkedin.png" alt="LinkedIn">
+                                <img src="./images/linkedin-icon.png" alt="LinkedIn">
                             </a>
                             </li>
                         </ul>
@@ -161,10 +159,6 @@
             </div>
         </section>    
 
-    <footer>
-        <p>&copy; 2024 Code Social. All rights reserved.</p>
-
-    </footer>
     
 
         <script>
@@ -204,28 +198,42 @@
                         });
                     }
         
-                  
+                    // Highlight today
                     if (new Date().getDate() === day && new Date().getMonth() === currentMonth) {
                         dayElement.style.backgroundColor = '#d1ecf1';
                     }
         
                     calendarGrid.appendChild(dayElement);
                 }
-
-                calendarGrid.appendChild(dayElement);
             }
         
-            
+            // Event listeners for month navigation
             document.getElementById('prev-month').addEventListener('click', () => {
                 currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
                 currentYear = (currentMonth === 11) ? currentYear - 1 : currentYear;
                 generateCalendar();
-                document.getElementById('event-title').value = '';
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', generateCalendar);
-    </script>
+            });
+        
+            document.getElementById('next-month').addEventListener('click', () => {
+                currentMonth = (currentMonth === 11) ? 0 : currentMonth + 1;
+                currentYear = (currentMonth === 0) ? currentYear + 1 : currentYear;
+                generateCalendar();
+            });
+        
+            document.getElementById('add-event').addEventListener('click', () => {
+                const date = document.getElementById('event-date').value;
+                const title = document.getElementById('event-title').value;
+                const color = document.getElementById('event-color').value;
+        
+                if (date && title) {
+                    events.push({ date, title, color });
+                    generateCalendar();
+                    document.getElementById('event-title').value = '';
+                }
+            });
+        
+            document.addEventListener('DOMContentLoaded', generateCalendar);
+        </script>
 </body>
 
 </html>
