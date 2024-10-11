@@ -310,41 +310,70 @@ body.dark-mode #theme-switch {
 
 /* About Community Section */
 .about-community {
-    padding: 20px;
+    padding: 30px; /* Increased padding for a more spacious layout */
     background-color: #f9f9f9;
     color: #333;
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.8; /* Increased line height for better readability */
     text-align: center;
     margin-top: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
 }
 
+/* Title styling */
 .about-community h2 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Increased font size */
     margin-bottom: 15px;
     color: #333;
     text-align: center;
+    font-weight: bold; /* Bold title for emphasis */
+    text-transform: uppercase; /* Uppercase for better prominence */
+}
+
+/* Paragraph styling */
+.about-community p {
+    max-width: 800px; /* Max width for better readability */
+    margin: 0 auto; /* Center the paragraph */
 }
 
 /* Social Icons */
 .social-icons {
-    margin-top: 20px;
+    margin-top: 30px; /* Increased margin for better spacing */
 }
 
 .social-icons a {
-    margin: 0 10px;
+    margin: 0 15px; /* Increased space between icons */
     display: inline-block;
 }
 
 .social-icons img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
+    width: 50px; /* Slightly larger icons */
+    height: 50px; /* Slightly larger icons */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effects */
 }
 
 .social-icons img:hover {
     transform: scale(1.1);
+    filter: brightness(1.2); /* Slightly brighten the icon on hover */
 }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .about-community {
+        padding: 20px; /* Reduced padding on smaller screens */
+    }
+
+    .about-community h2 {
+        font-size: 2rem; /* Adjusted title size */
+    }
+
+    .social-icons img {
+        width: 40px; /* Smaller icons on mobile */
+        height: 40px; /* Smaller icons on mobile */
+    }
+}
+
 
 
 
