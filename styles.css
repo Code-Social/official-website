@@ -64,8 +64,18 @@
         }
     
         .calendar-header {
-            font-size: 24px;
-            margin-bottom: 10px;
+            display: flex;
+            align-items: center; /* Center items vertically */
+            justify-content: center; /* Center items horizontally */
+            margin-bottom: 20px;
+        }
+        .month-year-box {
+            padding: 10px 20px; /* Add padding for aesthetics */
+            background-color: #f0f0f0; /* Light background for the box */
+            border: 1px solid #ccc; /* Border around the box */
+            border-radius: 5px; /* Rounded corners */
+            font-weight: bold; /* Bold text for visibility */
+            margin: 0 10px; /* Spacing around the box */
         }
     
         .calendar-grid {
