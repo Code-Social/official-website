@@ -132,25 +132,7 @@
             width: 100%;
             max-width: 300px;
         }
-
-        /* Button styles */
-        .edit-btn, .delete-btn {
-            margin-top: 5px;
-            padding: 2px 5px;
-            font-size: 12px;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        .edit-btn {
-            background-color: #2196F3; /* Blue */
-        }
-
-        .delete-btn {
-            background-color: #F44336; /* Red */
-        }
+     
 
 /* General Navbar Styling */
 .navbar {
@@ -249,7 +231,7 @@
     border-radius: 4px;
     z-index: 1;
     top: 100%;
-    right: 0;  /* Align dropdown with the right corner */
+    right: 0;  
     width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -266,10 +248,10 @@
 
 .hamburger-menu .dropdown li a {
     color: #fff;
-    padding: 10px 15px;  /* Increase padding for better spacing */
+    padding: 10px 15px;  
     text-decoration: none;
     display: block;
-    font-size: 1rem;   /* Set consistent font size */
+    font-size: 1rem;  
 }
 
 .hamburger-menu .dropdown li a:hover {
