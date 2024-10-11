@@ -70,12 +70,12 @@
             margin-bottom: 20px;
         }
         .month-year-box {
-            padding: 10px 20px; /* Add padding for aesthetics */
-            background-color: #f0f0f0; /* Light background for the box */
-            border: 1px solid #ccc; /* Border around the box */
-            border-radius: 5px; /* Rounded corners */
-            font-weight: bold; /* Bold text for visibility */
-            margin: 0 10px; /* Spacing around the box */
+            padding: 10px 20px; 
+            background-color: #f0f0f0; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            margin: 0 10px; 
         }
     
         .calendar-grid {
@@ -169,7 +169,7 @@
 /* Center the menu items */
 .navbar ul {
     display: flex;
-    justify-content: space-around;  /* evenly space the menu items */
+    justify-content: space-around;  
     align-items: center;
     list-style: none;
     flex: 1;
@@ -177,7 +177,7 @@
 
 /* Move Hamburger Menu to Right */
 .hamburger-menu {
-    margin-left: auto;  /* Push hamburger menu to the right */
+    margin-left: auto;  
     display: flex;
     align-items: center;
     cursor: pointer;
