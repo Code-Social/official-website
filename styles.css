@@ -103,7 +103,7 @@ body.darkmode {
 }
 
 /* Dark Mode Calendar Day Styles */
-body.dark-mode .calendar-day {
+body.darkmode .calendar-day {
     background-color: #1e1e1e; /* Dark mode day background */
     border-color: #444; /* Dark mode border color */
 }
@@ -112,7 +112,7 @@ body.dark-mode .calendar-day {
     background-color: #e0e0e0; /* Light hover effect */
 }
 
-body.dark-mode .calendar-day:hover {
+body.darkmode .calendar-day:hover {
     background-color: #333; /* Dark hover effect */
 }
 
@@ -420,7 +420,7 @@ body.dark-mode .calendar-day:hover {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-body.dark-mode #theme-switch {
+body.darkmode #theme-switch {
     background-color: #333;
     color: #fff;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
