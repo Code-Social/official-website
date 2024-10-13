@@ -367,6 +367,9 @@ body.dark-mode .calendar-day:hover {
     position: relative;
     display: inline-block;
 }
+.navbar ul a {
+    color: yellow;
+}
 
 .nav-links a {
     text-decoration: none;
