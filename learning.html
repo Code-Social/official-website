@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Code Social | Learning</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script src="script.js" defer></script>
+    <script type="text/javascript" src="darkmode.js" defer></script>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #000;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #333;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #555;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 20px 0;
+            padding-left: 10px;
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Styling the testimonials */
+        cite {
+            display: block;
+            text-align: right;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .learning-section {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .learning-section h2 {
+            color: #2196F3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <button id="theme-switch">
+            <img src="file:///C:/Users/Dell/Downloads/dark_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark Mode">
+            <img src="file:///C:/Users/Dell/Downloads/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Light Mode">
+        </button>
+    </header>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <a href="index.html"><img src="images/logo.png" class="logo" alt="Code Social logo"></a>
+        <span class="website-name">Code Social</span>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="learning.html">Learning</a>
+                <ul class="dropdown">
+                    <li><a href="#">Free Learning Resources</a></li>
+                    <li><a href="#">Mentorship Programs</a></li>
+                    <li><a href="#">Peer-to-Peer Sessions</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Live Events</a></li>
+            <li><a href="#">Join our Community</a></li>
+            <li class="hamburger-menu">
+                <a href="javascript:void(0);" class="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+                <ul class="dropdown">
+                    <li><a href="#">Meet Our Team</a></li>
+                    <li><a href="#">Join Our Team</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Follow Us</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Learning Section -->
+    <section class="learning-section">
+        <h2>Learning Opportunities at Code Social</h2>
+
+        <!-- Learning Paths -->
+        <h3>Learning Paths</h3>
+        <p>Our community offers structured learning paths to help you master technologies step by step.</p>
+        <ul>
+            <li><strong>Frontend Development:</strong> Start with HTML, CSS, and JavaScript, and progress to React and Angular.</li>
+            <li><strong>Backend Development:</strong> Learn Node.js, Express, databases, and API design.</li>
+            <li><strong>Full Stack Development:</strong> Combine both frontend and backend skills to become a full-stack developer.</li>
+            <li><strong>Data Science:</strong> Dive into Python, data analysis, machine learning, and AI.</li>
+            <li><strong>DevOps:</strong> Explore cloud infrastructure, CI/CD pipelines, and containerization with Docker and Kubernetes.</li>
+        </ul>
+
+        <!-- Upcoming Courses -->
+        <h3>Upcoming Courses & Workshops</h3>
+        <p>We regularly host online courses and workshops. Here’s what’s coming up:</p>
+        <ul>
+            <li><strong>React Basics Workshop</strong> - October 15, 2024</li>
+            <li><strong>Introduction to Python for Data Science</strong> - October 25, 2024</li>
+            <li><strong>DevOps Essentials Bootcamp</strong> - November 5, 2024</li>
+            <li><strong>Mastering CSS Grids and Flexbox</strong> - November 10, 2024</li>
+        </ul>
+
+        <!-- Featured Learning Resources -->
+        <h3>Featured Learning Resources</h3>
+        <p>These hand-picked resources can accelerate your learning:</p>
+        <ul>
+            <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a> – A comprehensive platform for learning web development.</li>
+            <li><a href="https://www.udemy.com/">Udemy</a> – Courses on various topics like programming, data science, and design.</li>
+            <li><a href="https://developer.mozilla.org/">MDN Web Docs</a> – The ultimate reference for web development technologies.</li>
+            <li><a href="https://www.kaggle.com/">Kaggle</a> – Learn data science and machine learning through competitions and datasets.</li>
+        </ul>
+
+        <!-- Testimonials -->
+        <h3>Student Testimonials</h3>
+        <blockquote>
+            <p>"The learning path for full-stack development helped me land my first developer job. The community support was invaluable!"</p>
+            <cite>– Alex, Full Stack Developer</cite>
+        </blockquote>
+        <blockquote>
+            <p>"The mentorship programs at Code Social connected me with experienced professionals who guided me through my projects."</p>
+            <cite>– Priya, Data Scientist</cite>
+        </blockquote>
+
+        <!-- Peer-to-Peer Learning -->
+        <h3>Peer-to-Peer Learning Sessions</h3>
+        <p>Collaborate with other learners through study groups, coding challenges, and community projects:</p>
+        <ul>
+            <li>Weekly coding challenges: Improve your problem-solving skills.</li>
+            <li>Group projects: Work with peers on real-world projects to apply what you've learned.</li>
+            <li>Study groups: Join others in learning sessions for more interactive experiences.</li>
+        </ul>
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Code Social. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

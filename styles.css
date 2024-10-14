@@ -1,21 +1,337 @@
-
-/* Navbar Styling */
-* {
-    margin: 0px;
-    padding: 0px;
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 64px;
+    padding: 0;
+    background-color: #f5f5f5; /* Light mode background */
+    color: #000; /* Light mode text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-  /* Navbar Styling */
-.navbar {
-    background-color: #333;
+/* Dark mode */
+.dark-mode {
+    background-color: #2e2e2e;
+    color: white;
+}
+
+.theme-toggle-btn {
     padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+.theme-toggle-btn img {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle-btn img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+#theme-toggle-icon {
+    width: 40px;
+    height: 40px;
+}
+/* Dark Mode Styles   */
+/* body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+} */
+
+/* Calendar Section Styles */
+.calendar-section {
+    display: flex;
+    justify-content: space-between; /* Space between event form and calendar */
+    align-items: flex-start;
+    margin: 20px;
+    gap: 20px;
+}
+
+.calendar-title {
+    text-align: center;
+}
+
+/* Event Form Styles */
+/* Styling the form container */
+.event-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Stretch inputs to full width */
+    width: 300px; /* Set a fixed width */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* background-color: #f9f9f9; */
+    margin-top: 45px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for more depth */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Clean font */
+    position: relative;
+    overflow: hidden; /* Hide any content that overflows the form */
+}
+
+/* Form title styling */
+.event-form h3 {
+    margin-bottom: 25px;
+    font-size: 1.8rem; /* Larger font size for the title */
+    font-weight: bold; /* Make the title stand out */
+    color: #333; /* Darker title color */
+    text-align: center; /* Centered title */
+    text-transform: uppercase; /* Uppercase for emphasis */
+    letter-spacing: 2px; /* Increased letter spacing */
+    position: relative;
+    animation: fadeInDown 0.5s ease-in-out; /* Add fade-in animation */
+}
+
+.event-form input,
+.event-form button {
+    margin: 10px 0; /* Adjusted margins for better spacing */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px; /* Softer, more rounded corners */
+    border: 1px solid #ccc; /* Light border */
+    transition: all 0.3s ease; /* Smooth transition for animations */
+    position: relative;
+}
+
+/* Input hover and focus effects */
+.event-form input:focus {
+    border-color: #4caf50; /* Green border on focus */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); /* Green glow on focus */
+    outline: none; /* Removes default outline */
+    transform: scale(1.02); /* Slight scaling animation on focus */
+}
+
+/* Color input styling */
+.event-form input[type="color"] {
+    appearance: none; /* Remove default browser styling */
+    width: 100%; /* Make it full width */
+    height: 50px; /* Height to make it more prominent */
+    cursor: pointer;
+    border: 1px solid #ccc; /* Soft border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 5px;
+    background-color: #ffffff; /* White background */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover effect on color picker */
+.event-form input[type="color"]:hover {
+    border-color: #4caf50; /* Green border on hover */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); /* Green glow on hover */
+    transform: scale(1.03); /* Slight scaling on hover */
+}
+
+/* Color Picker Circle inside input */
+.event-form input[type="color"]::-webkit-color-swatch {
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners for color box */
+    padding: 0;
+}
+
+.event-form input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 8px; /* Smooth edges */
+}
+
+/* When color picker is active (clicked) */
+.event-form input[type="color"]:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.6); /* Green glow */
+    transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Button hover effect */
+.event-form button {
+    background-color: #4caf50; /* Green background */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover transition */
+    border-radius: 8px;
+    font-weight: bold; /* Make the text stand out */
+    transform: scale(1); /* Default state */
+    animation: fadeInUp 0.6s ease-in-out; /* Button fade-in animation */
+}
+
+.event-form button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Label styling */
+.event-form label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px; /* Space between label and input */
+    text-align: left;
+    animation: fadeInLeft 0.5s ease-in-out; /* Label animation */
+}
+
+/* Animation for fading the title in from the top */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Starts from above */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Moves into place */
+    }
+}
+
+/* Animation for fading in inputs and buttons */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Starts from below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Moves into place */
+    }
+}
+
+/* Animation for labels sliding in from the left */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); /* Starts from the left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Moves into place */
+    }
+}
+
+/* Calendar Styles */
+.calendar {
+    flex-grow: 1; /* Allow calendar to take up available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Calendar Header */
+.calendar-header {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin-bottom: 20px;
+}
+
+.month-year-box {
+    padding: 10px 20px;
+    /* background-color: #f0f0f0; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Seven columns for days */
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%; /* Full width */
+    max-width: 900px; /* Maximum width for the grid */
+}
+
+/* Calendar Day Styles */
+.calendar-day {
+    border: 1px solid #ccc;
+    padding: 10px; /* Adjusted padding */
+    text-align: center;
+    position: relative;
+    /* /* background-color: #ffffff;   */
+    height: 100px; /* Fixed height for uniformity */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Dark Mode Calendar Day Styles */
+body.dark-mode .calendar-day {
+    background-color: #1e1e1e; /* Dark mode day background */
+    border-color: #444; /* Dark mode border color */
+}
+
+.calendar-day:hover {
+    background-color: #e0e0e0;
+}
+
+body.dark-mode .calendar-day:hover {
+    background-color: #333; /* Dark hover effect */
+}
+
+/* Event Styles */
+.event {
+    background-color: #4caf50;
+    /* color: white; */
+    padding: 5px; /* Adjusted padding */
+    border-radius: 3px;
+    font-size: 14px; /* Increased font size */
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    text-align: center;
+    cursor: pointer; /* Makes the event clickable */
+    overflow: hidden; /* Prevents overflow of text */
+    white-space: nowrap; /* Keeps text in a single line */
+    text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .calendar-section {
+        flex-direction: column; /* Stack elements on smaller screens */
+        align-items: center; /* Center the items */
+    }
+
+    .event-form {
+        width: 90%; /* Make form full width on small screens */
+        margin: 10px 0; /* Adjust margin */
+    }
+}
+
+/* General Navbar Styling */
+.navbar {
+    /* background-color: #333; */
+    padding: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* position: fixed; */
+    width: 100%;
+    top: 0;
+    margin-top: 0px;
+    z-index: 1000;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+/* Center the menu items */
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    flex: 1;
+}
+
+/* Move Hamburger Menu to Right */
+.hamburger-menu {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Logo Styling */
 .logo {
     height: 40px;
     transition: transform 0.3s ease;
@@ -24,103 +340,226 @@
 .logo:hover {
     transform: scale(1.1);
 }
-.darkmode {
+/* .darkmode {
     background-color: #fdf8f8;
     color: #070707;
     background-color: #401111;
     background-color: #908989;
     background-color: #2a2929;
     color: #401111;
-}
+} */
 
 .website-name {
-    margin-right: auto;
     font-size: 1.8rem;
-    color: #fff;
-    margin-left: 15px;
+    /* color: #fff; */
     font-weight: bold;
     letter-spacing: 1.2px;
+    margin-right: auto;
+    margin-left: 15px;
+}
+
+/* Center Links */
+.center-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    flex: 1;
+    position: relative; /* Added to position dropdowns correctly */
+}
+
+.center-links li {
+    margin-left: 25px;
+    position: relative; /* Added for dropdown positioning */
+
+    margin: 0;
+    z-index: 10;
 }
 
 .navbar ul {
-    list-style: none;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 0;
+    gap: 4vw;
+    list-style: none;
 }
 
 .navbar ul li {
     position: relative;
-    margin-left: 25px;
+    display: inline-block;
 }
 
-.navbar ul li a {
+.navbar-links a:hover {
+    color: red;
+}
+
+.center-links li a {
     text-decoration: none;
-    color: #fff;
-    padding: 8px 15px;
+    /* color: #fff; */
+    padding: 8px 10px;
     border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar ul li a:hover {
+.center-links li a:hover {
     background-color: #555;
+
     color: #f1c40f; /* Add hover color effect */
 }
-
 /* Hamburger Menu Styling */
 .hamburger-menu .toggle-button {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
-    width: 25px;
-    height: 18px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
+    padding: 4px;
+    padding-right: 10px;
 }
 
-.hamburger-menu .bar {
-    height: 3px;
+/* Apply a smooth transform transition for the icon */
+.hamburger-menu img {
     width: 30px;
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    background-color: #fff;
-    border-radius: 10px;
-    margin-left: 0;
-    transition: all 0.3s ease;
+    height: 30px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Rotation or scaling effect when active */
+.hamburger-menu img.active {
+    transform: rotate(90deg); /* or scale(1.2) for a scaling effect */
+    opacity: 0.8;
+}
+
+.my-svg {
+    width: 100px;
+    height: 100px;
 }
 
 /* Dropdown Menu */
-.navbar ul li:hover .dropdown {
-    display: block;
-}
-
 .dropdown {
     display: none;
     position: absolute;
-    background-color: #333;
+    /* background-color: #333; */
     padding: 10px;
     border-radius: 4px;
     z-index: 1;
-    top: 100%; /* Position the dropdown below the parent link */
-    left: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    top: 100%;
+    right: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    max-width: calc(100vw - 40px);
+    overflow: hidden;
 }
 
+.center-links li:hover .dropdown {
+    display: block;
+
+    top: 27px;
+    right: 0%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navbar ul li:hover .dropdown {
+    display: block;
+    opacity: 1;
+    background-color: #895d5d;
+    color: #fff;
+
+    transform: translateY(0);
+}
 .dropdown li {
     margin: 10px 0;
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 .dropdown li a {
-    color: #fff;
-    padding: 5px 10px;
+    /* color: #fff; */
+
+    padding: 5px 5px;
     display: block;
     white-space: nowrap;
 }
 
 .dropdown li a:hover {
+    border-radius: 4px;
+}
+.dropdown li a span:hover {
     background-color: #555;
     border-radius: 4px;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: relative;
+    margin-right: 5px; /* Added for dropdown positioning */
+}
+
+/* Dropdown Styling */
+.hamburger-menu .dropdown {
+    display: block;
+    position: absolute;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hamburger-menu.active .dropdown {
+    display: block;
+}
+
+/* Fix the dropdown text formatting */
+.hamburger-menu .dropdown li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.hamburger-menu .dropdown li a {
+    /* color: #fff; */
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+.hamburger-menu .dropdown li a:hover {
+    background-color: #555;
+    color: #f1c40f;
+}
+
+/* Dark Mode Button */
+#theme-switch {
+    height: 40px;
+    width: 40px;
+    margin: 0 20px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode #theme-switch {
+    /* background-color: #333; */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+#theme-switch:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Responsive Adjustments */
@@ -130,7 +569,7 @@
         align-items: flex-start;
         display: none;
         width: 100%;
-        background-color: #333;
+        /* background-color: #333; */
         padding: 20px 0;
         position: absolute;
         top: 60px;
@@ -142,53 +581,263 @@
     }
 
     .navbar ul li a {
-        display: block;
         padding: 10px 20px;
         width: 100%;
     }
 
-    .hamburger-menu .toggle-button {
-        display: block;
+    .navbar ul li:hover .dropdown {
+        position: relative;
+        top: 0;
+        left: 0;
     }
 
     .hamburger-menu.active + ul {
         display: flex;
     }
 
-    .navbar ul li:hover .dropdown {
-        position: relative;
-        left: 0;
-        top: 0;
+    /* Dropdown for Hamburger */
+    .hamburger-menu .dropdown {
+        top: 50px;
+        right: 0;
     }
 }
 
+/* Fixing Hamburger Menu Display */
+.hamburger-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #856fc6;
+        border-radius: 5px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        padding: 20px 0;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .navbar ul li a {
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    /* Dropdown for Hamburger */
+    .hamburger-menu .dropdown {
+        display: none;
+    }
+
+    .hamburger-menu.active .dropdown {
+        display: block;
+    }
+
+    /* Fixing the space for the dropdown */
+    .hamburger-menu .dropdown li {
+        padding-left: 0;
+    }
+
+    .hamburger-menu .dropdown li a {
+        padding: 10px 15px;
+        display: block;
+    }
+}
 
 /* About Community Section */
 .about-community {
-    padding: 20px;
-    background-color: #f9f9f9;
-    color: #333;
+    padding: 30px; /* Increased padding for a more spacious layout */
+    /* background-color: #f9f9f9; */
+    /* color: #333; */
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.8; /* Increased line height for better readability */
     text-align: center;
     margin-top: 20px;
+    border-radius: 10px; /* Rounded corners */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  */
+    /* Subtle shadow effect */
 }
 
+/* Title styling */
 .about-community h2 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Increased font size */
     margin-bottom: 15px;
-    color: #333;
+    /* color: #333; */
     text-align: center;
-    /* Center the heading */
+    font-weight: bold; /* Bold title for emphasis */
+    text-transform: uppercase; /* Uppercase for better prominence */
 }
 
+/* Paragraph styling */
+.about-community p {
+    max-width: 800px; /* Max width for better readability */
+    margin: 0 auto; /* Center the paragraph */
+}
+
+/* Social Icons */
 .social-icons {
-    margin-top: 20px;
+    margin-top: 30px; /* Increased margin for better spacing */
 }
 
 .social-icons a {
-    margin: 0 10px;
+    margin: 0 15px;
     display: inline-block;
+}
+
+.social-icons img {
+    width: 50px; /* Slightly larger icons */
+    height: 50px; /* Slightly larger icons */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effects */
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2); /* Slightly brighten the icon on hover */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .about-community {
+        padding: 20px; /* Reduced padding on smaller screens */
+    }
+
+    .about-community h2 {
+        font-size: 2rem; /* Adjusted title size */
+    }
+
+    .social-icons img {
+        width: 40px; /* Smaller icons on mobile */
+        height: 40px; /* Smaller icons on mobile */
+    }
+}
+
+/* Footer Styles */
+.footer {
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+} */
+
+.footer-logo-section {
+    grid-column: span 2;
+}
+
+.footer-logo {
+    height: 8.25rem;
+}
+
+.footer-text {
+    margin-top: 1.75rem;
+    color: #9ca3af;
+    line-height: 1.75rem;
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 2.25rem;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+
+    border-radius: 9999px;
+    transition: background-color 0.2s ease;
+}
+
+.social-icon:hover {
+    background-color: #2563eb;
+}
+
+.footer-section {
+    padding: 4rem 0;
+
+    /* background-color: #f9fafb; */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-column: 3;
+}
+
+.footer-item {
+    column-span: 1;
+}
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .footer-item {
+        grid-column: span 3;
+    }
+}
+.footer-logo-section {
+    grid-column: span 6; /* Logo section spans 6 columns on larger screens */
+}
+
+.footer-links {
+    grid-column: span 3; /* Links span 3 columns each */
+}
+
+/* Footer Logo */
+.footer-logo {
+    height: 2.25rem;
+}
+
+.footer-text {
+    margin-top: 1.75rem;
+    /* color: #4b5563; */
+    line-height: 1.75rem;
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center icons horizontally */
+    align-items: center; /* Center icons vertically */
+    gap: 15px; /* Adjust the spacing between the icons */
+    margin-top: 20px;
+    list-style: none;
+}
+
+.social-icons a {
+    text-decoration: none;
 }
 
 .social-icons img {
@@ -198,96 +847,55 @@
 }
 
 .social-icons img:hover {
-    transform: scale(1.1); /* Slightly enlarge the icon on hover */
-}
-
-#theme-switch{
-    height: 20px;
-    width: 20px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--base-variant);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-
-}
-
-/* Footer Styles */
-.footer {
-    background-color: #222;
-    color: #fff;
-    padding: 20px 0;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.footer-logo-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.footer-logo {
-    width: 80px;
-    margin-bottom: 10px;
-}
-
-.footer-links ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.footer-links ul li {
-    margin: 5px 0;
-}
-
-.footer-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links ul li a:hover {
-    color: #f39c12; /* Accent color for hover effect */
-}
-
-.footer-social a {
-    margin-right: 10px;
-}
-
-.footer-social a img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s;
-}
-
-.footer-social a img:hover {
     transform: scale(1.1);
 }
 
-.footer-bottom {
+/* Remove any additional unwanted content */
+.social-icons::before,
+.social-icons::after {
+    content: none;
+}
+
+/* Footer Links */
+footer {
     text-align: center;
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #444;
 }
 
-.footer-bottom p {
-    margin: 0;
-    font-size: 14px;
+.footer-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    /* color: #9ca3af; */
+    margin-bottom: 1.5rem;
 }
 
+.footer-list {
+    list-style: none;
+    padding: 0;
+}
 
+.footer-list li {
+    margin-bottom: 1rem;
+}
+
+.footer-list a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-list a:hover {
+    color: #2563eb;
+}
+
+/* Divider and Footer Bottom Text */
+.footer-divider {
+    margin: 4rem 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.footer-bottom-text {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
