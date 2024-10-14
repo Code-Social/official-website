@@ -6,6 +6,29 @@ body {
     color: #000; /* Light mode text color */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+.toggle-button {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center items vertically */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.about-text {
+    margin-right: 0px; /* Space between the text and buttons */
+  margin-top: 5px;
+}
+
+/* Additional styles for the buttons */
+.bar {
+    display: block;
+    width: 25px; /* Button width */
+    height: 4px; /* Button height */
+    background-color: black; /* Button color */
+    margin: 2px 0; /* Space between buttons */
+    transition: all 0.3s; /* Optional: Add a transition for hover effects */
+}
+
+
+
 
 /* Dark mode */
 .dark-mode {
