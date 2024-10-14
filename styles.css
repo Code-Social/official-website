@@ -899,3 +899,56 @@ footer {
     color: #6b7280;
     font-size: 0.875rem;
 }
+
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.event-form select {
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.event-form select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+/* Style for the event form category dropdown */
+.event-form select {
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+ }
+ 
+ /* Social media share buttons */
+ .share-buttons a {
+    margin: 5px;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #4CAF50;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+ }
+ 
+ .share-buttons a:hover {
+    background-color: #45a049;
+ }
+ 
