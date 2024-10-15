@@ -6,7 +6,7 @@ body {
     color: #000; /* Light mode text color */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* Default (Light) Theme Styles */
+
 body {
     background-color: white; /* Light background for body */
     color: black; /* Light text color for body */
