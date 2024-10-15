@@ -70,6 +70,35 @@ To set up the project locally, follow these steps:
    npm start
    ```
 
+ Dark Mode Feature (darkmode.js)
+We’ve implemented a dark mode feature for our website using the darkmode.js script. The dark mode preference is saved locally using localStorage, so users can enjoy their preferred theme on subsequent visits. Here’s a guide to how you can use and contribute to this feature:
+
+How to Use the Dark Mode Feature
+Users can toggle between Light Mode and Dark Mode using the switch button available on the top right of the website.
+The theme preference (dark/light) is saved locally using localStorage so that the preference persists across sessions.
+How to Run the Website Locally with Dark Mode Feature
+In order to test and develop the website locally with the dark mode feature, you'll need to serve the files using a local web server like http-server. This is especially useful for ensuring that the dark mode settings work properly when saving to localStorage.
+
+Instructions to Set Up Locally:
+Install http-server (if not already installed):
+
+bash
+Copy code
+npm install -g http-server
+Run the Local Development Server: In the project root directory, run:
+
+bash
+Copy code
+http-server .
+This will start a local server that allows you to view the site on http://localhost:8080.
+
+Access the Site: Open your browser and navigate to:
+
+arduino
+Copy code
+http://localhost:8080
+Test Dark Mode: Toggle the dark mode and refresh the page to confirm that the theme persists using localStorage.
+
 ##  🎊 For GSSOC and Hacktober Fest participants :
 
 Please read the Contribution Guidelines and if you have any doubts ,feel free to connect with the project admins or mentors. We have set up a discord channel in our community server for the event to answer queries,foster discussions and enhance collaboration on the project. [Click here to join](https://discord.com/channels/1049667734025289729/1291810957563134105)
