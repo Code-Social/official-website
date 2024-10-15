@@ -15,7 +15,7 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="flex"><img src="/images/logo.png" class="logo">
+        <a href="index.html" class="flex"><img src="./images/logo.png" class="logo">
             <span class="website-name tracking-tight ">Code Social</span></a>
 
 
@@ -40,7 +40,7 @@
             <li class="community">
                 <a href="maintenance.html">Join Our Community</a>
                 <ul class="dropdown">
-                    <li><a href="maintenance.html">WhatsApp</a></li>
+                    <li><a href="maintenance.html">WhatsApp</a></li></br>
                     <li><a href="maintenance.html">Discord</a></li>
                 </ul>
             </li>
@@ -58,12 +58,15 @@
                     <button class="bar"></button>
                     <button class="bar"></button>
                 </div>
-                <ul class="dropdown">
-                    <li><a href="#"> Meet Our Team</a></li>
-                    <li><a href="#">Join Our Team</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Follow Us</a></li>
-                </ul>
+                <li class="dropdown-container">
+                    <a href="#">More Options</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Meet Our Team</a></li>
+                        <li><a href="#">Join Our Team</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Follow Us</a></li>
+                    </ul>
+                </li>
             </li>
             <li>
                 <a href="maintenance.html">Follow Us</a>
@@ -71,7 +74,7 @@
             <!-- Dark Mode Toggle -->
             <li>
                 <button id="theme-toggle" class="theme-toggle-btn  ">
-                    <img src="/images/dark-mode.png" alt="theme-mode" id="theme-toggle-icon">
+                    <img src="./images/dark-mode.png" alt="theme-mode" id="theme-toggle-icon">
                 </button>
                 <!-- when light mode is active -> use "dark-mode.png" and when dark mode is active -> use "light-mode.png" -->
             </li>
@@ -269,6 +272,21 @@ document.getElementById('add-event').addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', generateCalendar);
+const themeToggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggleBtn.addEventListener('click', () => {
+    // Toggle the 'dark-theme' class on the body
+    body.classList.toggle('dark-theme');
+
+    // Optionally, change the icon based on the theme
+    const icon = document.getElementById('theme-toggle-icon');
+    if (body.classList.contains('dark-theme')) {
+        icon.src = './images/light-mode.png'; // Change to light mode icon
+    } else {
+        icon.src = './images/dark-mode.png'; // Change to dark mode icon
+    }
+});
 
         </script>
 </body>
