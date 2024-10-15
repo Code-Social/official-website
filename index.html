@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="script.js" defer></script>
-    
 </head>
 
 <body>
@@ -15,6 +14,7 @@
     <nav class="navbar">
         <a href="index.html"><img src="images/logo.png" class="logo" alt="Code Social logo"></a>
         <span class="website-name">Code Social</span>
+        <button class="toggle-theme" id="theme-toggle">🌙</button>
         <ul>
             <li>
                 <a href="#">Live Events</a>
@@ -22,8 +22,6 @@
                     <li><a href="#">Why don't you react?</a></li>
                 </ul>
             </li>
-
-            <!-- Dropdown -->
             <li>
                 <a href="#">Join our Community</a>
                 <ul class="dropdown">
@@ -53,21 +51,7 @@
             Code Social Community is a learning-focused community dedicated to providing individuals with resources,
             opportunities to learn, grow, and develop their skills in various technologies. The community helps
             individuals to explore their interests, expand their knowledge, and connect with like-minded people.
-
-            At Code Social Community, members have access to a wealth of resources and learning opportunities, including
-            free learning sessions, mentorship programs, and peer-to-peer learning sessions. The community also provides
-            opportunities for members to network and connect with others in the tech industry.
-
-            In addition to its learning and networking opportunities, Code Social Community also serves as a hub for
-            resources, tools, and other materials that can help members enhance their skills and stay up-to-date with
-            the latest trends and best practices in the tech industry.
-
-            Whether you are just starting out in your career or are a seasoned professional looking to expand your
-            knowledge and skills, this community offers something for everyone. With its focus on hands-on learning,
-            mentorship, and networking opportunities, Code Social Community is an excellent place to connect with
-            like-minded individuals, build your skills, and take your career to the next level.
         </p>
-        <!-- Social Media Icons -->
         <div class="social-icons">
             <a href="https://wa.me/your-whatsapp-number" target="_blank">
                 <img src="images/whatsapp-icon.png" alt="WhatsApp">
@@ -81,9 +65,68 @@
         </div>
     </section>
 
+    <section class="event-calendar">
+        <h2>Upcoming Events</h2>
+        <div class="event">
+            <h3>Workshop on JavaScript Basics</h3>
+            <p>Date: November 10, 2024</p>
+            <p>Time: 2:00 PM - 4:00 PM</p>
+            <p>Location: Online (Zoom link to be provided)</p>
+            <p><a href="#">Register Now</a></p>
+        </div>
+        <div class="event">
+            <h3>Monthly Meetup</h3>
+            <p>Date: November 20, 2024</p>
+            <p>Time: 6:00 PM - 8:00 PM</p>
+            <p>Location: Local Cafe, Main St.</p>
+            <p><a href="#">RSVP</a></p>
+        </div>
+        <div class="event">
+            <h3>Advanced Python Workshop</h3>
+            <p>Date: November 30, 2024</p>
+            <p>Time: 10:00 AM - 1:00 PM</p>
+            <p>Location: Online (Link to be sent upon registration)</p>
+            <p><a href="#">Register Now</a></p>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy: 2024 Code Social.All rights reserved.</p>
+        <section class="forum-section">
+            <h2>Forum / Discussion Boards</h2>
+            <p>
+                Join our community forum where you can ask questions, share knowledge, and engage in discussions on various topics.
+                Whether you're looking for help with a coding problem or want to discuss the latest tech trends, this is the place for you!
+            </p>
+            <ul>
+                <li><a href="forum.html">Visit the Forum</a></li>
+                <li><a href="https://discourse.example.com" target="_blank">Join our Discourse Community</a></li>
+            </ul>
+        </section>
+        <p>&copy; 2024 Code Social. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Check for saved user preference in localStorage
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle dark mode
+        const toggleButton = document.getElementById('theme-toggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+
+            // Save the user's preference in localStorage
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleButton.textContent = '☀️'; // Sun icon for light mode
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleButton.textContent = '🌙'; // Moon icon for dark mode
+            }
+        });
+    </script>
 
 </body>
 
