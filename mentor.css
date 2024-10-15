@@ -1,0 +1,112 @@
+ /* General Styles */
+ body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Main Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  /* Heading Styles */
+  h1 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Mentor Grid Layout */
+  .mentors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 mentors per line max */
+    gap: 20px;
+  }
+
+  /* Mentor Box (Each Mentor Card) */
+  .mentor-banner {
+    background-color: #93c5fd; /* Light blue */
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    background-image: linear-gradient(145deg, #93c5fd, #60a5fa);
+  }
+
+  /* Hover effect for mentor cards */
+  .mentor-banner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Mentor Image Container */
+  .image-container {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #1e40af; /* Dark blue */
+  }
+
+  /* Mentor Image */
+  .mentor-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Mentor Description */
+  .mentor-description {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #1e3a8a; /* Dark blue */
+  }
+
+  .mentor-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #1e40af; /* Dark blue */
+  }
+
+  .mentor-role {
+    font-size: 14px;
+    color: #374151; /* Gray */
+  }
+
+  /* Rating Stars */
+  .mentor-rating {
+    margin-top: 10px;
+    color: #f59e0b; /* Golden yellow for stars */
+    font-size: 18px;
+  }
+
+  /* Responsive Design for Mobile */
+  @media (max-width: 600px) {
+    .mentor-banner {
+      padding: 15px;
+    }
+
+    .mentor-name {
+      font-size: 14px;
+    }
+
+    .mentor-role {
+      font-size: 12px;
+    }
+  }
