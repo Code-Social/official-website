@@ -93,15 +93,17 @@ body {
 
 /* Form title styling */
 .event-form h3 {
+
     margin-bottom: 25px;
     font-size: 1.8rem; /* Larger font size for the title */
     font-weight: bold; /* Make the title stand out */
-    color: #333; /* Darker title color */
+    color:  #1997fb; /* Darker title color */
     text-align: center; /* Centered title */
     text-transform: uppercase; /* Uppercase for emphasis */
     letter-spacing: 2px; /* Increased letter spacing */
     position: relative;
     animation: fadeInDown 0.5s ease-in-out; /* Add fade-in animation */
+
 }
 
 .event-form input,
@@ -185,12 +187,14 @@ body {
 
 /* Label styling */
 .event-form label {
+
     font-size: 1rem;
     font-weight: 500;
-    color: #333;
+    color: #1997fb;
     margin-bottom: 8px; /* Space between label and input */
     text-align: left;
     animation: fadeInLeft 0.5s ease-in-out; /* Label animation */
+    
 }
 
 /* Animation for fading the title in from the top */
