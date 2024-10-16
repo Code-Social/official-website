@@ -63,13 +63,58 @@
 
     <div class="image-container">
         <img src="../images/volunteer-bg.jpg" alt="volunteer bg image">
-    </div>
+    </div>  
+
 
     <!--Introduction to volunteering sectio-->
     <div class="volunteer-intro-block">
         <p class="info">
             Volunteering at Code Social Community provides a meaningful opportunity to make a difference in the tech ecosystem while enhancing your own skills. Our community thrives on collaboration, inclusivity, and learning, and we invite passionate individuals to contribute to these core values. Whether you’re interested in mentoring, content creation, event organization, or platform development, your involvement will help shape a vibrant and supportive environment for tech enthusiasts.
         </p>
+
+            <!--Roles and Responsibilities-->
+    <div class="responsibilities-container">
+        <div class="job-role">
+            <div class="role-title" onclick="toggleRole(this)">
+                Mentor <span class="expand-symbol">+</span>
+            </div>
+            <div class="role-description">
+                <p>As a mentor, your role is to guide and support community members in their learning journey. You will provide one-on-one or group mentorship, share your expertise, and help others develop their skills. Mentors foster a positive learning environment, offering advice, feedback, and encouragement to help individuals grow in their chosen technology fields.</p>
+            </div>
+        </div>
+        <div class="job-role">
+            <div class="role-title" onclick="toggleRole(this)">
+                Content Creator <span class="expand-symbol">+</span>
+            </div>
+            <div class="role-description">
+                <p>Content Creators are responsible for developing educational materials such as blogs, tutorials, videos, or infographics. Your goal is to create clear, engaging, and informative content that helps community members understand complex topics. You will also contribute to keeping the community up-to-date with the latest trends and developments in the tech industry.</p>
+            </div>
+        </div>
+        <div class="job-role">
+            <div class="role-title" onclick="toggleRole(this)">
+                Event Organizer <span class="expand-symbol">+</span>
+            </div>
+            <div class="role-description">
+                <p>As an Event Organizer, you will plan and coordinate events such as webinars, workshops, or community meetups. Your role includes managing event logistics, promoting events within the community, and ensuring participants have a valuable learning experience. Event Organizers help bring the community together through meaningful and impactful gatherings.</p>
+            </div>
+        </div>
+        <div class="job-role">
+            <div class="role-title" onclick="toggleRole(this)">
+                Developer <span class="expand-symbol">+</span>
+            </div>
+            <div class="role-description">
+                <p>Developers are responsible for maintaining and improving the community’s website and platforms. You will work on coding, debugging, and implementing new features to enhance user experience. Your contributions ensure that the community has a reliable, user-friendly platform for accessing resources, participating in events, and collaborating with others.</p>
+            </div>
+        </div>
+        <div class="job-role">
+            <div class="role-title" onclick="toggleRole(this)">
+                Community Moderator <span class="expand-symbol">+</span>
+            </div>
+            <div class="role-description">
+                <p>Community Moderators ensure that discussions and interactions within the community are respectful, productive, and in line with the community’s guidelines. Your responsibilities include monitoring conversations, addressing inappropriate behavior, and fostering an inclusive environment where all members feel welcome and supported.</p>
+            </div>
+        </div>        
+    </div>
 
         <h1 class="why-join"><center>Why Volunteer with Us?</center></h1>
 
@@ -240,5 +285,6 @@
     </footer>
 
     <script src="../script.js"></script>
+    <script src="./vol-effects.js"></script>
 </body>
 </html>

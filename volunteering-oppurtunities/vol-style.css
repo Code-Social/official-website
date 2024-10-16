@@ -25,6 +25,7 @@
     padding: 40px;
     color: #333;
     background-color:  orange;
+    align-items: center;
 }
 
 .info{
@@ -32,7 +33,55 @@
     font-weight: bold;
     text-align: center;
     line-height: 1.6;
-    
+}
+
+/* Job Roles container */
+.job-role {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+}
+
+/* Title of each role */
+.role-title {
+    font-weight: bold;
+    font-size: 1.60em;
+    display: flex;
+    justify-content: space-between; 
+    padding: 5px;
+    text-align: center;
+}
+
+/* Initially hidden role descriptions */
+.role-description {
+    padding-top: 0px;
+    padding: 10px;
+    display: none;
+    margin-top: 10px;
+    font-size: 1.75 em;
+    color: #555;
+}
+
+/* Expand/collapse symbol styles */
+.expand-symbol {
+    font-size: 1.5em;
+    color: #ff9900;
+    font-weight: bold;
+}
+
+/* Hover effect on role titles */
+.role-title:hover {
+    color: #ff9900;
+}
+
+.responsibilities-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align the job-role cards to the center */
 }
 
 .why-join{
@@ -140,6 +189,20 @@ label[for="name"], label[for="email"], label[for="mobile"] {
     margin: 10px 0;
 }
 
+/* Apply red color to the asterisk (*) in the required fields */
+label[for="name"]::after,
+label[for="email"]::after,
+label[for="mobile"]::after,
+label[for="hours-button"]::after,
+label[for="motivation"]::after,
+label[for="code-conduct"]::after,
+label[for="info-accuracy"]::after,
+label[for="experience"]::after,
+label[for="roles-all"]::after {
+    content: " *"; /* Add the asterisk */
+    color: red;    /* Set the asterisk color to red */
+}
+
 /* Container to align the checkbox and its label horizontally */
 .checkbox-agreement-container {
     display: flex; /* Use flexbox to align items */
@@ -156,7 +219,6 @@ label[for="name"], label[for="email"], label[for="mobile"] {
 .checkbox-agreement-container label {
     font-weight: normal; /* Normal font weight for labels */
 }
-
 
 .volunteer-form button {
     background-color: #ff9900;
