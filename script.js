@@ -42,10 +42,11 @@ const currentTheme = localStorage.getItem("theme");
 // Function to set the appropriate theme icon
 const setThemeIcon = (isDarkMode) => {
     themeIcon.src = isDarkMode
-        ? "/images/dark-mode.png"
-        : "/images/light-mode.png";
-};
+        ? "images/dark-mode.png"
+        : "images/light-mode.png";
 
+};
+ 
 // Apply the saved theme on page load
 if (currentTheme === "dark") {
     body.classList.add("dark-mode");
