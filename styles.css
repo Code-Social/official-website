@@ -1,17 +1,64 @@
-
 body {
     font-family: Arial, sans-serif;
     margin-top: 64px;
     padding: 0;
     background-color: #f5f5f5; /* Light mode background */
     color: #000; /* Light mode text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.toggle-button {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center items vertically */
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212; /* Dark mode background */
-    color: #ffffff; /* Dark mode text color */
+.about-text {
+    margin-right: 0px; /* Space between the text and buttons */
+  margin-top: 5px;
 }
+
+/* Additional styles for the buttons */
+.bar {
+    display: block;
+    width: 25px; /* Button width */
+    height: 4px; /* Button height */
+    background-color: black; /* Button color */
+    margin: 2px 0; /* Space between buttons */
+    transition: all 0.3s; /* Optional: Add a transition for hover effects */
+}
+
+
+
+
+/* Dark mode */
+.dark-mode {
+    background-color: #2e2e2e;
+    color: white;
+}
+
+.theme-toggle-btn {
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+.theme-toggle-btn img {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle-btn img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+#theme-toggle-icon {
+    width: 40px;
+    height: 40px;
+}
+/* Dark Mode Styles   */
+/* body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+} */
 
 /* Calendar Section Styles */
 .calendar-section {
@@ -22,7 +69,7 @@ body.dark-mode {
     gap: 20px;
 }
 
-.calendar-title{
+.calendar-title {
     text-align: center;
 }
 
@@ -32,35 +79,37 @@ body.dark-mode {
     display: flex;
     flex-direction: column;
     align-items: stretch; /* Stretch inputs to full width */
-    width: 320px; /* Fixed width for form */
-    padding: 30px; /* Increased padding for more space */
-    border: 1px solid #ddd; /* Softer border */
-    border-radius: 12px; /* More rounded corners */
-    background-color: #ffffff; /* Clean white background */
+    width: 300px; /* Set a fixed width */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* background-color: #f9f9f9; */
     margin-top: 45px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for more depth */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean font */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Clean font */
     position: relative;
     overflow: hidden; /* Hide any content that overflows the form */
 }
 
 /* Form title styling */
 .event-form h3 {
+
     margin-bottom: 25px;
     font-size: 1.8rem; /* Larger font size for the title */
     font-weight: bold; /* Make the title stand out */
-    color: #333; /* Darker title color */
+    color:  #1997fb; /* Darker title color */
     text-align: center; /* Centered title */
     text-transform: uppercase; /* Uppercase for emphasis */
     letter-spacing: 2px; /* Increased letter spacing */
     position: relative;
     animation: fadeInDown 0.5s ease-in-out; /* Add fade-in animation */
+
 }
 
-/* Input and button styling */
-.event-form input, .event-form button {
-    margin: 15px 0; /* More space between elements */
-    padding: 12px;
+.event-form input,
+.event-form button {
+    margin: 10px 0; /* Adjusted margins for better spacing */
+    padding: 10px;
     font-size: 16px;
     border-radius: 8px; /* Softer, more rounded corners */
     border: 1px solid #ccc; /* Light border */
@@ -70,7 +119,7 @@ body.dark-mode {
 
 /* Input hover and focus effects */
 .event-form input:focus {
-    border-color: #4CAF50; /* Green border on focus */
+    border-color: #4caf50; /* Green border on focus */
     box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); /* Green glow on focus */
     outline: none; /* Removes default outline */
     transform: scale(1.02); /* Slight scaling animation on focus */
@@ -92,7 +141,7 @@ body.dark-mode {
 
 /* Hover effect on color picker */
 .event-form input[type="color"]:hover {
-    border-color: #4CAF50; /* Green border on hover */
+    border-color: #4caf50; /* Green border on hover */
     box-shadow: 0 0 8px rgba(76, 175, 80, 0.4); /* Green glow on hover */
     transform: scale(1.03); /* Slight scaling on hover */
 }
@@ -112,14 +161,14 @@ body.dark-mode {
 /* When color picker is active (clicked) */
 .event-form input[type="color"]:focus {
     outline: none;
-    border-color: #4CAF50;
+    border-color: #4caf50;
     box-shadow: 0 0 8px rgba(76, 175, 80, 0.6); /* Green glow */
     transform: scale(1.05); /* Slight scale effect */
 }
 
 /* Button hover effect */
 .event-form button {
-    background-color: #4CAF50; /* Green background */
+    background-color: #4caf50; /* Green background */
     color: white;
     border: none;
     cursor: pointer;
@@ -138,12 +187,14 @@ body.dark-mode {
 
 /* Label styling */
 .event-form label {
+
     font-size: 1rem;
     font-weight: 500;
-    color: #333;
+    color: #1997fb;
     margin-bottom: 8px; /* Space between label and input */
     text-align: left;
     animation: fadeInLeft 0.5s ease-in-out; /* Label animation */
+    
 }
 
 /* Animation for fading the title in from the top */
@@ -182,7 +233,6 @@ body.dark-mode {
     }
 }
 
-
 /* Calendar Styles */
 .calendar {
     flex-grow: 1; /* Allow calendar to take up available space */
@@ -201,12 +251,12 @@ body.dark-mode {
 }
 
 .month-year-box {
-    padding: 10px 20px; 
-    background-color: #f0f0f0; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    font-weight: bold; 
-    margin: 0 10px; 
+    padding: 10px 20px;
+    /* background-color: #f0f0f0; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 10px;
 }
 
 /* Calendar Grid */
@@ -225,7 +275,7 @@ body.dark-mode {
     padding: 10px; /* Adjusted padding */
     text-align: center;
     position: relative;
-    background-color: #ffffff; /* Light mode day background */
+    /* /* background-color: #ffffff;   */
     height: 100px; /* Fixed height for uniformity */
     border-radius: 8px; /* Rounded corners */
     transition: background-color 0.3s ease; /* Smooth transition */
@@ -238,7 +288,7 @@ body.dark-mode .calendar-day {
 }
 
 .calendar-day:hover {
-    background-color: #e0e0e0; /* Light hover effect */
+    background-color: #e0e0e0;
 }
 
 body.dark-mode .calendar-day:hover {
@@ -247,8 +297,8 @@ body.dark-mode .calendar-day:hover {
 
 /* Event Styles */
 .event {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #4caf50;
+    /* color: white; */
     padding: 5px; /* Adjusted padding */
     border-radius: 3px;
     font-size: 14px; /* Increased font size */
@@ -269,34 +319,32 @@ body.dark-mode .calendar-day:hover {
         flex-direction: column; /* Stack elements on smaller screens */
         align-items: center; /* Center the items */
     }
-    
+
     .event-form {
         width: 90%; /* Make form full width on small screens */
         margin: 10px 0; /* Adjust margin */
     }
 }
 
-     
-
 /* General Navbar Styling */
 .navbar {
-    background-color: #333;
+    /* background-color: #333; */
     padding: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
-    top:0;
+    top: 0;
     margin-top: 0px;
-    z-index:1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 /* Center the menu items */
 .navbar ul {
     display: flex;
-    justify-content: space-around;  
+    justify-content: space-around;
     align-items: center;
     list-style: none;
     flex: 1;
@@ -304,7 +352,7 @@ body.dark-mode .calendar-day:hover {
 
 /* Move Hamburger Menu to Right */
 .hamburger-menu {
-    margin-left: auto;  
+    margin-left: auto;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -319,18 +367,18 @@ body.dark-mode .calendar-day:hover {
 .logo:hover {
     transform: scale(1.1);
 }
-.darkmode {
+/* .darkmode {
     background-color: #fdf8f8;
     color: #070707;
     background-color: #401111;
     background-color: #908989;
     background-color: #2a2929;
     color: #401111;
-}
+} */
 
 .website-name {
     font-size: 1.8rem;
-    color: #fff;
+    /* color: #fff; */
     font-weight: bold;
     letter-spacing: 1.2px;
     margin-right: auto;
@@ -368,15 +416,13 @@ body.dark-mode .calendar-day:hover {
     display: inline-block;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
+.navbar-links a:hover {
+    color: red;
 }
-
 
 .center-links li a {
     text-decoration: none;
-    color: #fff;
+    /* color: #fff; */
     padding: 8px 10px;
     border-radius: 4px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -387,32 +433,32 @@ body.dark-mode .calendar-day:hover {
 
     color: #f1c40f; /* Add hover color effect */
 }
-
 /* Hamburger Menu Styling */
 .hamburger-menu .toggle-button {
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: space-between;
-    width: 25px;
-    height: 18px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
-    padding: 4px 6px;
+    padding: 4px;
     padding-right: 10px;
-    
 }
 
-.hamburger-menu .bar {
-    height: 5px;
+/* Apply a smooth transform transition for the icon */
+.hamburger-menu img {
     width: 30px;
-    display: flex;
-    align-items: center ;
-    justify-content: center;
-    background-color:rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 0;
-    transition: all 0.3s ease;
+    height: 30px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
+/* Rotation or scaling effect when active */
+.hamburger-menu img.active {
+    transform: rotate(90deg); /* or scale(1.2) for a scaling effect */
+    opacity: 0.8;
+}
+
 .my-svg {
     width: 100px;
     height: 100px;
@@ -420,52 +466,54 @@ body.dark-mode .calendar-day:hover {
 
 /* Dropdown Menu */
 .dropdown {
-    display: none; 
-    position: absolute; 
-    background-color: #333;
+    display: none;
+    position: absolute;
+    /* background-color: #333; */
     padding: 10px;
     border-radius: 4px;
     z-index: 1;
 
-    top: 100%; 
-    right: 0; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: calc(100vw - 40px); 
-    overflow: hidden; 
+    top: 100%;
+    right: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    max-width: calc(100vw - 40px);
+    overflow: hidden;
 }
 
 .center-links li:hover .dropdown {
     display: block;
 
-    top: 27px; 
-    right: 0%; 
+    top: 27px;
+    right: 0%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-
 }
 
 .navbar ul li:hover .dropdown {
     display: block;
     opacity: 1;
+    background-color: #895d5d;
+    color: #fff;
+
     transform: translateY(0);
 }
 .dropdown li {
     margin: 10px 0;
-    list-style-type: disc; 
-    padding-left: 20px; 
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 .dropdown li a {
-    color: #fff;
+    /* color: #fff; */
+
     padding: 5px 5px;
     display: block;
     white-space: nowrap;
 }
 
 .dropdown li a:hover {
-    background-color: #555;
     border-radius: 4px;
 }
 .dropdown li a span:hover {
@@ -473,28 +521,10 @@ body.dark-mode .calendar-day:hover {
     border-radius: 4px;
 }
 
-
 /* Hamburger Menu */
 .hamburger-menu {
-    position: relative; /* Added for dropdown positioning */
-}
-
-.hamburger-menu .toggle-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 18px;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.hamburger-menu .bar {
-    height: 3px;
-    width: 25px;
-    background-color: #fff;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    position: relative;
+    margin-right: 5px; /* Added for dropdown positioning */
 }
 
 /* Dropdown Styling */
@@ -506,7 +536,7 @@ body.dark-mode .calendar-day:hover {
     border-radius: 4px;
     z-index: 1;
     top: 100%;
-    right: 0;  
+    right: 0;
     width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -522,11 +552,11 @@ body.dark-mode .calendar-day:hover {
 }
 
 .hamburger-menu .dropdown li a {
-    color: #fff;
-    padding: 10px 15px;  
+    /* color: #fff; */
+    padding: 10px 15px;
     text-decoration: none;
     display: block;
-    font-size: 1rem;  
+    font-size: 1rem;
 }
 
 .hamburger-menu .dropdown li a:hover {
@@ -550,7 +580,7 @@ body.dark-mode .calendar-day:hover {
 }
 
 body.dark-mode #theme-switch {
-    background-color: #333;
+    /* background-color: #333; */
     color: #fff;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
@@ -564,9 +594,9 @@ body.dark-mode #theme-switch {
     .navbar ul {
         flex-direction: column;
         align-items: flex-start;
-        display: none; 
+        display: none;
         width: 100%;
-        background-color: #333;
+        /* background-color: #333; */
         padding: 20px 0;
         position: absolute;
         top: 60px;
@@ -574,7 +604,7 @@ body.dark-mode #theme-switch {
     }
 
     .navbar ul li {
-        margin-left: 0; 
+        margin-left: 0;
     }
 
     .navbar ul li a {
@@ -582,45 +612,99 @@ body.dark-mode #theme-switch {
         width: 100%;
     }
 
-    .hamburger-menu .toggle-button {
-        display: block; 
-    }
-
     .navbar ul li:hover .dropdown {
-        position: relative; 
-        top: 0; 
-        left: 0; 
+        position: relative;
+        top: 0;
+        left: 0;
     }
 
     .hamburger-menu.active + ul {
-        display: flex; 
+        display: flex;
     }
 
     /* Dropdown for Hamburger */
     .hamburger-menu .dropdown {
-        top: 50px; 
-        right: 0; 
+        top: 50px;
+        right: 0;
+    }
+}
+
+/* Fixing Hamburger Menu Display */
+.hamburger-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #856fc6;
+        border-radius: 5px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        padding: 20px 0;
+    }
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .navbar ul li a {
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    /* Dropdown for Hamburger */
+    .hamburger-menu .dropdown {
+        display: none;
+    }
+
+    .hamburger-menu.active .dropdown {
+        display: block;
+    }
+
+    /* Fixing the space for the dropdown */
+    .hamburger-menu .dropdown li {
+        padding-left: 0;
+    }
+
+    .hamburger-menu .dropdown li a {
+        padding: 10px 15px;
+        display: block;
     }
 }
 
 /* About Community Section */
 .about-community {
     padding: 30px; /* Increased padding for a more spacious layout */
-    background-color: #f9f9f9;
-    color: #333;
+    /* background-color: #f9f9f9; */
+    /* color: #333; */
     font-size: 1.1rem;
     line-height: 1.8; /* Increased line height for better readability */
     text-align: center;
     margin-top: 20px;
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  */
+    /* Subtle shadow effect */
 }
 
 /* Title styling */
 .about-community h2 {
     font-size: 2.5rem; /* Increased font size */
     margin-bottom: 15px;
-    color: #333;
+    /* color: #333; */
     text-align: center;
     font-weight: bold; /* Bold title for emphasis */
     text-transform: uppercase; /* Uppercase for better prominence */
@@ -638,7 +722,7 @@ body.dark-mode #theme-switch {
 }
 
 .social-icons a {
-    margin: 0 15px; /* Increased space between icons */
+    margin: 0 15px;
     display: inline-block;
 }
 
@@ -669,13 +753,8 @@ body.dark-mode #theme-switch {
     }
 }
 
-
-
-
 /* Footer Styles */
 .footer {
-    background-color: #222;
-    color: #fff;
     padding: 20px 0;
 }
 
@@ -685,11 +764,11 @@ body.dark-mode #theme-switch {
     padding: 0 1rem;
 }
 
-.footer-grid {
+/* .footer-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
-}
+} */
 
 .footer-logo-section {
     grid-column: span 2;
@@ -701,7 +780,7 @@ body.dark-mode #theme-switch {
 
 .footer-text {
     margin-top: 1.75rem;
-    color: #4B5563;
+    color: #9ca3af;
     line-height: 1.75rem;
 }
 
@@ -723,12 +802,13 @@ body.dark-mode #theme-switch {
 }
 
 .social-icon:hover {
-    background-color: #2563EB;
+    background-color: #2563eb;
 }
 
 .footer-section {
     padding: 4rem 0;
-    background-color: #f9fafb;
+
+    /* background-color: #f9fafb; */
 }
 
 .container {
@@ -739,11 +819,21 @@ body.dark-mode #theme-switch {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* Create a 12-column grid for flexibility */
-    gap: 2rem; /* Space between grid items */
-    align-items: start; /* Align items to start */
+    grid-column: 3;
 }
 
+.footer-item {
+    column-span: 1;
+}
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .footer-item {
+        grid-column: span 3;
+    }
+}
 .footer-logo-section {
     grid-column: span 6; /* Logo section spans 6 columns on larger screens */
 }
@@ -752,7 +842,6 @@ body.dark-mode #theme-switch {
     grid-column: span 3; /* Links span 3 columns each */
 }
 
-
 /* Footer Logo */
 .footer-logo {
     height: 2.25rem;
@@ -760,7 +849,7 @@ body.dark-mode #theme-switch {
 
 .footer-text {
     margin-top: 1.75rem;
-    color: #4B5563;
+    /* color: #4b5563; */
     line-height: 1.75rem;
 }
 
@@ -794,7 +883,6 @@ body.dark-mode #theme-switch {
     content: none;
 }
 
-
 /* Footer Links */
 footer {
     text-align: center;
@@ -804,7 +892,7 @@ footer {
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.1em;
-    color: #9CA3AF;
+    /* color: #9ca3af; */
     margin-bottom: 1.5rem;
 }
 
@@ -818,27 +906,23 @@ footer {
 }
 
 .footer-list a {
-    color: #111827;
+    color: #9ca3af;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-
 .footer-list a:hover {
-    color: #2563EB;
+    color: #2563eb;
 }
 
 /* Divider and Footer Bottom Text */
 .footer-divider {
     margin: 4rem 0;
-    border-top: 1px solid #E5E7EB;
+    border-top: 1px solid #e5e7eb;
 }
 
 .footer-bottom-text {
     text-align: center;
-    color: #6B7280;
+    color: #6b7280;
     font-size: 0.875rem;
 }
-
-
-
