@@ -1,0 +1,99 @@
+/* Blog Container */
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: #f8f9fa;
+}
+
+/* Blog Cards */
+.blog-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 30%;
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card img {
+    width: 100%;
+    border-bottom: 4px solid #2196f3;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-card h4 {
+    color: #333;
+    margin-top: 15px;
+}
+
+.blog-card p {
+    color: #666;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.blog-card button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blog-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    margin: 50px auto;
+    padding: 30px;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-content h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: #333;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff0000;
+}

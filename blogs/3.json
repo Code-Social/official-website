@@ -1,0 +1,94 @@
+{
+    "title": "Beginner's Guide to Coding",
+    "image": "images/beg.jpg",
+    "content": [
+        {
+            "type": "heading",
+            "text": "Introduction"
+        },
+        {
+            "type": "paragraph",
+            "text": "Coding is the foundation of the modern tech world. Whether you're looking to start a career in software development or just curious about how technology works, learning to code is an essential skill. This guide will help you get started with coding."
+        },
+        {
+            "type": "heading",
+            "text": "Why Learn to Code?"
+        },
+        {
+            "type": "paragraph",
+            "text": "Coding allows you to create software, websites, and apps that solve problems. It opens doors to lucrative careers and helps you understand the technology that powers our world."
+        },
+        {
+            "type": "heading",
+            "text": "Choosing Your First Programming Language"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Python: Beginner-friendly and used in AI, ML, and web development.",
+                "JavaScript: Great for web development and front-end design.",
+                "Java: Popular for Android app development and enterprise solutions."
+            ]
+        },
+        {
+            "type": "paragraph",
+            "text": "These are some of the most popular programming languages for beginners. Depending on your interest, you can choose the one that fits your goals best."
+        },
+        {
+            "type": "heading",
+            "text": "Essential Tools for Beginners"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Text Editor: Start with something simple like Visual Studio Code or Sublime Text.",
+                "Version Control: Learn Git for managing your code versions.",
+                "Integrated Development Environment (IDE): Use an IDE like PyCharm or IntelliJ for more advanced projects."
+            ]
+        },
+        {
+            "type": "paragraph",
+            "text": "Mastering these tools will help you in writing, organizing, and managing your code efficiently."
+        },
+        {
+            "type": "heading",
+            "text": "Beginner Coding Projects"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Build a basic website using HTML, CSS, and JavaScript.",
+                "Create a simple calculator in Python.",
+                "Develop a to-do list application."
+            ]
+        },
+        {
+            "type": "paragraph",
+            "text": "Building small projects is a great way to practice and apply what you've learned."
+        },
+        {
+            "type": "heading",
+            "text": "Learning Resources"
+        },
+        {
+            "type": "list",
+            "items": [
+                "FreeCodeCamp: Offers free tutorials on web development and more.",
+                "Codecademy: Interactive coding lessons for beginners.",
+                "Coursera and edX: Offer beginner-friendly coding courses."
+            ]
+        },
+        {
+            "type": "paragraph",
+            "text": "These resources are a great starting point for learning to code, offering lessons at your own pace."
+        },
+        {
+            "type": "heading",
+            "text": "Conclusion"
+        },
+        {
+            "type": "paragraph",
+            "text": "Starting your coding journey may seem challenging, but with the right resources and consistent practice, you'll be on your way to becoming a proficient coder in no time."
+        }
+    ]
+}
