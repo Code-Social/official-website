@@ -1,0 +1,236 @@
+.join-us{
+    padding-top: 10px;
+    text-align: center;
+    font-size: 150%;
+}
+
+.image-container {
+    width: 150%;
+    max-width: 1200px;
+    margin: 0 auto;  /*Center the image container */
+    padding-top: 0%;
+    padding-bottom: 20px;
+    text-align: center; /* Center the image horizontally */
+}
+
+.image-container img {
+    width: 150%; /* Make the image responsive */
+    height: 30em;
+    max-width: 100%;
+    padding-top: 0%;
+}
+
+.volunteer-intro-block{
+    margin-bottom: 20px;
+    padding: 40px;
+    color: #333;
+    background-color:  orange;
+    align-items: center;
+}
+
+.info{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Job Roles container */
+.job-role {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+}
+
+/* Title of each role */
+.role-title {
+    font-weight: bold;
+    font-size: 1.60em;
+    display: flex;
+    justify-content: space-between; 
+    padding: 5px;
+    text-align: center;
+}
+
+/* Initially hidden role descriptions */
+.role-description {
+    padding-top: 0px;
+    padding: 10px;
+    display: none;
+    margin-top: 10px;
+    font-size: 1.75 em;
+    color: #555;
+}
+
+/* Expand/collapse symbol styles */
+.expand-symbol {
+    font-size: 1.5em;
+    color: #ff9900;
+    font-weight: bold;
+}
+
+/* Hover effect on role titles */
+.role-title:hover {
+    color: #ff9900;
+}
+
+.responsibilities-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align the job-role cards to the center */
+}
+
+.why-join{
+    padding: 20px;
+}
+
+.quadrant-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px;
+}
+
+.quadrant-card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.quadrant-card h3 {
+    font-size: 1.7em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.quadrant-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+.quadrant-card:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+    .quadrant-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Volunteer Form Styling */
+.volunteer-form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 50px auto; /* Horizontally centers the form */
+    border-radius: 10px;
+    width: 50%; /* Define the width of the form */
+    max-width: 600px; /* Ensures it doesn't get too wide */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.volunteer-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.volunteer-form label {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#motivation, #experience, #additional-info, #skills, #linkedin{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 96%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+/* Styling for name, email, and mobile input fields */
+#name, #email, #mobile {
+    border: 1px solid #ccc;
+    width: 50%; /* Adjust the width to occupy the available space */
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: inline-block; /* Keep the input on the same line as the label */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+/* Styling for labels */
+label[for="name"], label[for="email"], label[for="mobile"] {
+    display: inline-block; /* Keep the label on the same line as the input */
+    width: 25%; /* Adjust label width to make space for inputs */
+    text-align: left; /* Align label text to the right */
+    vertical-align: middle; /* Align the label with the input field vertically */
+}
+
+.volunteer-form input[type="radio"],
+.volunteer-form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#must-read {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Apply red color to the asterisk (*) in the required fields */
+label[for="name"]::after,
+label[for="email"]::after,
+label[for="mobile"]::after,
+label[for="hours-button"]::after,
+label[for="motivation"]::after,
+label[for="code-conduct"]::after,
+label[for="info-accuracy"]::after,
+label[for="experience"]::after,
+label[for="roles-all"]::after {
+    content: " *"; /* Add the asterisk */
+    color: red;    /* Set the asterisk color to red */
+}
+
+/* Container to align the checkbox and its label horizontally */
+.checkbox-agreement-container {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically center the checkbox and label */
+    margin-bottom: 10px; /* Add space between rows */
+}
+
+/* Styling the checkboxes */
+.checkbox-agreement-container input[type="checkbox"] {
+    margin-right: 10px; /* Add space between checkbox and label */
+}
+
+/* Adjust the label text if necessary */
+.checkbox-agreement-container label {
+    font-weight: normal; /* Normal font weight for labels */
+}
+
+.volunteer-form button {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.volunteer-form button:hover {
+    background-color: #e68a00;
+}
