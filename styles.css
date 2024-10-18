@@ -6,6 +6,29 @@ body {
     color: #000; /* Light mode text color */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+.toggle-button {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center items vertically */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.about-text {
+    margin-right: 0px; /* Space between the text and buttons */
+  margin-top: 5px;
+}
+
+/* Additional styles for the buttons */
+.bar {
+    display: block;
+    width: 25px; /* Button width */
+    height: 4px; /* Button height */
+    background-color: black; /* Button color */
+    margin: 2px 0; /* Space between buttons */
+    transition: all 0.3s; /* Optional: Add a transition for hover effects */
+}
+
+
+
 
 /* Dark mode */
 .dark-mode {
@@ -70,15 +93,17 @@ body {
 
 /* Form title styling */
 .event-form h3 {
+
     margin-bottom: 25px;
     font-size: 1.8rem; /* Larger font size for the title */
     font-weight: bold; /* Make the title stand out */
-    color: #333; /* Darker title color */
+    color:  #1997fb; /* Darker title color */
     text-align: center; /* Centered title */
     text-transform: uppercase; /* Uppercase for emphasis */
     letter-spacing: 2px; /* Increased letter spacing */
     position: relative;
     animation: fadeInDown 0.5s ease-in-out; /* Add fade-in animation */
+
 }
 
 .event-form input,
@@ -162,12 +187,14 @@ body {
 
 /* Label styling */
 .event-form label {
+
     font-size: 1rem;
     font-weight: 500;
-    color: #333;
+    color: #1997fb;
     margin-bottom: 8px; /* Space between label and input */
     text-align: left;
     animation: fadeInLeft 0.5s ease-in-out; /* Label animation */
+    
 }
 
 /* Animation for fading the title in from the top */

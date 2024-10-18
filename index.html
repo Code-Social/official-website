@@ -15,7 +15,7 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="flex"><img src="/images/logo.png" class="logo">
+        <a href="index.html" class="flex"><img src="images/logo.png" class="logo">
             <span class="website-name tracking-tight ">Code Social</span></a>
 
 
@@ -37,6 +37,12 @@
 
                 </ul>
             </li>
+         <!-- blog section -->
+            <ul class="navbar-links flex  ">
+            <li class="ml-20">
+                <a href="blog.html">Blogs</a>
+                </ul>
+            </li>
             <li class="community">
                 <a href="maintenance.html">Join Our Community</a>
                 <ul class="dropdown">
@@ -54,24 +60,26 @@
             </li> 
             <li class="hamburger-menu">
                 <div class="toggle-button">
+                    <span class="about-text">About us</span>
                     <button class="bar"></button>
                     <button class="bar"></button>
                     <button class="bar"></button>
                 </div>
                 <ul class="dropdown">
-                    <li><a href="#"> Meet Our Team</a></li>
+                    <li><a href="mentorship.html">Meet Our Team</a></li>
                     <li><a href="#">Join Our Team</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Follow Us</a></li>
                 </ul>
             </li>
+            
             <li>
                 <a href="maintenance.html">Follow Us</a>
             </li>
             <!-- Dark Mode Toggle -->
             <li>
                 <button id="theme-toggle" class="theme-toggle-btn  ">
-                    <img src="/images/dark-mode.png" alt="theme-mode" id="theme-toggle-icon">
+                    <img src="images/dark-mode.png" alt="theme-mode" id="theme-toggle-icon">
                 </button>
                 <!-- when light mode is active -> use "dark-mode.png" and when dark mode is active -> use "light-mode.png" -->
             </li>
@@ -151,9 +159,7 @@
               <a href="https://wa.me/your-whatsapp-number" target="_blank"><img src="./images/whatsapp-icon.png" alt="WhatsApp"></a>
               <a href="https://discord.gg/MSTNyRSPYW" target="_blank"><img src="./images/discord-icon.png" alt="Discord"></a>
               <a href="https://www.linkedin.com/company/code-social/" target="_blank"><img src="./images/linkedin-icon.png" alt="LinkedIn"></a>
-            </div>
-          </div>
-      
+  
           <!-- Links Section -->
           <div class="footer-links">
             <div class="footer-column">
@@ -261,6 +267,18 @@ document.getElementById('add-event').addEventListener('click', () => {
 document.addEventListener('DOMContentLoaded', generateCalendar);
 
         </script>
+        <script>
+            window.embeddedChatbotConfig = {
+            chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
+            domain: "www.chatbase.co"
+            }
+            </script>
+            <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="j2Uy2CrJfZueGX7wNtJT_"
+            domain="www.chatbase.co"
+            defer>
+            </script>
 </body>
 
 </html>
