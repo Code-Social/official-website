@@ -198,6 +198,25 @@
     color: #f5f5f5;
 }
 
+.darkmode .forum-section {
+    background-color: #2a2929;
+    color: #f5f5f5;
+}
+
+.darkmode .event-calendar {
+    background-color: #2a2929;
+    color: #f5f5f5;
+    border: 1px solid #444; /* Optional: change border for visibility */
+}
+
+.darkmode a {
+    color: #4CAF50; /* Example link color in dark mode */
+}
+
+.darkmode a:hover {
+    color: #f1c40f; /* Change hover color for links */
+}
+
 /* Footer Styles */
 .footer {
     background-color: #222;
@@ -289,16 +308,25 @@
     text-decoration: underline;
 }
 
-#theme-switch {
-    height: 20px;
-    width: 20px;
-    padding: 0;
+/* Dark Mode Toggle Button Styles */
+#theme-switch-fixed {
+    height: 40px; /* Increased size for better visibility */
+    width: 40px;
+    border: none; /* Remove border */
     border-radius: 50%;
-    background-color: var(--base-variant);
+    background-color: #444; /* Dark background for the button */
+    color: white; /* Icon color */
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 20px;
     right: 20px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above other elements */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#theme-switch-fixed:hover {
+    background-color: #555; /* Lighter shade on hover */
 }

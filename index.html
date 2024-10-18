@@ -5,139 +5,214 @@
     <title>Code Social | Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="event-calendar.css" type="text/css">
+    <link rel="stylesheet" href="forum.css" type="text/css">
+    <link rel="stylesheet" href="footer.css" type="text/css">
     <script src="script.js" defer></script>
-    <script type="text/javascript" src="darkmode.js" defer></script>
+    <script src="darkmode.js" defer></script>
+    <script src="event-calendar.js" defer></script>
+    <script src="forum.js" defer></script>
     <style>
-        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(120deg, #f0f0f5, #d9d9e6);
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5; /* Light mode background */
-            color: #000; /* Light mode text color */
+            transition: background-color 0.3s, color 0.3s;
         }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #121212; /* Dark mode background */
-            color: #ffffff; /* Dark mode text color */
-        }
-
-        /* Calendar styles */
-        .calendar {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px;
-        }
-
-        .calendar-header {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-            width: 100%; /* Full width */
-            max-width: 800px; /* Maximum width for the grid */
-        }
-
-        .calendar-day {
-            border: 1px solid #ccc;
-            padding: 20px; /* Increased padding */
-            text-align: center;
-            position: relative;
-            background-color: #ffffff; /* Light mode day background */
-            height: 100px; /* Fixed height for uniformity */
-            border-radius: 8px; /* Rounded corners */
-            transition: background-color 0.3s ease; /* Smooth transition */
-        }
-
-        body.dark-mode .calendar-day {
-            background-color: #1e1e1e; /* Dark mode day background */
-            border-color: #444; /* Dark mode border color */
-        }
-
-        .calendar-day:hover {
-            background-color: #e0e0e0; /* Light hover effect */
-        }
-
-        body.dark-mode .calendar-day:hover {
-            background-color: #333; /* Dark hover effect */
-        }
-
-        .event {
-            background-color: #4CAF50;
+        nav {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
             color: white;
-            padding: 5px; /* Adjusted padding */
-            border-radius: 3px;
-            font-size: 14px; /* Increased font size */
-            position: absolute;
-            bottom: 5px;
-            left: 5px;
-            right: 5px;
-            text-align: center;
-            cursor: pointer; /* Makes the event clickable */
-            overflow: hidden; /* Prevents overflow of text */
-            white-space: nowrap; /* Keeps text in a single line */
-            text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
-        }
-
-        /* Form styles */
-        .event-form {
-            margin: 20px;
+            padding: 15px;
             display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-
+        nav .logo {
+            height: 50px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .section {
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+        .social-icons a {
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
         .event-form input,
         .event-form button {
-            margin: 5px;
-            padding: 10px;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(100% - 24px);
             font-size: 16px;
-            width: 100%; /* Full width for inputs */
-            max-width: 300px; /* Maximum width for inputs */
+            transition: border-color 0.3s;
         }
-
-        /* Button styles */
-        .edit-btn,
-        .delete-btn {
-            margin-top: 5px;
-            padding: 2px 5px;
-            font-size: 12px;
+        .event-form input:focus {
+            border-color: #6a11cb;
+            outline: none;
+            box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+        }
+        .event-form button {
+            background-color: #6a11cb;
             color: white;
             border: none;
-            border-radius: 3px;
             cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .event-form button:hover {
+            background-color: #2575fc;
+            transform: translateY(-2px);
+        }
+        .footer-section {
+            background: #6a11cb;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .footer-logo {
+            height: 40px;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #ffdd57;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .dark-mode nav {
+            background: linear-gradient(90deg, #1d1d1d, #2e2e2e);
+        }
+        .dark-mode .section {
+            background: #2e2e2e;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+        .dark-mode .footer-section {
+            background: #1d1d1d;
+        }
+        .section h2, .calendar-title {
+            color: #333;
+            transition: color 0.3s;
+        }
+        .dark-mode .section h2, .dark-mode .calendar-title {
+            color: #980514;
+        }
+        #theme-switch-fixed {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        #theme-switch-fixed:hover {
+            transform: scale(1.1);
+        }
+        #theme-switch-fixed img {
+            width: 25px;
+            height: 25px;
         }
 
-        .edit-btn {
-            background-color: #2196F3; /* Blue */
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: none;
         }
 
-        .delete-btn {
-            background-color: #F44336; /* Red */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #6a11cb;
+                width: 200px;
+                z-index: 100;
+            }
+
+            nav .hamburger-menu {
+                display: block;
+                cursor: pointer;
+                margin-left: auto; /* Align to the right */
+            }
+
+            nav .hamburger-menu .bar {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                margin: 4px auto;
+                transition: all 0.3s;
+            }
+        }
+
+        .dropdown {
+            display: none; /* Initially hidden */
+        }
+        .hamburger-menu.active .dropdown {
+            display: block;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <button id="theme-switch">
-            <img src="file:///C:/Users/Dell/Downloads/dark_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark Mode">
-            <img src="file:///C:/Users/Dell/Downloads/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Light Mode">
-        </button>
-    </header>
-
     <nav class="navbar">
         <a href="index.html"><img src="images/logo.png" class="logo" alt="Code Social logo"></a>
         <span class="website-name">Code Social</span>
-        <button class="toggle-theme" id="theme-toggle">🌙</button>
+        <div class="hamburger-menu" onclick="toggleDropdown()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <ul>
             <li>
                 <a href="#">Live Events</a>
@@ -148,143 +223,195 @@
             <li>
                 <a href="#">Join our Community</a>
                 <ul class="dropdown">
-                    <li><a href="#">Whatsapp</a></li>
+                    <li><a href="#">WhatsApp</a></li>
                     <li><a href="#">Discord</a></li>
                 </ul>
             </li>
-            <li class="hamburger-menu">
-                <a href="javascript:void(0);" class="toggle-button">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </a>
-                <ul class="dropdown">
-                    <li><a href="#">Meet Our Team</a></li>
-                    <li><a href="#">Join Our Team</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Follow Us</a></li>
-                </ul>
+            <li>
+                <a href="#">Meet Our Team</a>
+            </li>
+            <li>
+                <a href="#">Join Our Team</a>
+            </li>
+            <li>
+                <a href="#">Contact Us</a>
+            </li>
+            <li>
+                <a href="#">Follow Us</a>
             </li>
         </ul>
     </nav>
 
-    <section class="about-community">
+    <section class="section about-community">
         <h2>About Community</h2>
         <p>
             Code Social Community is a learning-focused community dedicated to providing individuals with resources, opportunities to learn, grow, and develop their skills in various technologies. The community helps individuals to explore their interests, expand their knowledge, and connect with like-minded people.
-
+        </p>
+        <p>
             At Code Social Community, members have access to a wealth of resources and learning opportunities, including free learning sessions, mentorship programs, and peer-to-peer learning sessions. The community also provides opportunities for members to network and connect with others in the tech industry.
-
-            In addition to its learning and networking opportunities, Code Social Community also serves as a hub for resources, tools, and other materials that can help members enhance their skills and stay up-to-date with the latest trends and best practices in the tech industry.
-
+        </p>
+        <p>
             Whether you are just starting out in your career or are a seasoned professional looking to expand your knowledge and skills, this community offers something for everyone. With its focus on hands-on learning, mentorship, and networking opportunities, Code Social Community is an excellent place to connect with like-minded individuals, build your skills, and take your career to the next level.
         </p>
         <div class="social-icons">
-            <a href="https://wa.me/your-whatsapp-number" target="_blank">
+            <a href="https://wa.me/your-whatsapp-number" target="_blank" aria-label="WhatsApp">
                 <img src="images/whatsapp-icon.png" alt="WhatsApp">
             </a>
-            <a href="https://discord.gg/MSTNyRSPYW" target="_blank">
+            <a href="https://discord.gg/MSTNyRSPYW" target="_blank" aria-label="Discord">
                 <img src="images/discord-icon.png" alt="Discord">
             </a>
-            <a href="https://www.linkedin.com/company/code-social/" target="_blank">
+            <a href="https://www.linkedin.com/company/code-social/" target="_blank" aria-label="LinkedIn">
                 <img src="images/linkedin-icon.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/Code-Social" target="_blank" aria-label="GitHub">
+                <img src="images/github.png" alt="GitHub">
             </a>
         </div>
     </section>
 
-    <!-- Event Calendar Section -->
-    <section class="calendar">
-        <div class="calendar-header">Event Calendar</div>
-        <div class="calendar-grid" id="calendar-grid"></div>
+    <h2 class="calendar-title text-3xl mt-10 font-semibold">Event Calendar</h2>
 
-        <!-- Event Customization Form -->
+    <section class="section calendar-section">
         <div class="event-form">
             <h3>Add Event</h3>
-            <input type="date" id="event-date" required>
+            <input type="date" id="event-date" class="text-gray-500" required>
             <input type="text" id="event-title" placeholder="Event Title" required>
-            <button id="add-event">Add Event</button>
+            <label for="event-color">Pick color for event:</label>
+            <input type="color" id="event-color" value="#4CAF50">
+            <button id="add-event"><img src="images/add-icon.png" alt="Add Event Icon"> Add Event</button>
         </div>
+
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="prev-month">◀</button>
+                <div class="month-year-box" id="current-month">
+                    <!-- Current month will be displayed here -->
+                </div>
+                <button id="next-month">▶</button>
+            </div>
+
+            <div class="calendar-grid" id="calendar-grid"></div>
+        </div>
+    </section>
+
+    <section class="section forum-section">
+        <h2>Forum</h2>
+        <p>
+            Join our community forum to discuss various topics related to technology, programming, and more.
+        </p>
+        <ul>
+            <li><a href="#">Getting started with React</a></li>
+            <li><a href="#">Best practices for Node.js</a></li>
+            <li><a href="#">CSS Grid vs Flexbox</a></li>
+            <li><a href="#">JavaScript ES6+ features</a></li>
+        </ul>
     </section>
 
     <footer>
-        <section class="forum-section">
-            <h2>Forum / Discussion Boards</h2>
-            <p>
-                Join our community forum where you can ask questions, share knowledge, and engage in discussions on various topics.
-                Whether you're looking for help with a coding problem or want to discuss the latest tech trends, this is the place for you!
-            </p>
-            <ul>
-                <li><a href="forum.html">Visit the Forum</a></li>
-                <li><a href="https://discourse.example.com" target="_blank">Join our Discourse Community</a></li>
-            </ul>
+        <section class="footer-section">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-logo-section">
+                        <img class="footer-logo" src="images/logo.png" alt="Code Social Logo" />
+                        <p class="footer-text">Code Social Community is a vibrant and inclusive space for tech enthusiasts to learn, grow, and connect. Founded in 2023, our mission is to empower individuals with resources, mentorship, and opportunities to cultivate their skills, explore their interests, and collaborate with like-minded peers. Join us on our journey to create something extraordinary together!</p>
+                        <ul class="social-icons">
+                            <li><a href="https://wa.me/your-whatsapp-number" target="_blank" aria-label="WhatsApp">
+                                    <img src="images/whatsapp-icon.png" alt="WhatsApp"></a>
+                            </li>
+                            <li><a href="https://discord.gg/MSTNyRSPYW" target="_blank" aria-label="Discord">
+                                    <img src="images/discord-icon.png" alt="Discord">
+                                    </a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/company/code-social/" target="_blank" aria-label="LinkedIn">
+                                    <img src="images/linkedin-icon.png" alt="LinkedIn">
+                                    </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links">
+                        <p class="footer-title">Quick Links</p>
+                        <ul class="footer-list">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Community Guidelines</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links">
+                        <p class="footer-title">Help</p>
+                        <ul class="footer-list">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Volunteer Opportunities</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="footer-divider" />
+                <p class="footer-bottom-text">2024 Code Social. All rights reserved.</p>
+            </div>
         </section>
-        <p>&copy; 2024 Code Social. All rights reserved.</p>
     </footer>
 
+    <button id="theme-switch-fixed" aria-label="Toggle dark/light mode">
+        <img src="images/dark-mode-toggle-icon.png" alt="Dark Mode" class="dark-icon">
+        <img src="images/light-mode-toggle-icon.png" alt="Light Mode" style="display: none;">
+    </button>
+
     <script>
-        // Check for saved user preference in localStorage
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
-            document.body.classList.add('dark-mode');
+        window.embeddedChatbotConfig = {
+            chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
+            domain: "www.chatbase.co"
         }
-
-        // Toggle dark mode
-        const toggleButton = document.getElementById('theme-toggle');
-        toggleButton.addEventListener('click', () => {
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="j2Uy2CrJfZueGX7wNtJT_" domain="www.chatbase.co" defer></script>
+    <script>
+        document.getElementById('theme-switch-fixed').addEventListener('click', function() {
             document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            updateToggleIcon();
+        });
 
-            // Save the user's preference in localStorage
-            if (document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                toggleButton.textContent = '☀️'; // Sun icon for light mode
-            } else {
-                localStorage.setItem('theme', 'light');
-                toggleButton.textContent = '🌙'; // Moon icon for dark mode
+        // Load user preference
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                updateToggleIcon();
             }
         });
 
-        const events = [
-            { date: '2024-10-06', title: 'React Workshop' },
-            { date: '2024-10-14', title: 'Node.js Webinar' },
-            { date: '2024-10-21', title: 'CSS Masterclass' },
-        ];
-
-        function generateCalendar() {
-            const calendarGrid = document.getElementById('calendar-grid');
-            const daysInMonth = new Date(2024, 9, 0).getDate(); // October 2024
-
-            // Clear existing calendar
-            calendarGrid.innerHTML = '';
-
-            for (let day = 1; day <= daysInMonth; day++) {
-                const dayElement = document.createElement('div');
-                dayElement.className = 'calendar-day';
-                dayElement.innerText = day;
-
-                const event = events.find(e => new Date(e.date).getDate() === day);
-                if (event) {
-                    const eventElement = document.createElement('div');
-                    eventElement.className = 'event';
-                    eventElement.innerText = event.title;
-                    dayElement.appendChild(eventElement);
-                }
-
-                calendarGrid.appendChild(dayElement);
+        function updateToggleIcon() {
+            const darkIcon = document.querySelector('.dark-icon');
+            const lightIcon = document.querySelector('.light-icon');
+            if (document.body.classList.contains('dark-mode')) {
+                darkIcon.style.display = 'none';
+                lightIcon.style.display = 'block';
+            } else {
+                darkIcon.style.display = 'block';
+                lightIcon.style.display = 'none';
             }
         }
 
-        document.getElementById('add-event').addEventListener('click', () => {
-            const date = document.getElementById('event-date').value;
-            const title = document.getElementById('event-title').value;
+        // Event validation
+        document.getElementById('add-event').addEventListener('click', function() {
+            const eventDate = document.getElementById('event-date').value;
+            const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 
-            if (date && title) {
-                events.push({ date, title });
-                generateCalendar();
-                document.getElementById('event-title').value = '';
+            if (eventDate < today) {
+                alert('Please select a future date for the event.');
+                return;
             }
+            // Add event logic here
         });
 
-        document.addEventListener('DOMContentLoaded', generateCalendar);
+        // Toggle dropdown for hamburger menu
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.hamburger-menu .dropdown');
+            dropdown.classList.toggle('active');
+        }
     </script>
 </body>
 

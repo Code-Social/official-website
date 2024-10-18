@@ -1,0 +1,47 @@
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+body.dark-mode footer {
+    background-color: #1a1a1a;
+}
+
+footer p {
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+}
+
+footer .forum-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer .forum-section h2 {
+    color: #fff;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+
+footer .forum-section ul {
+    padding-left: 20px;
+}
+
+footer .forum-section ul li {
+    margin-bottom: 5px;
+}
+
+footer .forum-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .forum-section ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
