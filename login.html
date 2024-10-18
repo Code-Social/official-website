@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-container input:focus {
+            border-color: #4CAF50;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+
+        .login-container .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-link a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 20px;
+            }
+
+            .login-container h2 {
+                font-size: 20px;
+            }
+
+            .login-container input {
+                padding: 10px;
+            }
+
+            .login-container button {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <div id="emailError" class="error-message"></div>
+
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <div id="passwordError" class="error-message"></div>
+
+            <button type="submit">Login</button>
+            <div id="successMessage" class="success-message"></div>
+        </form>
+
+        <div class="signup-link">
+            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+
+            // Clear previous error messages
+            emailError.textContent = '';
+            passwordError.textContent = '';
+            successMessage.textContent = '';
+
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput.value)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                valid = false;
+            }
+
+            // Password validation
+            if (passwordInput.value.length < 6) {
+                passwordError.textContent = 'Password must be at least 6 characters long.';
+                valid = false;
+            }
+
+            // If the form is valid, navigate to the home page
+            if (valid) {
+                successMessage.textContent = 'Login successful!';
+                // Redirect to the home page (change 'home.html' to your actual home page file)
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1000); // Redirects after 1 second
+            }
+        });
+    </script>
+</body>
+
+</html>
