@@ -472,9 +472,8 @@ body.dark-mode .calendar-day:hover {
     padding: 10px;
     border-radius: 4px;
     z-index: 1;
-
     top: 100%;
-    right: 0;
+    right: -65%;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     max-width: calc(100vw - 40px);
     overflow: hidden;
@@ -502,7 +501,7 @@ body.dark-mode .calendar-day:hover {
 .dropdown li {
     margin: 10px 0;
     list-style-type: disc;
-    padding-left: 20px;
+    padding-left: 15px;
 }
 
 .dropdown li a {
@@ -527,6 +526,13 @@ body.dark-mode .calendar-day:hover {
     margin-right: 5px; /* Added for dropdown positioning */
 }
 
+.hamburger-menu span{
+    padding-left: -43px;
+}
+.hamburger-menu span:hover{
+    color: red;
+}
+
 /* Dropdown Styling */
 .hamburger-menu .dropdown {
     display: block;
@@ -536,7 +542,7 @@ body.dark-mode .calendar-day:hover {
     border-radius: 4px;
     z-index: 1;
     top: 100%;
-    right: 0;
+    right: -120%;
     width: 200px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
