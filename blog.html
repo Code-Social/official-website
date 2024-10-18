@@ -2,128 +2,119 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.ico">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="blog.css">
-  <title>Blogs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="blog.css">
+    <title>Blogs</title>
 </head>
 
 <body>
-  <!-- Blog Section -->
-  <section class="blog" id="blog">
-    <div class="section__container blog__container">
-      <h2 class="section__header">BLOGS</h2>
-      <div class="blog-container">
-        <!-- Blog Card 1 -->
-        <div class="blog-card">
-          <img src="images/b1.jpeg" alt="AI and ML Impact" />
-          <h4>AI and ML</h4>
-          <p>Discover how AI and ML are reshaping the world...</p>
-          <button class="read-more" data-id="1">Read More</button>
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="section__container blog__container">
+            <h2 class="section__header">Blogs</h2>
+            <div class="blog-container">
+                <!-- Blog Card 1 -->
+                <div class="blog-card">
+                    <img src="images/b1.jpeg" alt="AI and ML Impact" />
+                    <h4>AI and ML</h4>
+                    <p>Discover how AI and ML are reshaping the world...</p>
+                    <button class="read-more" data-id="1">Read More</button>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="blog-card">
+                    <img src="images/b2.jpg" alt="A Guide to Java Development" />
+                    <h4>A Guide to Java Development</h4>
+                    <p>Learn how to become a successful Java developer...</p>
+                    <button class="read-more" data-id="2">Read More</button>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="blog-card">
+                    <img src="images/beg.jpg" alt="Coding Journey" />
+                    <h4>Beginner's Guide to Coding</h4>
+                    <p>Starting your coding journey with the right tools...</p>
+                    <button class="read-more" data-id="3">Read More</button>
+                </div>
+
+                <!-- Blog Card 4 -->
+                <div class="blog-card">
+                    <img src="images/b4.jpeg" alt="Tips for Efficient Coding" />
+                    <h4>Efficient Coding Techniques</h4>
+                    <p>Maximize your coding efficiency with these tips...</p>
+                    <button class="read-more" data-id="4">Read More</button>
+                </div>
+            </div>
+
+            <!-- Blog Modal -->
+            <div id="blogModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" aria-label="Close modal">&times;</span>
+                    <div id="blog-content"></div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Blog Card 2 -->
-        <div class="blog-card">
-          <img src="images/b2.jpg" alt="A Guide to Java Development" />
-          <h4>A Guide to Java Development</h4>
-          <p>Learn how to become a successful Java developer...</p>
-          <button class="read-more" data-id="2">Read More</button>
-        </div>
+    <script>
+        // Modal and Blog fetch functionality
+        const modal = document.getElementById('blogModal');
+        const closeModal = document.querySelector('.close');
 
-        <!-- Blog Card 3 -->
-        <div class="blog-card">
-          <img src="images/beg.jpg" alt="Coding Journey" />
-          <h4>Beginner's Guide to Coding</h4>
-          <p>Starting your coding journey with the right tools...</p>
-          <button class="read-more" data-id="3">Read More</button>
-        </div>
-
-        <!-- Blog Card 4 -->
-        <div class="blog-card">
-          <img src="images/b4.jpeg" alt="Tips for Efficient Coding" />
-          <h4>Efficient Coding Techniques</h4>
-          <p>Maximize your coding efficiency with these tips...</p>
-          <button class="read-more" data-id="4">Read More</button>
-        </div>
-      </div>
-<!-- 
-      <div class="blog__btn">
-        <button class="btn btn__primary">VIEW ALL</button>
-      </div>
-    </div> -->
-
-    <!-- Blog Modal -->
-    <div id="blogModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="blog-content"></div>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    // Modal and Blog fetch functionality remains the same
-    const modal = document.getElementById('blogModal');
-    const closeModal = document.querySelector('.close');
-
-    function openModal(blogId) {
-        fetch(`blogs/${blogId}.json`)
-            .then(response => response.json())
-            .then(data => {
-                let blogHtml = `<h1>${data.title}</h1>`;
-                blogHtml += `<img src="${data.image}" alt="${data.title}" style="width: 100%; height: auto;">`;
-                blogHtml += data.content.map(item => {
-                    if (item.type === 'heading') {
-                        return `<h2>${item.text}</h2>`;
-                    } else if (item.type === 'paragraph') {
-                        return `<p>${item.text}</p>`;
-                    } else if (item.type === 'list') {
-                        return `<ul>${item.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
-                    }
-                }).join('');
+        function openModal(blogId) {
+            fetch(`blogs/${blogId}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    let blogHtml = `<h1>${data.title}</h1>`;
+                    blogHtml += `<img src="${data.image}" alt="${data.title}" style="width: 100%; height: auto;">`;
+                    blogHtml += data.content.map(item => {
+                        if (item.type === 'heading') {
+                            return `<h2>${item.text}</h2>`;
+                        } else if (item.type === 'paragraph') {
+                            return `<p>${item.text}</p>`;
+                        } else if (item.type === 'list') {
+                            return `<ul>${item.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+                        }
+                    }).join('');
   
-                document.getElementById('blog-content').innerHTML = blogHtml;
-                modal.style.display = "block";
-                document.body.style.overflow = 'hidden';
-            });
-    }
+                    document.getElementById('blog-content').innerHTML = blogHtml;
+                    modal.style.display = "block";
+                    document.body.style.overflow = 'hidden';
+                });
+        }
 
-    closeModal.onclick = function () {
-        modal.style.display = "none";
-        document.body.style.overflow = 'auto';
-    };
-
-    window.onclick = function (event) {
-        if (event.target == modal) {
+        closeModal.onclick = function () {
             modal.style.display = "none";
             document.body.style.overflow = 'auto';
-        }
-    };
+        };
 
-    document.querySelectorAll('.read-more').forEach(button => {
-        button.addEventListener('click', function () {
-            const blogId = this.getAttribute('data-id');
-            openModal(blogId);
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        document.querySelectorAll('.read-more').forEach(button => {
+            button.addEventListener('click', function () {
+                const blogId = this.getAttribute('data-id');
+                openModal(blogId);
+            });
         });
-    });
-  </script>
-  <script>
-    window.embeddedChatbotConfig = {
-    chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
-    domain: "www.chatbase.co"
-    }
     </script>
-    <script
-    src="https://www.chatbase.co/embed.min.js"
-    chatbotId="j2Uy2CrJfZueGX7wNtJT_"
-    domain="www.chatbase.co"
-    defer>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
+            domain: "www.chatbase.co"
+        }
     </script>
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="j2Uy2CrJfZueGX7wNtJT_" domain="www.chatbase.co" defer></script>
 </body>
 
 </html>
