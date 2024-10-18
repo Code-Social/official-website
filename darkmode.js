@@ -9,7 +9,7 @@ const enableDarkMode = () => {
   body.classList.add("dark-mode");
   body.classList.remove("light-mode"); // Ensure light mode class is removed
   localStorage.setItem("darkmode", "active");
-  themeIcon.src = "/images/light-mode.png"; // Light mode icon in dark mode
+  themeIcon.src = "images/light-mode.png"; // Light mode icon in dark mode
 };
 
 // Disable Dark Mode (Switch to Light Mode)
@@ -17,7 +17,7 @@ const disableDarkMode = () => {
   body.classList.remove("dark-mode");
   body.classList.add("light-mode"); // Ensure light mode class is added
   localStorage.setItem("darkmode", "inactive");
-  themeIcon.src = "/images/dark-mode.png"; // Dark mode icon in light mode
+  themeIcon.src = "images/dark-mode.png"; // Dark mode icon in light mode
 };
 
 // Apply the saved theme on page load
