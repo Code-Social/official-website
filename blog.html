@@ -10,14 +10,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="blog.css">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  -->
+  <link rel="stylesheet" href="styles.css" type="text/css" />
   <title>Blogs</title>
 </head>
 
 <body>
   <!-- Blog Section -->
-  <section class="blog" id="blog">
+   <div class="section__header"><h1 >BLOGS</h1></div>
+   
+  <section class="blog" id="blog" >
     <div class="section__container blog__container">
-      <h2 class="section__header">BLOGS</h2>
+      
       <div class="blog-container">
         <!-- Blog Card 1 -->
         <div class="blog-card">
@@ -65,6 +69,68 @@
       </div>
     </div>
   </section>
+
+
+  <footer>
+    <section class="footer-section border border-gray-500 shadow-lg  ">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Logo and About Section -->
+
+                <div class="footer-logo-section footer-item my-5  ">
+
+                    <a href="index.html" class="flex w-full justify-center  "><img src="images/logo.png" class="logo mx-auto">
+                        
+                        <span class="website-name tracking-tight ">Code Social</span></a>
+
+                    <p class="footer-text">Code Social Community is a vibrant and inclusive space for tech enthusiasts to learn, grow, and connect. Founded in 2023, our mission is to empower individuals with resources, mentorship, and
+                        opportunities to cultivate their skills, explore their interests,
+
+                        and collaborate with like-minded peers. Join us on our journey to create something extraordinary together!</p>
+                    <ul class="social-icons py-5    ">
+                        <li><a href="https://wa.me/your-whatsapp-number" target="_blank">
+                                <img src="./images/whatsapp-icon.png" alt="WhatsApp"></a>
+                        </li>
+                        <li><a href="https://discord.gg/MSTNyRSPYW" target="_blank">
+                                <img src="./images/discord-icon.png" alt="Discord">
+                            </a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/company/code-social/" target="_blank">
+                                <img src="./images/linkedin-icon.png" alt="LinkedIn">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div class="footer-links footer-item">
+                    <p class="footer-title">Quick Links</p>
+                    <ul class="footer-list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help Links -->
+                <div class="footer-links footer-item">
+                    <p class="footer-title">Help</p>
+                    <ul class="footer-list">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="./volunteering-oppurtunities/volunteer-opp-page.html">Volunteer Opportunities</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="footer-divider" />
+            <p class="footer-bottom-text">© Copyright 2024, All Rights Reserved by Code-social</p>
+        </div>
+    </section>
+</footer>
+
 
   <script>
     // Modal and Blog fetch functionality remains the same
