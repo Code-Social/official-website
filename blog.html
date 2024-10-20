@@ -8,20 +8,203 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="blog.css">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  -->
-  <link rel="stylesheet" href="styles.css" type="text/css" />
   <title>Blogs</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .section__header {
+      text-align: center;
+      padding: 50px 0;
+      background: rgb(182, 182, 237);
+      color: #fff;
+      height: 50px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .blog-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    .blog-card {
+      width: 200px;
+      height: 400px;
+      margin-right: 10px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .blog-card:hover {
+      transform: scale(1.05);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-card h4 {
+      font-size: 1.5rem;
+      margin: 10px 15px;
+    }
+
+    .blog-card p {
+      font-size: 1rem;
+      color: #555;
+      margin: 0 15px 15px;
+    }
+
+    .read-more {
+      display: block;
+      margin: 15px;
+      padding: 10px 20px;
+      background: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .read-more:hover {
+      background: #45a049;
+    }
+
+    footer {
+      background-color: black;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .footer-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .footer-item {
+      color: #fff;
+    }
+
+    .footer-title {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-list {
+      margin-left: 170px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-list li {
+      margin-bottom: 10px;
+    }
+
+    .footer-list li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-list li a:hover {
+      color: #4caf50;
+    }
+
+    .social-icons img {
+      width: 30px;
+      margin: 0 10px;
+    }
+
+    .footer-divider {
+      border: 0;
+      border-top: 1px solid #666;
+      margin: 20px 0;
+    }
+
+    .footer-bottom-text {
+      font-size: 0.9rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
   <!-- Blog Section -->
-   <div class="section__header"><h1 >BLOGS</h1></div>
-   
-  <section class="blog" id="blog" >
-    <div class="section__container blog__container">
-      
+  <div class="section__header">
+    <h1>BLOGS</h1>
+  </div>
+
+  <section class="blog" id="blog">
+    <div class="section__container-blog__container">
+
       <div class="blog-container">
         <!-- Blog Card 1 -->
         <div class="blog-card">
@@ -55,141 +238,108 @@
           <button class="read-more" data-id="4">Read More</button>
         </div>
       </div>
-<!-- 
-      <div class="blog__btn">
-        <button class="btn btn__primary">VIEW ALL</button>
-      </div>
-    </div> -->
 
-    <!-- Blog Modal -->
-    <div id="blogModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <div id="blog-content"></div>
+      <!-- Blog Modal -->
+      <div id="blogModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="blog-content"></div>
+        </div>
       </div>
     </div>
   </section>
 
-
   <footer>
-    <section class="footer-section border border-gray-500 shadow-lg  ">
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Logo and About Section -->
+    <section class="footer-section">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Logo and About Section -->
+          <div class="footer-logo-section footer-item">
+            <a href="index.html"><img src="images/logo.png" class="logo" alt="Code Social Logo">
+              <span class="website-name">Code Social</span>
+            </a>
+            <p class="footer-text">Code Social Community is a vibrant space for tech enthusiasts to learn and connect...</p>
+            <ul class="social-icons">
+              <li><a href="https://wa.me/your-whatsapp-number" target="_blank">
+                  <img src="./images/whatsapp-icon.png" alt="WhatsApp"></a></li>
+              <li><a href="https://discord.gg/MSTNyRSPYW" target="_blank">
+                  <img src="./images/discord-icon.png" alt="Discord"></a></li>
+              <li><a href="https://www.linkedin.com/company/code-social/" target="_blank">
+                  <img src="./images/linkedin-icon.png" alt="LinkedIn"></a></li>
+            </ul>
+          </div>
 
-                <div class="footer-logo-section footer-item my-5  ">
+          <!-- Company Links -->
+          <div class="footer-links footer-item">
+            <ul class="footer-list">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="#">Community Guidelines</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
 
-                    <a href="index.html" class="flex w-full justify-center  "><img src="images/logo.png" class="logo mx-auto">
-                        
-                        <span class="website-name tracking-tight ">Code Social</span></a>
-
-                    <p class="footer-text">Code Social Community is a vibrant and inclusive space for tech enthusiasts to learn, grow, and connect. Founded in 2023, our mission is to empower individuals with resources, mentorship, and
-                        opportunities to cultivate their skills, explore their interests,
-
-                        and collaborate with like-minded peers. Join us on our journey to create something extraordinary together!</p>
-                    <ul class="social-icons py-5    ">
-                        <li><a href="https://wa.me/your-whatsapp-number" target="_blank">
-                                <img src="./images/whatsapp-icon.png" alt="WhatsApp"></a>
-                        </li>
-                        <li><a href="https://discord.gg/MSTNyRSPYW" target="_blank">
-                                <img src="./images/discord-icon.png" alt="Discord">
-                            </a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/company/code-social/" target="_blank">
-                                <img src="./images/linkedin-icon.png" alt="LinkedIn">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Company Links -->
-                <div class="footer-links footer-item">
-                    <p class="footer-title">Quick Links</p>
-                    <ul class="footer-list">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="#">Community Guidelines</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-
-                <!-- Help Links -->
-                <div class="footer-links footer-item">
-                    <p class="footer-title">Help</p>
-                    <ul class="footer-list">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="./volunteering-oppurtunities/volunteer-opp-page.html">Volunteer Opportunities</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <hr class="footer-divider" />
-            <p class="footer-bottom-text">© Copyright 2024, All Rights Reserved by Code-social</p>
+          <!-- Help Links -->
+          <div class="footer-links footer-item">
+            <p class="footer-title">Help</p>
+            <ul class="footer-list">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
         </div>
-    </section>
-</footer>
 
+        <hr class="footer-divider" />
+        <p class="footer-bottom-text">© Copyright 2024, All Rights Reserved by Code-social</p>
+      </div>
+    </section>
+  </footer>
 
   <script>
-    // Modal and Blog fetch functionality remains the same
     const modal = document.getElementById('blogModal');
     const closeModal = document.querySelector('.close');
 
     function openModal(blogId) {
-        fetch(`blogs/${blogId}.json`)
-            .then(response => response.json())
-            .then(data => {
-                let blogHtml = `<h1>${data.title}</h1>`;
-                blogHtml += `<img src="${data.image}" alt="${data.title}" style="width: 100%; height: auto;">`;
-                blogHtml += data.content.map(item => {
-                    if (item.type === 'heading') {
-                        return `<h2>${item.text}</h2>`;
-                    } else if (item.type === 'paragraph') {
-                        return `<p>${item.text}</p>`;
-                    } else if (item.type === 'list') {
-                        return `<ul>${item.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
-                    }
-                }).join('');
-  
-                document.getElementById('blog-content').innerHTML = blogHtml;
-                modal.style.display = "block";
-                document.body.style.overflow = 'hidden';
-            });
+      fetch(`blogs/${blogId}.json`)
+        .then(response => response.json())
+        .then(data => {
+          let blogHtml = `<h1>${data.title}</h1>`;
+          blogHtml += `<img src="${data.image}" alt="${data.title}" style="width: 100%; height: auto;">`;
+          blogHtml += data.content.map(item => {
+            if (item.type === 'heading') {
+              return `<h2>${item.text}</h2>`;
+            } else if (item.type === 'paragraph') {
+              return `<p>${item.text}</p>`;
+            } else if (item.type === 'list') {
+              return `<ul>${item.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+            }
+          }).join('');
+          document.getElementById('blog-content').innerHTML = blogHtml;
+          modal.style.display = "block";
+          document.body.style.overflow = 'hidden';
+        });
     }
 
     closeModal.onclick = function () {
-        modal.style.display = "none";
-        document.body.style.overflow = 'auto';
+      modal.style.display = "none";
+      document.body.style.overflow = 'auto';
     };
 
     window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            document.body.style.overflow = 'auto';
-        }
+      if (event.target == modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = 'auto';
+      }
     };
 
     document.querySelectorAll('.read-more').forEach(button => {
-        button.addEventListener('click', function () {
-            const blogId = this.getAttribute('data-id');
-            openModal(blogId);
-        });
+      button.addEventListener('click', function () {
+        const blogId = this.getAttribute('data-id');
+        openModal(blogId);
+      });
     });
   </script>
-  <script>
-    window.embeddedChatbotConfig = {
-    chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
-    domain: "www.chatbase.co"
-    }
-    </script>
-    <script
-    src="https://www.chatbase.co/embed.min.js"
-    chatbotId="j2Uy2CrJfZueGX7wNtJT_"
-    domain="www.chatbase.co"
-    defer>
-    </script>
 </body>
 
 </html>
