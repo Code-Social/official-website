@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Oppurtunities</title>
+    <link rel="icon" href="/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="./vol-style.css" type="text/css">
+    <link rel="stylesheet" href="../styles.css" type="text/css">
+</head>
+<body>
+    
+    <!--Navigation Bar-->
+    <nav class="navbar">
+
+        <a href="../index.html"><img src="../images/logo.png" class="logo"></a>
+        <span class="website-name" >Code Social</span>
+        <ul>
+            <li>
+                <a href="#">Live Events</a>
+                <ul class="dropdown">
+                    <li><a href="#"> Why don't you react?</a></li>
+                </ul>
+            </li>
+            <li class="community">
+                <a href="#">Join our Community</a>
+                <ul class="dropdown">
+                    <li><a href="#">Whatsapp</a></li>
+                    <li><a href="#">Discord</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="learning.html">Learning</a>
+                <ul class="dropdown">
+                    <li><a href="#">Free Learning Resources</a></li>
+                    <li><a href="#">Mentorship Programs</a></li>
+                    <li><a href="#">Peer-to-Peer Sessions</a></li>
+                </ul>
+            </li> 
+            <li class="hamburger-menu">
+                <div class="toggle-button">
+                    <button class="bar"></button>
+                    <button class="bar"></button>
+                    <button class="bar"></button>
+                </div>
+                <ul class="dropdown">
+                    <li><a href="#"> Meet Our Team</a></li>
+                    <li><a href="#">Join Our Team</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Follow Us</a></li>
+                </ul>
+            </li>
+            <li>
+                <button id="theme-switch">
+                </button> 
+            </li>
+        </ul>
+    </nav>
+
+    <div class="join-us">
+        <h1>Join Us As A Volunteer!</h1>
+    </div>
+
+    <div class="image-container">
+        <img src="../images/volunteer-bg.jpg" alt="volunteer bg image">
+    </div>  
+
+
+    <!--Introduction to volunteering sectio-->
+    <div class="volunteer-intro-block">
+        <p class="info">
+            Volunteering at Code Social Community provides a meaningful opportunity to make a difference in the tech ecosystem while enhancing your own skills. Our community thrives on collaboration, inclusivity, and learning, and we invite passionate individuals to contribute to these core values. Whether you’re interested in mentoring, content creation, event organization, or platform development, your involvement will help shape a vibrant and supportive environment for tech enthusiasts.
+        </p>
+
+            <!--Roles and Responsibilities-->
+    <div class="responsibilities-container">
+        <div class="job-role">
+            <div class="role-title" onclick="toggleRole(this)">
+                Mentor <span class="expand-symbol">+</span>
+            </div>
+            <div class="role-description">
+                <p>As a mentor, your role is to guide and support community members in their learning journey. You will provide one-on-one or group mentorship, share your expertise, and help others develop their skills. Mentors foster a positive learning environment, offering advice, feedback, and encouragement to help individuals grow in their chosen technology fields.</p>
+            </div>
+        </div>
+        <div class="job-role">
+            <div class="role-title" onclick="toggleRole(this)">
+                Content Creator <span class="expand-symbol">+</span>
+            </div>
+            <div class="role-description">
+                <p>Content Creators are responsible for developing educational materials such as blogs, tutorials, videos, or infographics. Your goal is to create clear, engaging, and informative content that helps community members understand complex topics. You will also contribute to keeping the community up-to-date with the latest trends and developments in the tech industry.</p>
+            </div>
+        </div>
+        <div class="job-role">
+            <div class="role-title" onclick="toggleRole(this)">
+                Event Organizer <span class="expand-symbol">+</span>
+            </div>
+            <div class="role-description">
+                <p>As an Event Organizer, you will plan and coordinate events such as webinars, workshops, or community meetups. Your role includes managing event logistics, promoting events within the community, and ensuring participants have a valuable learning experience. Event Organizers help bring the community together through meaningful and impactful gatherings.</p>
+            </div>
+        </div>
+        <div class="job-role">
+            <div class="role-title" onclick="toggleRole(this)">
+                Developer <span class="expand-symbol">+</span>
+            </div>
+            <div class="role-description">
+                <p>Developers are responsible for maintaining and improving the community’s website and platforms. You will work on coding, debugging, and implementing new features to enhance user experience. Your contributions ensure that the community has a reliable, user-friendly platform for accessing resources, participating in events, and collaborating with others.</p>
+            </div>
+        </div>
+        <div class="job-role">
+            <div class="role-title" onclick="toggleRole(this)">
+                Community Moderator <span class="expand-symbol">+</span>
+            </div>
+            <div class="role-description">
+                <p>Community Moderators ensure that discussions and interactions within the community are respectful, productive, and in line with the community’s guidelines. Your responsibilities include monitoring conversations, addressing inappropriate behavior, and fostering an inclusive environment where all members feel welcome and supported.</p>
+            </div>
+        </div>        
+    </div>
+
+        <h1 class="why-join"><center>Why Volunteer with Us?</center></h1>
+
+        <!--reasons for volunteering cards-->
+        <div class="quadrant-container">
+            <div class="quadrant-card">
+                <h3>Skill Enhancement</h3>
+                <p>Volunteering offers a chance to sharpen both technical and soft skills. You can mentor others, contribute to our platform’s development, or organize community events, all while expanding your expertise.</p>
+            </div>
+        
+            <div class="quadrant-card">
+                <h3>Networking</h3>
+                <p>By joining our volunteer team, you'll connect with like-minded individuals, tech professionals, and community members, opening doors for future career opportunities and collaborations.</p>
+            </div>
+        
+            <div class="quadrant-card">
+                <h3>Making an Impact</h3>
+                <p>As a volunteer, you will directly contribute to building a space where learners and professionals alike can grow, collaborate, and achieve their goals. Your efforts will help create a lasting positive impact on the community.</p>
+            </div>
+        
+            <div class="quadrant-card">
+                <h3>Leadership Experience</h3>
+                <p>Taking on responsibilities as a volunteer helps you develop leadership, teamwork, and problem-solving skills in a real-world environment.</p>
+            </div>
+        </div>
+
+        <!--Applying form-->
+    <div class="volunteer-form">
+        <form>
+            <h1><center>FILL THIS FORM</center></h1>
+            <!-- Name -->
+            <label for="name" style="display: inline-block; width: 150px;">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Email -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Mobile Number -->
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile" required>
+
+            <!-- Hours per week -->
+            <label>How many hours can you work?(per week)</label>
+            <div>
+                <input type="radio" id="less-than-6" name="hours" value="Less than 6 hours">
+                <label for="less-than-6">Less than 6 hours</label><br>
+                <input type="radio" id="6-10" name="hours" value="6-10 hours">
+                <label for="6-10">6-10 hours</label><br>
+                <input type="radio" id="10-15" name="hours" value="10-15 hours">
+                <label for="10-15">10-15 hours</label><br>
+                <input type="radio" id="15+" name="hours" value="15+ hours">
+                <label for="15+">15+ hours</label>
+            </div>
+
+            <!-- Motivation -->
+            <label for="motivation">Why do you want to volunteer?</label>
+            <textarea id="motivation" name="motivation" rows="4" required></textarea>
+
+            <!-- Previous Experience -->
+            <label for="experience">Mention your previous volunteering or work experience:</label>
+            <textarea id="experience" name="experience" rows="4" required></textarea>
+
+            <!-- Additional Information -->
+            <label for="additional-info">Any additional information you would like to share:</label>
+            <textarea id="additional-info" name="additional-info" rows="4"></textarea>
+
+            <!-- Preferred Roles -->
+            <label>Preferred Volunteer Roles(Select atmost 2):</label>
+            <div>
+                <input type="checkbox" id="mentor" name="roles" value="Mentor">
+                <label for="mentor">Mentor</label><br>
+                <input type="checkbox" id="content-creator" name="roles" value="Content Creator">
+                <label for="content-creator">Content Creator</label><br>
+                <input type="checkbox" id="event-organizer" name="roles" value="Event Organizer">
+                <label for="event-organizer">Event Organizer</label><br>
+                <input type="checkbox" id="developer" name="roles" value="Developer">
+                <label for="developer">Developer</label><br>
+                <input type="checkbox" id="moderator" name="roles" value="Community Moderator">
+                <label for="moderator">Community Moderator</label>
+            </div>
+
+            <!-- Skills -->
+            <label for="skills">Skills and Expertise:</label>
+            <input type="text" id="skills" name="skills">
+
+            <!-- LinkedIn/Portfolio -->
+            <label for="linkedin">LinkedIn or Portfolio Link or Resume Link:</label>
+            <input type="url" id="linkedin" name="linkedin">
+
+            <!-- Code of Conduct Agreement -->
+            <p id="must-read">***Please read the Code of Conduct before applying***</p>
+            <h3><a href="https://docs.google.com/document/d/1yw0ZXfGsQjEBzOC-dTT_XsOxIlRo5jAO1uD1oLe0TQU/edit?usp=sharing" target="_blank">
+                <center>👉Code of Conduct👈</center>
+            </a></h3>
+
+            <div class="checkbox-agreement-container">
+                <input type="checkbox" id="code-conduct" name="code-conduct" required>
+                <label for="code-conduct">I have read and agree to the Code of Conduct.</label>
+            </div>
+
+            <!-- Information Accuracy Agreement -->
+            <div class="checkbox-agreement-container">
+                <input type="checkbox" id="info-accuracy" name="info-accuracy" required>
+                <label for="info-accuracy">I confirm that the information provided is accurate and truthful.</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+        
+    </div>
+    
+
+    <!--footer-->
+    <footer>
+        <section class="footer-section">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Logo and About Section -->
+                    <div class="footer-logo-section">
+                        <img class="footer-logo" src="../images/logo.png" alt="Logo" />
+                        <p class="footer-text">Code Social Community is a vibrant and inclusive space for tech enthusiasts to learn, grow, and connect. Founded in 2023, our mission is to empower individuals with resources, mentorship, and 
+                            opportunities to cultivate their skills, explore their interests, 
+                            and collaborate with like-minded peers. Join us on our journey to create something extraordinary together!</p>
+                        <ul class="social-icons">
+                            <li><a href="https://wa.me/your-whatsapp-number" target="_blank">
+                                <img src="../images/whatsapp-icon.png" alt="WhatsApp"></a>
+                            </li>
+                            <li><a href="https://discord.gg/MSTNyRSPYW" target="_blank">
+                                <img src="../images/discord.png" alt="Discord">
+                            </a>
+                            </li>
+                            <li><a href="https://www.linkedin.com/company/code-social/" target="_blank">
+                                <img src="../images/linkedin-icon.png" alt="LinkedIn">
+                            </a>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <!-- Company Links -->
+                    <div class="footer-links">
+                        <p class="footer-title">Quick Links</p>
+                        <ul class="footer-list">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Community Guidelines</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Help Links -->
+                    <div class="footer-links">
+                        <p class="footer-title">Help</p>
+                        <ul class="footer-list">
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="./volunteer-opp-page.html">Volunteer Opportunities</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <hr class="footer-divider" />
+                <p class="footer-bottom-text">© Copyright 2024, All Rights Reserved by Code-social</p>
+            </div>
+        </section>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="./vol-effects.js"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="j2Uy2CrJfZueGX7wNtJT_"
+        domain="www.chatbase.co"
+        defer>
+        </script>
+</body>
+</html>

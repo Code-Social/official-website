@@ -15,7 +15,9 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="flex"><img src="./images/logo.png" class="logo">
+
+        <a href="index.html" class="flex"><img src="images/logo.png" class="logo">
+
             <span class="website-name tracking-tight ">Code Social</span></a>
 
 
@@ -37,6 +39,12 @@
 
                 </ul>
             </li>
+         <!-- blog section -->
+            <ul class="navbar-links flex  ">
+            <li class="ml-20">
+                <a href="blog.html">Blogs</a>
+                </ul>
+            </li>
             <li class="community">
                 <a href="maintenance.html">Join Our Community</a>
                 <ul class="dropdown">
@@ -54,27 +62,32 @@
             </li> 
             <li class="hamburger-menu">
                 <div class="toggle-button">
+                    <span class="about-text">About us</span>
                     <button class="bar"></button>
                     <button class="bar"></button>
                     <button class="bar"></button>
                 </div>
-                <li class="dropdown-container">
-                    <a href="#">More Options</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Meet Our Team</a></li>
-                        <li><a href="#">Join Our Team</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Follow Us</a></li>
-                    </ul>
-                </li>
+<li class="dropdown-container">
+    <a href="#">More Options</a>
+    <ul class="dropdown">
+        <li><a href="mentorship.html">Meet Our Team</a></li>
+        <li><a href="#">Join Our Team</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Follow Us</a></li>
+    </ul>
+</li>
+
             </li>
+            
             <li>
                 <a href="maintenance.html">Follow Us</a>
             </li>
             <!-- Dark Mode Toggle -->
             <li>
+
                 <button id="theme-toggle" class="theme-toggle-btn  ">
                     <img src="./images/dark-mode.png" alt="theme-mode" id="theme-toggle-icon">
+
                 </button>
                 <!-- when light mode is active -> use "dark-mode.png" and when dark mode is active -> use "light-mode.png" -->
             </li>
@@ -146,7 +159,10 @@
                     <!-- Logo and About Section -->
 
                     <div class="footer-logo-section footer-item my-5  ">
-                        <a href="index.html" class="flex w-full justify-center  "><img src="./images/logo.png" class="logo mx-auto">
+
+                        <a href="index.html" class="flex w-full justify-center  "><img src="images/logo.png" class="logo mx-auto">
+                            
+
                             <span class="website-name tracking-tight ">Code Social</span></a>
 
                         <p class="footer-text">Code Social Community is a vibrant and inclusive space for tech enthusiasts to learn, grow, and connect. Founded in 2023, our mission is to empower individuals with resources, mentorship, and
@@ -174,6 +190,7 @@
                         <ul class="footer-list">
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">Events</a></li>
+                            <li><a href="blog.html">Blog</a></li>
                             <li><a href="#">Community Guidelines</a></li>
                             <li><a href="#">Careers</a></li>
                         </ul>
@@ -184,7 +201,7 @@
                         <p class="footer-title">Help</p>
                         <ul class="footer-list">
                             <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Volunteer Opportunities</a></li>
+                            <li><a href="./volunteering-oppurtunities/volunteer-opp-page.html">Volunteer Opportunities</a></li>
                             <li><a href="#">Terms & Conditions</a></li>
                         </ul>
                     </div>
@@ -289,6 +306,18 @@ themeToggleBtn.addEventListener('click', () => {
 });
 
         </script>
+        <script>
+            window.embeddedChatbotConfig = {
+            chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
+            domain: "www.chatbase.co"
+            }
+            </script>
+            <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="j2Uy2CrJfZueGX7wNtJT_"
+            domain="www.chatbase.co"
+            defer>
+            </script>
 </body>
 
 </html>

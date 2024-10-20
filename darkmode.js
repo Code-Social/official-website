@@ -1,38 +1,38 @@
+// Check for saved dark mode preference in localStorage
+let darkmode = localStorage.getItem("darkmode");
+const themeToggleBtn = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-toggle-icon");
+const body = document.body;
 
-let darkmode = localStorage.getItem('darkmode');
-const themeSwitch = document.getElementById('theme-switch');
-
-
+// Enable Dark Mode
 const enableDarkMode = () => {
-    document.body.classList.add('darkmode');
-    localStorage.setItem('darkmode', 'active');
-    updateThemeSwitchText(); 
+  body.classList.add("dark-mode");
+  body.classList.remove("light-mode"); // Ensure light mode class is removed
+  localStorage.setItem("darkmode", "active");
+  themeIcon.src = "images/light-mode.png"; // Light mode icon in dark mode
 };
 
-
+// Disable Dark Mode (Switch to Light Mode)
 const disableDarkMode = () => {
-    document.body.classList.remove('darkmode');
-    localStorage.setItem('darkmode', 'inactive');
-    updateThemeSwitchText(); 
+  body.classList.remove("dark-mode");
+  body.classList.add("light-mode"); // Ensure light mode class is added
+  localStorage.setItem("darkmode", "inactive");
+  themeIcon.src = "images/dark-mode.png"; // Dark mode icon in light mode
 };
 
-
-const updateThemeSwitchText = () => {
-    themeSwitch.textContent = darkmode === "active" ? "Switch to Light Mode ☀️" : "Switch to Dark Mode 🌙";
-};
-
-
+// Apply the saved theme on page load
 if (darkmode === "active") {
-    enableDarkMode();
+  enableDarkMode(); // Start in dark mode if the user prefers it
 } else {
-    disableDarkMode();
+  disableDarkMode(); // Otherwise, start in light mode
 }
 
-
-themeSwitch.addEventListener("click", () => {
-    darkmode = localStorage.getItem('darkmode');
-    darkmode === "active" ? disableDarkMode() : enableDarkMode();
+// Toggle dark mode on button click
+themeToggleBtn.addEventListener("click", () => {
+  darkmode = localStorage.getItem("darkmode"); // Get the current state
+  if (darkmode === "active") {
+    disableDarkMode(); // Switch to light mode
+  } else {
+    enableDarkMode(); // Switch to dark mode
+  }
 });
-
-// Update button text on initial load
-updateThemeSwitchText();
