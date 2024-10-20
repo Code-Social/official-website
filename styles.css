@@ -948,3 +948,7 @@ footer {
   color: #6b7280;
   font-size: 0.875rem;
 }
+
+.section__container-blog__container {
+  height: 500px;
+}
