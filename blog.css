@@ -1,4 +1,7 @@
 /* Blog Container */
+body{
+    background-color: #ffffff;
+}
 .section__header{
     text-align: center;
     padding: 20px auto;
@@ -14,7 +17,7 @@
     gap: 20px;
     justify-content: center;
     padding: 50px 0;
-    background-color: #f8f9fa;
+    background-color: #f0f0f0;
 }
 
 /* Blog Cards */
