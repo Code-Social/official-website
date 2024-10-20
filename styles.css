@@ -429,6 +429,9 @@ body.dark-mode .calendar-day:hover {
 .navbar ul li:hover {
   transform: scale(1.1);
 }
+.navbar ul a {
+    color: white;
+}
 
 .navbar-links a:hover {
   color: red;
