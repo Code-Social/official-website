@@ -28,6 +28,48 @@ body {
   transition: all 0.3s; /* Optional: Add a transition for hover effects */
 }
 
+body {
+    background-color: white; /* Light background for body */
+    color: black; /* Light text color for body */
+}
+
+.navbar {
+    background-color: white; /* Light background for navbar */
+    color: black; /* Light text color for navbar */
+}
+
+.navbar a {
+    color: black; /* Links color in light theme */
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+    background-color: black; /* Dark background for body */
+    color: white; /* Dark text color for body */
+}
+
+.dark-theme .navbar {
+    background-color: black; /* Dark background for navbar */
+    color: white; /* Dark text color for navbar */
+}
+
+.dark-theme .navbar a {
+    color: white; /* Links color in dark theme */
+}
+/* Hide dropdowns by default */
+.navbar .dropdown {
+    display: none; /* Hide the dropdowns */
+    position: absolute; /* Position them absolutely */
+    background-color: white; /* Background for dropdowns */
+    border: 1px solid #ccc; /* Border for dropdowns */
+    z-index: 1; /* Ensure dropdowns appear above other elements */
+}
+
+/* Show dropdowns when parent li is hovered */
+.navbar li:hover .dropdown {
+    display: block; /* Show the dropdown on hover */
+}
+
 /* Dark mode */
 .dark-mode {
   background-color: #2e2e2e;
@@ -306,7 +348,49 @@ body.dark-mode .calendar-day:hover {
   white-space: nowrap; /* Keeps text in a single line */
   text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
 }
-
+/* Hide the dropdown initially */
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    top: 100%; /* Aligns the dropdown right below the link */
+    left: 0;
+    min-width:260px;
+    z-index: 1000;
+  }
+  
+  .dropdown li {
+    padding: 10px 20px;
+  }
+  
+  .dropdown li a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .dropdown li a:hover {
+    background-color: #f1f1f1;
+    color: red;
+  }
+  
+  /* Show dropdown when hovering on the parent container */
+  .dropdown-container:hover .dropdown {
+    display: block;
+  }
+  
+  /* Dropdown link styling */
+  .nav-links {
+    position: relative;
+  }
+  
+  .dropdown-container {
+    position: relative;
+  }
+  
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .calendar-section {
@@ -319,39 +403,91 @@ body.dark-mode .calendar-day:hover {
     margin: 10px 0; /* Adjust margin */
   }
 }
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    padding-top: 100px; /* Adjust this to the height of your navbar */
+  }
+  .content {
+    padding: 20px;
+  }
+  
+  .section {
+    margin-bottom: 100px;
+  }
+  
+  .section h1,
+  .section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .section p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }  
 /* General Navbar Styling */
 .navbar {
-  /* background-color: #333; */
-  padding: 10px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* position: fixed; */
-  transition: background-color 0.3s;
-  width: 100%;
-  height: 12vh;
-  font-weight: 400;
-  top: 0;
-  margin-top: 0px;
-  z-index: 1000;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  position: sticky;
+    position: sticky; /* Changed to sticky to allow for the alternative positioning */
+    top: 0;
+    width: 100%;
+    background-color: white; /* Default background color */
+    border-bottom: 1px solid #ccc;
+    z-index: 1000; /* Ensure the navbar is on top */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: background-color 0.3s;
+    height: 12vh;
+    font-weight: 400;
 }
+
 .light-mode .navbar {
-  background-color: white; /* White background for light mode */
-  color: black; /* Text color for light mode */
+    background-color: white; /* White background for light mode */
+    color: black; /* Text color for light mode */
 }
 
 .dark-mode .navbar {
-  background-color: #333; /* Dark background for dark mode */
-  color: white; /* Text color for dark mode */
+    background-color: #333; /* Dark background for dark mode */
+    color: white; /* Text color for dark mode */
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.navbar .nav-links li a:hover {
+    color: red;
+    transition: color 0.3s ease;
 }
 
 .content {
-  height: 2000px; /* Just for scrolling */
-  padding: 20px;
+    height: 2000px; /* Just for scrolling */
+    padding: 20px;
 }
+
 
 /* Center the menu items */
 .navbar ul {
