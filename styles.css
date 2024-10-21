@@ -788,7 +788,7 @@ body.dark-mode #theme-switch {
   }
 }
 
-/* Footer Styles */
+* Footer Styles */
 /* General Styling for Footer */
 .footer-section {
     background-color: #f9fafb;
@@ -901,6 +901,3 @@ body.dark-mode #theme-switch {
     font-size: 0.875rem;
     color: #6b7280;
   }
-  
-
-
