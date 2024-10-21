@@ -426,6 +426,16 @@ body.dark-mode .calendar-day:hover {
   position: relative;
   display: inline-block;
 }
+/* Initially hide the dropdown */
+.navbar ul li .dropdown {
+  display: none;
+}
+
+/* Show the dropdown on hover */
+.navbar ul li:hover .dropdown {
+  display: block;
+}
+
 .navbar ul li:hover {
   transform: scale(1.1);
 }
