@@ -11,6 +11,47 @@ body{
    
 }
 
+/*issue changes*/
+.footer-links {
+    display: flex;                /* Use flexbox to align columns */
+    justify-content: space-between; /* Adds space between the columns */
+    flex-wrap: wrap;              /* Ensures responsiveness on smaller screens */
+    padding: 20px 0;
+  }
+  
+  .footer-column {
+    flex: 1;                      /* Each column takes equal space */
+    margin-right: 40px;           /* Add some space between columns */
+  }
+  
+  .footer-column:last-child {
+    margin-right: 0;              /* Remove right margin for the last column */
+  }
+  
+  .footer-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footer-list {
+    list-style: none;             /* Remove bullets */
+    padding: 0;
+  }
+  
+  .footer-list li {
+    margin-bottom: 8px;           /* Add space between the links */
+  }
+  
+  .footer-list li a {
+    color: #6c757d;               /* Change link color to grey */
+    text-decoration: none;        /* Remove underline */
+  }
+  
+  .footer-list li a:hover {
+    color: #000;                  /* Darken link color on hover */
+  }
+  
+/*issue changes*/
 .blog-container {
     display: flex;
     flex-wrap: wrap;
@@ -102,7 +143,51 @@ body{
     font-size: 16px;
     color: #333;
 }
-
+/*css change*/
+.social-icons {
+    display: flex;
+    justify-content: center;  /* Centers icons horizontally */
+    align-items: center;      /* Centers icons vertically */
+    gap: 20px;                /* Adds space between icons */
+    margin-top: 20px;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+  }
+  
+  .social-icons img {
+    width: 40px;              /* Adjust the size of the icons */
+    height: auto;
+    transition: transform 0.2s;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.1);     /* Zoom effect on hover */
+  }
+  .logo-container {
+    display: flex;
+    align-items: center;    /* Align items vertically in the center */
+    text-decoration: none; 
+  }
+  
+  .logo {
+    max-width: 50px;           /* Adjust the logo size as needed */
+    height: auto;              /* Maintain the aspect ratio */
+    margin-right: 5px;        /* Add some space between image and text */
+    margin-top: 10px;
+  }
+  
+  .website-name {
+    font-size: 24px;        /* Adjust the size of the text as needed */
+    font-weight: bold;
+    color: #000;
+    margin-top: 10px;
+    text-decoration: none;  /* Remove underline from text if it's a link */
+  }
+  
+  
+/*css change*/
 .close {
     position: absolute;
     top: 10px;
