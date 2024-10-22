@@ -1,210 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Code Social | Learning</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <script src="script.js" defer></script>
     <script type="text/javascript" src="darkmode.js" defer></script>
     <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #000;
-        }
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        color: #000;
+      }
+      .website-name{
+        color: #74ad46;
+      }
+      h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin: 20px 0;
+        color: #74ad46;
+        text-align: center;
+      }
 
-        h2 {
-            font-size: 28px;
-            font-weight: bold;
-            margin: 20px 0;
-            color: #333;
-            text-align: center;
-        }
+      h3 {
+        font-size: 22px;
+        font-weight: bold;
+       margin-bottom: 35px;
+       margin-top: 20px;
+       
+      }
+      strong{
+        color: #74ad46;
+      }
 
-        h3 {
-            font-size: 22px;
-            font-weight: bold;
-            margin: 15px 0;
-            color: #555;
-        }
+      p {
+        font-size: 16px;
+        margin: 10px 0;
+        line-height: 1.6;
+        color: #888;
+        
+      }
 
-        p {
-            font-size: 16px;
-            margin: 10px 0;
-            line-height: 1.6;
-            color: #333;
-        }
+      ul {
+        padding-left: 20px;
+        margin: 10px 0;
+      }
 
-        ul {
-            padding-left: 20px;
-            margin: 10px 0;
-        }
+      li {
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
 
-        li {
-            margin-bottom: 8px;
-            font-size: 16px;
-        }
+      blockquote {
+        border-left: 4px solid #ccc;
+        margin: 20px 0;
+        padding-left: 10px;
+        font-style: italic;
+        color: #9f8d8d;
+      }
 
-        blockquote {
-            border-left: 4px solid #ccc;
-            margin: 20px 0;
-            padding-left: 10px;
-            font-style: italic;
-            color: #666;
-        }
+      /* Styling the testimonials */
+      cite {
+        display: block;
+        text-align: right;
+        margin-top: 5px;
+        font-size: 14px;
+        color: #2eb445;
+      }
 
-        /* Styling the testimonials */
-        cite {
-            display: block;
-            text-align: right;
-            margin-top: 5px;
-            font-size: 14px;
-            color: #888;
-        }
+      .learning-section {
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 1200px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 4px 4px rgba(228, 209, 209, 0.3);
+      }
 
-        .learning-section {
-            padding: 20px;
-            background-color: #fff;
-            margin: 20px auto;
-            max-width: 1200px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+      footer {
+        padding: 20px;
+        margin-top: 40px;
+      }
+     
+      .footer-list a {
+        text-decoration: none;
+        color: #888;
+        transition: color 0.2s ease;
+      }
+      .footer-des{
+        color: #888;
+      }
 
-        .learning-section h2 {
-            color: #2196F3;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            margin-top: 40px;
-        }
+      .footer-list a:hover {
+        color: #6093ff;
+      }
+      hr{
+        margin-top: 50px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <!-- Header Section -->
-    <header>
-        <button id="theme-switch">
-            <img src="file:///C:/Users/Dell/Downloads/dark_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark Mode">
-            <img src="file:///C:/Users/Dell/Downloads/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Light Mode">
-        </button>
-    </header>
-
+  <body>
     <!-- Navbar Section -->
     <nav class="navbar">
-        <a href="index.html"><img src="images/logo.png" class="logo" alt="Code Social logo"></a>
-        <span class="website-name">Code Social</span>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li>
-                <a href="learning.html">Learning</a>
-                <ul class="dropdown">
-                    <li><a href="#">Free Learning Resources</a></li>
-                    <li><a href="#">Mentorship Programs</a></li>
-                    <li><a href="#">Peer-to-Peer Sessions</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Live Events</a></li>
-            <li><a href="#">Join our Community</a></li>
-            <li class="hamburger-menu">
-                <a href="javascript:void(0);" class="toggle-button">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </a>
-                <ul class="dropdown">
-                    <li><a href="#">Meet Our Team</a></li>
-                    <li><a href="#">Join Our Team</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Follow Us</a></li>
-                </ul>
-            </li>
+      <a href="index.html" class="flex"
+        ><img src="images/logo.png" class="logo" />
+        <span class="website-name tracking-tight"
+          >Code Social</span
+        ></a
+      >
+
+      <!-- Hamburger Menu -->
+      <div class="hamburger-menu">
+        <div class="toggle-button">
+          <img src="/images/hamburger.png" alt="open" id="hamburger-img" />
+        </div>
+      </div>
+
+      <!-- Navbar Links -->
+      <ul class="navbar-links flex">
+        <li class="ml-20">
+          <a href="maintenance.html">Live Events</a>
+          <ul class="dropdown">
+            <li><a href="maintenance.html">Why don't you react?</a></li>
+          </ul>
+        </li>
+        <!-- blog section -->
+        <ul class="navbar-links flex">
+          <li class="ml-20">
+            <a href="blog.html">Blogs</a>
+          </li>
         </ul>
+        <li class="community">
+          <a href="maintenance.html">Join Our Community</a>
+
+          <ul class="dropdown">
+            <li><a href="maintenance.html">WhatsApp</a></li>
+            <li><a href="maintenance.html">Discord</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="learning.html">Learning</a>
+          <ul class="dropdown">
+            <li><a href="./Resources.html">Free Learning Resources</a></li>
+            <li><a href="#">Mentorship Programs</a></li>
+            <li><a href="#">Peer-to-Peer Sessions</a></li>
+          </ul>
+        </li>
+        <li class="hamburger-menu">
+          <div class="toggle-button">
+            <span class="about-text">About us</span>
+            <button class="bar"></button>
+            <button class="bar"></button>
+            <button class="bar"></button>
+          </div>
+          <ul class="dropdown">
+            <li><a href="mentorship.html">Meet Our Team</a></li>
+            <li><a href="#">Join Our Team</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Follow Us</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="maintenance.html">Follow Us</a>
+        </li>
+        <!-- Dark Mode Toggle -->
+        <li>
+          <button id="theme-toggle" class="theme-toggle-btn">
+            <img
+              src="images/dark-mode.png"
+              alt="theme-mode"
+              id="theme-toggle-icon"
+            />
+          </button>
+          <!-- when light mode is active -> use "dark-mode.png" and when dark mode is active -> use "light-mode.png" -->
+        </li>
+      </ul>
     </nav>
 
     <!-- Learning Section -->
     <section class="learning-section">
-        <h2>Learning Opportunities at Code Social</h2>
+      <h1>Learning Opportunities at Code Social</h1>
 
-        <!-- Learning Paths -->
-        <h3>Learning Paths</h3>
-        <p>Our community offers structured learning paths to help you master technologies step by step.</p>
-        <ul>
-            <li><strong>Frontend Development:</strong> Start with HTML, CSS, and JavaScript, and progress to React and Angular.</li>
-            <li><strong>Backend Development:</strong> Learn Node.js, Express, databases, and API design.</li>
-            <li><strong>Full Stack Development:</strong> Combine both frontend and backend skills to become a full-stack developer.</li>
-            <li><strong>Data Science:</strong> Dive into Python, data analysis, machine learning, and AI.</li>
-            <li><strong>DevOps:</strong> Explore cloud infrastructure, CI/CD pipelines, and containerization with Docker and Kubernetes.</li>
-        </ul>
+      <!-- Learning Paths -->
+      <h3><u>Learning Paths</u></h3>
+      <p>
+        Our community offers structured learning paths to help you master
+        technologies step by step.
+      </p>
+      <ul>
+        <li>
+          <strong>Frontend Development:</strong> Start with HTML, CSS, and
+          JavaScript, and progress to React and Angular.
+        </li>
+        <li>
+          <strong>Backend Development:</strong> Learn Node.js, Express,
+          databases, and API design.
+        </li>
+        <li>
+          <strong>Full Stack Development:</strong> Combine both frontend and
+          backend skills to become a full-stack developer.
+        </li>
+        <li>
+          <strong>Data Science:</strong> Dive into Python, data analysis,
+          machine learning, and AI.
+        </li>
+        <li>
+          <strong>DevOps:</strong> Explore cloud infrastructure, CI/CD
+          pipelines, and containerization with Docker and Kubernetes.
+        </li>
+      </ul>
+      <hr>
 
-        <!-- Upcoming Courses -->
-        <h3>Upcoming Courses & Workshops</h3>
-        <p>We regularly host online courses and workshops. Here’s what’s coming up:</p>
-        <ul>
-            <li><strong>React Basics Workshop</strong> - October 15, 2024</li>
-            <li><strong>Introduction to Python for Data Science</strong> - October 25, 2024</li>
-            <li><strong>DevOps Essentials Bootcamp</strong> - November 5, 2024</li>
-            <li><strong>Mastering CSS Grids and Flexbox</strong> - November 10, 2024</li>
-        </ul>
+      <!-- Upcoming Courses -->
+      <h3><u>Upcoming Courses & Workshops</u></h3>
+      <p>
+        We regularly host online courses and workshops. Here’s what’s coming up:
+      </p>
+      <ul>
+        <li><strong>React Basics Workshop</strong> - October 15, 2024</li>
+        <li>
+          <strong>Introduction to Python for Data Science</strong> - October 25,
+          2024
+        </li>
+        <li><strong>DevOps Essentials Bootcamp</strong> - November 5, 2024</li>
+        <li>
+          <strong>Mastering CSS Grids and Flexbox</strong> - November 10, 2024
+        </li>
+      </ul>
+      <hr>
+      <!-- Featured Learning Resources -->
+      <h3><u>Featured Learning Resources</u></h3>
+      <p>These hand-picked resources can accelerate your learning:</p>
+      <ul>
+        <li>
+          <a href="https://www.freecodecamp.org/"><strong>FreeCodeCamp -</strong></a>  A
+          comprehensive platform for learning web development.
+        </li>
+        <li>
+          <a href="https://www.udemy.com/"><strong>Udemy -</strong></a>  Courses on various topics
+          like programming, data science, and design.
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/"><strong>MDN Web Docs -</strong></a>  The
+          ultimate reference for web development technologies.
+        </li>
+        <li>
+          <a href="https://www.kaggle.com/"><strong>Kaggle -</strong></a>  Learn data science and
+          machine learning through competitions and datasets.
+        </li>
+      </ul>
+      <hr>
 
-        <!-- Featured Learning Resources -->
-        <h3>Featured Learning Resources</h3>
-        <p>These hand-picked resources can accelerate your learning:</p>
-        <ul>
-            <li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a> – A comprehensive platform for learning web development.</li>
-            <li><a href="https://www.udemy.com/">Udemy</a> – Courses on various topics like programming, data science, and design.</li>
-            <li><a href="https://developer.mozilla.org/">MDN Web Docs</a> – The ultimate reference for web development technologies.</li>
-            <li><a href="https://www.kaggle.com/">Kaggle</a> – Learn data science and machine learning through competitions and datasets.</li>
-        </ul>
+      <!-- Testimonials -->
+      <h3><u>Student Testimonials</u></h3>
+      <blockquote>
+        <p>
+          "The learning path for full-stack development helped me land my first
+          developer job. The community support was invaluable!"
+        </p>
+        <cite>– Alex, Full Stack Developer</cite>
+      </blockquote>
+      <blockquote>
+        <p>
+          "The mentorship programs at Code Social connected me with experienced
+          professionals who guided me through my projects."
+        </p>
+        <cite>– Priya, Data Scientist</cite>
+      </blockquote>
+      <hr>
 
-        <!-- Testimonials -->
-        <h3>Student Testimonials</h3>
-        <blockquote>
-            <p>"The learning path for full-stack development helped me land my first developer job. The community support was invaluable!"</p>
-            <cite>– Alex, Full Stack Developer</cite>
-        </blockquote>
-        <blockquote>
-            <p>"The mentorship programs at Code Social connected me with experienced professionals who guided me through my projects."</p>
-            <cite>– Priya, Data Scientist</cite>
-        </blockquote>
-
-        <!-- Peer-to-Peer Learning -->
-        <h3>Peer-to-Peer Learning Sessions</h3>
-        <p>Collaborate with other learners through study groups, coding challenges, and community projects:</p>
-        <ul>
-            <li>Weekly coding challenges: Improve your problem-solving skills.</li>
-            <li>Group projects: Work with peers on real-world projects to apply what you've learned.</li>
-            <li>Study groups: Join others in learning sessions for more interactive experiences.</li>
-        </ul>
-
+      <!-- Peer-to-Peer Learning -->
+      <h3><u>Peer-to-Peer Learning Sessions</u></h3>
+      <p>
+        Collaborate with other learners through study groups, coding challenges,
+        and community projects:
+      </p>
+      <ul>
+        <li><strong>Weekly coding challenges:</strong> Improve your problem-solving skills.</li>
+        <li>
+          <strong>Group projects:</strong> Work with peers on real-world projects to apply what
+          you've learned.
+        </li>
+        <li>
+          <strong>Study groups:</strong> Join others in learning sessions for more interactive
+          experiences.
+        </li>
+      </ul>
     </section>
 
     <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Code Social. All rights reserved.</p>
+    <footer class="footer-section">
+      <div class="container">
+        <!-- Logo and About Section -->
+        <div class="footer-logo-about">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="/images/logo.png"
+              alt="Code Social Logo"
+              class="footer-logo"
+            />
+            <span class="website-name">Code Social</span>
+          </a>
+          <p class="footer-des">
+            Code Social Community is a vibrant and inclusive space for tech
+            enthusiasts <br />
+            to learn, grow, and connect. Founded in 2023, our mission is to
+            empower individuals <br />
+            with resources, mentorship, and opportunities to cultivate their
+            skills, explore their interests, and <br />collaborate with
+            like-minded peers.
+          </p>
+          <div class="social-icons">
+            <a href="https://wa.me/your-whatsapp-number" target="_blank"
+              ><img src="./images/whatsapp-icon.png" alt="WhatsApp"
+            /></a>
+            <a href="https://discord.gg/MSTNyRSPYW" target="_blank"
+              ><img src="./images/discord-icon.png" alt="Discord"
+            /></a>
+            <a
+              href="https://www.linkedin.com/company/code-social/"
+              target="_blank"
+              ><img src="./images/linkedin-icon.png" alt="LinkedIn"
+            /></a>
+          </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h5 class="footer-title">Quick Links</h5>
+            <ul class="footer-list">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Community Guidelines</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h5 class="footer-title">Help</h5>
+            <ul class="footer-list">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Volunteer Opportunities</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <hr class="footer-divider" />
+      <p class="footer-bottom-text">
+        © Copyright 2024, All Rights Reserved by Code Social
+      </p>
     </footer>
+
     <script>
-        window.embeddedChatbotConfig = {
+      window.embeddedChatbotConfig = {
         chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
-        domain: "www.chatbase.co"
-        }
-        </script>
-        <script
-        src="https://www.chatbase.co/embed.min.js"
-        chatbotId="j2Uy2CrJfZueGX7wNtJT_"
-        domain="www.chatbase.co"
-        defer>
-        </script>
-
-</body>
-
+        domain: "www.chatbase.co",
+      };
+    </script>
+    <script
+      src="https://www.chatbase.co/embed.min.js"
+      chatbotId="j2Uy2CrJfZueGX7wNtJT_"
+      domain="www.chatbase.co"
+      defer
+    ></script>
+  </body>
 </html>
