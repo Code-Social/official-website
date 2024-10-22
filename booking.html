@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script src="script.js" defer></script>
+    <script type="text/javascript" src="darkmode.js" defer></script>
+    <link rel="icon" type="image/png" href="images/logo copy.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Book Your Ticket</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #ffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+      }
+
+      header {
+        width: 100%;
+        background-color: white;
+        color: black;
+        padding: 1em 0;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 1em;
+      }
+
+      nav ul li a {
+        color: black;
+        text-decoration: none;
+      }
+
+      main {
+        padding: 1em;
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+        margin-bottom: 100px;
+      }
+
+      .booking-container {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 2em;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+      }
+
+      .booking-container h2 {
+        font-size: 2em;
+      }
+
+      .booking-container p {
+        margin-bottom: 20px;
+      }
+
+      .booking-container button {
+        background-color: #0056b3;
+        color: white;
+        padding: 15px;
+      }
+
+      .bed-selection {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+        justify-content: center;
+      }
+
+      .bed {
+        width: 60px;
+        height: 60px;
+        background-color: #21ce49;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s;
+        position: relative;
+      }
+
+      .bed:hover {
+        background-color: #0056b3;
+        transform: scale(1.1);
+      }
+
+      .bed.selected {
+        background-color: red;
+        /* Change the color to red when selected */
+      }
+
+      .bed i {
+        position: absolute;
+        font-size: 24px;
+        color: white;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .confirmation {
+        margin-top: 20px;
+        display: none;
+      }
+
+      .footer {
+        position: absolute;
+        left: 0%;
+        width: 100%;
+        background: white;
+        padding: 30px 0;
+        text-align: center;
+        font-size: 0.8em;
+        color: gray;
+      }
+
+      .footer-section {
+        background-color: #f9fafb;
+        padding: 3rem 1rem;
+        color: #6b7280;
+        font-family: "Arial", sans-serif;
+        width: 100%;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+
+      .footer-logo-about {
+        flex: 1;
+        min-width: 300px;
+        text-align: left;
+      }
+
+      .footer-logo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+
+      .footer-logo {
+        height: 50px;
+        display: inline-block;
+      }
+
+      .website-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #111827;
+      }
+
+      .footer-about-text {
+        margin-top: 15px;
+        line-height: 1.6;
+        color: #000;
+        font-style: italic;
+      }
+
+      .social-icons {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 10px;
+      }
+
+      .social-icons img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .social-icons img:hover {
+        transform: scale(1.1);
+      }
+
+      /* Footer Links Styling */
+      .footer-links {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 2rem;
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .footer-column {
+        flex: 1;
+      }
+
+      .footer-title {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .footer-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-list li {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-list a {
+        text-decoration: none;
+        color: #6b7280;
+        transition: color 0.2s ease;
+      }
+
+      .footer-list a:hover {
+        color: #2563eb;
+      }
+
+      /* Footer Bottom Styling */
+      .footer-divider {
+        border-top: 1px solid #e5e7eb;
+        margin: 2rem 0;
+      }
+
+      .footer-bottom-text {
+        text-align: center;
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
+
+      .blinking {
+        color: red;
+        font-weight: bold;
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <head>
+        <title>Code Social | Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css" type="text/css" />
+        <script src="script.js" defer></script>
+        <script type="text/javascript" src="darkmode.js" defer></script>
+        <link rel="icon" type="image/png" href="images/logo copy.png">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        
+        <style>
+            .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            position: fixed;
+            background-color: black;  /* Default color of circles */
+            pointer-events: none;     /* Prevent interaction with circles */
+            z-index: 9999;
+            transition: transform 0.1s ease-out;
+            }
+        </style>
+    </head>
+    
+    <body>
+    
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <script>
+            // Store the mouse coordinates
+    const coords = { x: 0, y: 0 };
+    
+    // Select all circles (you can add more circles to HTML as needed)
+    const circles = document.querySelectorAll(".circle");
+    
+    // Customize the colors for the circles (optional)
+    const colors = ["#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f", "#3d005e"];
+    
+    // Initialize circle positions
+    circles.forEach((circle, index) => {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];  // Assign colors
+    });
+    
+    // Update mouse coordinates on move
+    window.addEventListener("mousemove", (e) => {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+    });
+    
+    // Animation loop for circles
+    function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+    
+        circles.forEach((circle, index) => {
+            circle.style.left = `${x - 12}px`;   // Offset for center alignment
+            circle.style.top = `${y - 12}px`;
+    
+            circle.style.transform = `scale(${(circles.length - index) / circles.length})`;  // Shrink effect
+    
+            circle.x = x;
+            circle.y = y;
+    
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+        });
+    
+        requestAnimationFrame(animateCircles);
+    }
+    
+    // Start animation
+    animateCircles();
+    
+        </script>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="flex"><img src="images/logo.png" class="logo">
+                <span class="website-name tracking-tight ">Code Social</span></a>
+    
+    
+    
+            <!-- Hamburger Menu -->
+            <div class="hamburger-menu">
+                <div class="toggle-button">
+                    <img src="/images/hamburger.png" alt="open" id="hamburger-img">
+    
+                </div>
+            </div>
+    
+            <!-- Navbar Links -->
+            <ul class="navbar-links flex  ">
+                <li class="ml-20">
+                    <a href="maintenance.html">Live Events</a>
+                    <ul class="dropdown  " style="display: none;">
+                        <li><a href="maintenance.html">Why don't you react?</a></li>
+    
+                    </ul>
+                </li>
+             <!-- blog section -->
+                <ul class="navbar-links flex  ">
+                <li class="ml-20">
+                    <a href="blog.html">Blogs</a>
+                    </li></ul>
+                
+                <li class="community">
+                    <a href="maintenance.html">Join Our Community</a>
+                    <ul class="dropdown" style="display: none;">
+                        <li><a href="maintenance.html">WhatsApp</a></li>
+                        <li><a href="maintenance.html">Discord</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="learning.html">Learning</a>
+                    <ul class="dropdown" style="display: none;">
+                        <li><a href="./Resources.html">Free Learning Resources</a></li>
+                        <li><a href="#">Mentorship Programs</a></li>
+                        <li><a href="#">Peer-to-Peer Sessions</a></li>
+                    </ul>
+                </li> 
+                <li class="hamburger-menu">
+                    <div class="toggle-button">
+                        <span class="about-text">About us</span>
+                        <button class="bar"></button>
+                        <button class="bar"></button>
+                        <button class="bar"></button>
+                    </div>
+                    <ul class="dropdown">
+                        <li><a href="mentorship.html">Meet Our Team</a></li>
+                        <li><a href="#">Join Our Team</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Follow Us</a></li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="maintenance.html">Follow Us</a>
+                </li>
+                <!-- Dark Mode Toggle -->
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn">
+                        <img src="images/dark-mode.png" alt="theme-mode" id="theme-toggle-icon">
+                    </button>
+                    <!-- when light mode is active -> use "dark-mode.png" and when dark mode is active -> use "light-mode.png" -->
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+      <div class="booking-container">
+        <h2>Book Your Ticket</h2>
+        <h3 id="event-title"></h3>
+        <p id="available-chairs">
+          Available Chairs:
+          <span id="available-count" class="blinking">50</span>
+        </p>
+        <div class="bed-selection">
+          <!-- Loop for 50 chairs with chair numbers -->
+          <script>
+            for (let i = 1; i <= 50; i++) {
+              document.write(`
+                            <div class="bed" data-bed="${i}">
+                                <i class="fas fa-chair"></i>
+                                <span>${i}</span>
+                            </div>
+                        `);
+            }
+          </script>
+        </div>
+        <button id="book-btn">Book Selected Chair</button>
+        <div class="confirmation" id="confirmation">
+          <h3>Booking Confirmation</h3>
+          <p id="confirmation-message"></p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const eventTitle = params.get("event");
+      document.getElementById("event-title").innerText = eventTitle;
+
+      // Variables to track the selected chair and available count
+      let selectedBed = null;
+      let availableCount = 50;
+
+      document.querySelectorAll(".bed").forEach((bed) => {
+        bed.addEventListener("click", function () {
+          // Deselect previously selected bed
+          if (selectedBed) {
+            selectedBed.classList.remove("selected");
+          }
+
+          // Select the new bed
+          this.classList.add("selected");
+          selectedBed = this;
+        });
+      });
+
+      document
+        .getElementById("book-btn")
+        .addEventListener("click", function () {
+          if (selectedBed) {
+            const bedNumber = selectedBed.getAttribute("data-bed");
+            selectedBed.classList.add("selected");
+            selectedBed.style.pointerEvents = "none"; // Disable further clicks on this chair
+            availableCount--;
+            document.getElementById("available-count").innerText =
+              availableCount;
+            document.getElementById("confirmation").style.display = "block";
+            document.getElementById(
+              "confirmation-message"
+            ).innerText = `You have successfully booked Chair ${bedNumber} for ${eventTitle}.`;
+
+            // Clear selection
+            selectedBed = null;
+          } else {
+            alert("Please select a chair to book.");
+          }
+        });
+    </script>
+    <footer class="footer-section">
+      <div class="container">
+        <!-- Logo and About Section -->
+        <div class="footer-logo-about">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="/images/logo.png"
+              alt="Code Social Logo"
+              class="footer-logo"
+            />
+            <span class="website-name">Code Social</span>
+          </a>
+          <p class="footer-about-text">
+            Code Social Community is a vibrant and inclusive space for tech
+            enthusiasts <br />
+            to learn, grow, and connect. Founded in 2023, our mission is to
+            empower individuals <br />
+            with resources, mentorship, and opportunities to cultivate their
+            skills, explore their interests, and <br />collaborate with
+            like-minded peers.
+          </p>
+          <div class="social-icons">
+            <a href="https://wa.me/your-whatsapp-number" target="_blank"
+              ><img src="./images/whatsapp-icon.png" alt="WhatsApp"
+            /></a>
+            <a href="https://discord.gg/MSTNyRSPYW" target="_blank"
+              ><img src="./images/discord-icon.png" alt="Discord"
+            /></a>
+            <a
+              href="https://www.linkedin.com/company/code-social/"
+              target="_blank"
+              ><img src="./images/linkedin-icon.png" alt="LinkedIn"
+            /></a>
+          </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <p class="footer-title">Quick Links</p>
+            <ul class="footer-list">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Community Guidelines</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <p class="footer-title">Help</p>
+            <ul class="footer-list">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Volunteer Opportunities</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <hr class="footer-divider" />
+      <p class="footer-bottom-text">
+        © Copyright 2024, All Rights Reserved by Code Social
+      </p>
+    </footer>
+  </body>
+</html>
