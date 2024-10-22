@@ -160,6 +160,10 @@ animateCircles();
                 </ul>
             </li>
             
+
+
+
+            
             <li>
                 <a href="maintenance.html">Follow Us</a>
             </li>
@@ -365,4 +369,139 @@ document.addEventListener('DOMContentLoaded', generateCalendar);
             </script>
 </body>
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Feedback | Code Social</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="feedback-form">
+      <h1>We Value Your Feedback!</h1>
+      <p>Please let us know what you think about our platform.</p>
+
+      <form action="#">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="rating">Rate Us</label>
+          <select id="rating" required>
+            <option value="">Select rating</option>
+            <option value="5">5 - Excellent</option>
+            <option value="4">4 - Very Good</option>
+            <option value="3">3 - Good</option>
+            <option value="2">2 - Fair</option>
+            <option value="1">1 - Poor</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="comments">Comments</label>
+          <textarea id="comments" rows="5" placeholder="Share your feedback"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .feedback-form {
+    text-align: center;
+  }
+  
+  .feedback-form h1 {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .feedback-form p {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    font-weight: 500;
+    color: #34495e;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #dcdcdc;
+    font-size: 16px;
+    color: #34495e;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: #3498db;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #2980b9;
+  }
+  </style>
+</body>
 </html>
+
