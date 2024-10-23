@@ -78,6 +78,26 @@ Please read the Contribution Guidelines and if you have any doubts ,feel free to
 ## Our Valuable Contributors ❤️✨
 [![Contributors](https://contrib.rocks/image?repo=Code-Social/official-website)]((https://github.com/Code-Social/official-website/graphs/contributors))
 
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+## Stargazers ❤️
+
+<div align='left'>
+
+[![Stargazers repo roster for @Code-Social/official-website](https://reporoster.com/stars/dark/Code-Social/official-website)](https://github.com/Code-Social/official-website/stargazers)
+
+</div>
+
+## Forkers ❤️
+
+[![Forkers repo roster for @Code-Social/official-website](https://reporoster.com/forks/dark/Code-Social/official-website)](https://github.com/Code-Social/official-website/network/members)
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+
+
 ##  🙌 Join Us
 
 We are excited to build and improve this website with the help of our community. Your contributions, no matter how big or small, are valuable and appreciated. Let's create something amazing together!
