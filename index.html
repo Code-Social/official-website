@@ -22,6 +22,11 @@
         z-index: 9999;
         transition: transform 0.1s ease-out;
         }
+    
+       button:disabled {
+       opacity: 0.5; /* Make it appear visually disabled */
+       pointer-events: none; /* Disable interaction */
+       }
     </style>
 </head>
 
@@ -275,6 +280,9 @@ animateCircles();
 
 
         <script>
+
+const addEventButton = document.getElementById('add-event');
+
            const events = [
     { date: '2024-10-06', title: 'React Workshop', color: '#4CAF50' },
     { date: '2024-10-14', title: 'Node.js Webinar', color: '#FFC107' },
@@ -323,6 +331,22 @@ function generateCalendar() {
     }
 }
 
+function validate(date){
+  // date is a string  
+  const arr = date.split('-');
+  const selectedYear = parseInt(arr[0]);
+  const selectedMonth = parseInt(arr[1])-1;// Month is 0-based in JS Date
+  const selectedDay = parseInt(arr[2]);
+ 
+  const selectedDate = new Date(selectedYear, selectedMonth, selectedDay);
+  const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+  
+   // Ensure selected date is today or in the future
+   return selectedDate >= currentDate;
+
+}
+
 // Event listeners for month navigation
 document.getElementById('prev-month').addEventListener('click', () => {
     currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
@@ -334,6 +358,16 @@ document.getElementById('next-month').addEventListener('click', () => {
     currentMonth = (currentMonth === 11) ? 0 : currentMonth + 1;
     currentYear = (currentMonth === 0) ? currentYear + 1 : currentYear;
     generateCalendar();
+});
+
+document.getElementById('event-date').addEventListener('change', () => {
+    const date = document.getElementById('event-date').value;
+
+    if (validate(date)) {
+        addEventButton.disabled = false;
+    } else {
+        addEventButton.disabled = true;
+    }
 });
 
 document.getElementById('add-event').addEventListener('click', () => {
