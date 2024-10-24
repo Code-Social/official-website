@@ -274,37 +274,36 @@ animateCircles();
         <p class="footer-bottom-text">© Copyright 2024, All Rights Reserved by Code Social</p>
       </footer>
 
-
       <script>
-            const events = [
+        const events = [
                 { date: '2024-10-06', eventdetails: [{ title: 'React Workshop', color: '#4CAF50' }, { title: 'JavaScript Talk', color: '#FF5733' }] },
                 { date: '2024-10-14', eventdetails: [{ title: 'Node.js Webinar', color: '#FFC107' }] },
                 { date: '2024-10-21', eventdetails: [{ title: 'CSS Masterclass', color: '#2196F3' }, { title: 'Advanced CSS', color: '#FF5722' }] },
-            ];
+        ];
 
-            let currentMonth = new Date().getMonth();
-            let currentYear = new Date().getFullYear();
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
 
-            function generateCalendar() {
-                const calendarGrid = document.getElementById('calendar-grid');
-                const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        function generateCalendar() {
+            const calendarGrid = document.getElementById('calendar-grid');
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-                document.getElementById('current-month').innerText = new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long', year: 'numeric' });
+            document.getElementById('current-month').innerText = new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long', year: 'numeric' });
 
-                calendarGrid.innerHTML = '';
+            calendarGrid.innerHTML = '';
 
-                for (let day = 1; day <= daysInMonth; day++) {
-                    const dayElement = document.createElement('div');
-                    dayElement.className = 'calendar-day';
-                    dayElement.innerText = day;
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                dayElement.innerText = day;
 
-                    const event = events.filter(e =>
-                        new Date(e.date).getDate() === day &&
-                        new Date(e.date).getMonth() === currentMonth &&
-                        new Date(e.date).getFullYear() === currentYear
-                    );
+                const event = events.filter(e =>
+                    new Date(e.date).getDate() === day &&
+                    new Date(e.date).getMonth() === currentMonth &&
+                    new Date(e.date).getFullYear() === currentYear // Keep this check to match the exact date
+                );
 
-                    if (event.length) {
+                if (event.length) {
                         event.forEach(ev => {
                             if (ev.eventdetails && ev.eventdetails.length > 0) {
                                 ev.eventdetails.forEach(detail => {
@@ -320,30 +319,31 @@ animateCircles();
                                 });
                             }
                         });
-                    }
+                  }
 
-                    // Highlight today
-                    if (new Date().getDate() === day && new Date().getMonth() === currentMonth && new Date().getFullYear() === currentYear) {
-                        dayElement.style.backgroundColor = '#d1ecf1';
-                    }
-
-                    calendarGrid.appendChild(dayElement);
+                // Highlight today
+                if (new Date().getDate() === day && new Date().getMonth() === currentMonth && new Date().getFullYear() === currentYear) {
+                    dayElement.style.backgroundColor = '#d1ecf1';
                 }
+
+                calendarGrid.appendChild(dayElement);
             }
+        }
 
-            document.getElementById('prev-month').addEventListener('click', () => {
-                currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
-                currentYear = (currentMonth === 11) ? currentYear - 1 : currentYear;
-                generateCalendar();
-            });
+        // Event listeners for month navigation
+        document.getElementById('prev-month').addEventListener('click', () => {
+            currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+            currentYear = (currentMonth === 11) ? currentYear - 1 : currentYear;
+            generateCalendar();
+        });
 
-            document.getElementById('next-month').addEventListener('click', () => {
-                currentMonth = (currentMonth === 11) ? 0 : currentMonth + 1;
-                currentYear = (currentMonth === 0) ? currentYear + 1 : currentYear;
-                generateCalendar();
-            });
+        document.getElementById('next-month').addEventListener('click', () => {
+            currentMonth = (currentMonth === 11) ? 0 : currentMonth + 1;
+            currentYear = (currentMonth === 0) ? currentYear + 1 : currentYear;
+            generateCalendar();
+        });
 
-            document.getElementById('add-event').addEventListener('click', () => {
+        document.getElementById('add-event').addEventListener('click', () => {
                 const date = document.getElementById('event-date').value;
                 const title = document.getElementById('event-title').value;
                 const color = document.getElementById('event-color').value;
@@ -358,11 +358,12 @@ animateCircles();
                     generateCalendar();
                     document.getElementById('event-title').value = '';
                 }
-            });
+        });
 
-            document.addEventListener('DOMContentLoaded', generateCalendar);
-        </script>
-        <script>
+        document.addEventListener('DOMContentLoaded', generateCalendar);
+
+    </script>
+    <script>
             window.embeddedChatbotConfig = {
             chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
             domain: "www.chatbase.co"
