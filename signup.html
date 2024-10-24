@@ -78,19 +78,20 @@
             margin-bottom: 10px;
         }
 
-        .login-link {
-            text-align: center;
-            margin-top: 20px;
+        .password-strength {
+            margin-top: 10px;
         }
 
-        .login-link a {
-            color: #4CAF50;
-            text-decoration: none;
+        .password-strength .strength-bar {
+            height: 5px;
+            background-color: #ddd;
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+
+        .password-strength .strength-message {
             font-size: 14px;
-        }
-
-        .login-link a:hover {
-            text-decoration: underline;
+            margin-top: 5px;
         }
 
         /* Responsive */
@@ -128,6 +129,11 @@
             <input type="password" id="password" name="password" placeholder="Password" required>
             <div id="passwordError" class="error-message"></div>
 
+            <div class="password-strength">
+                <div id="strengthBar" class="strength-bar"></div>
+                <div id="strengthMessage" class="strength-message"></div>
+            </div>
+
             <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
             <div id="confirmPasswordError" class="error-message"></div>
 
@@ -152,6 +158,49 @@
         const passwordError = document.getElementById('passwordError');
         const confirmPasswordError = document.getElementById('confirmPasswordError');
         const successMessage = document.getElementById('successMessage');
+        const strengthBar = document.getElementById('strengthBar');
+        const strengthMessage = document.getElementById('strengthMessage');
+
+        const updateStrengthMeter = (password) => {
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/\d/.test(password)) strength++;
+            if (/[!@#$%^&*(),.?":{}|<>]/.test(password)) strength++;
+
+            // Update the strength bar
+            strengthBar.style.width = (strength * 20) + '%';
+
+            if (strength === 0) {
+                strengthBar.style.backgroundColor = '#ddd';
+                strengthMessage.textContent = '';
+            } else if (strength <= 2) {
+                strengthBar.style.backgroundColor = 'red';
+                strengthMessage.textContent = 'Weak password. Try adding numbers, symbols, and uppercase letters.';
+            } else if (strength <= 4) {
+                strengthBar.style.backgroundColor = 'orange';
+                strengthMessage.textContent = 'Moderate password. Add more complexity for a stronger password.';
+            } else {
+                strengthBar.style.backgroundColor = 'green';
+                strengthMessage.textContent = 'Strong password.';
+            }
+        };
+
+        passwordInput.addEventListener('input', (e) => {
+            const password = e.target.value;
+            updateStrengthMeter(password);
+        });
+
+        // Real-time email validation when user finishes typing
+        emailInput.addEventListener('blur', () => {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(emailInput.value)) {
+                emailError.textContent = 'Please enter a valid email address.';
+            } else {
+                emailError.textContent = '';
+            }
+        });
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -171,15 +220,15 @@
             }
 
             // Email validation
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
             if (!emailPattern.test(emailInput.value)) {
                 emailError.textContent = 'Please enter a valid email address.';
                 valid = false;
             }
 
             // Password validation
-            if (passwordInput.value.length < 6) {
-                passwordError.textContent = 'Password must be at least 6 characters long.';
+            if (passwordInput.value.length < 8) {
+                passwordError.textContent = 'Password must be at least 8 characters long.';
                 valid = false;
             }
 
@@ -194,23 +243,11 @@
                 successMessage.textContent = 'Signup successful!';
                 form.reset();
                 setTimeout(() => {
-                    window.location.href = 'index.html'; // Redirect to index.html after 2 seconds
-                }, 1000); // Adjust the timing as needed
+                    window.location.href = 'index.html';
+                }, 1000);
             }
         });
     </script>
-    <script>
-        window.embeddedChatbotConfig = {
-        chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
-        domain: "www.chatbase.co"
-        }
-        </script>
-        <script
-        src="https://www.chatbase.co/embed.min.js"
-        chatbotId="j2Uy2CrJfZueGX7wNtJT_"
-        domain="www.chatbase.co"
-        defer>
-        </script>
 </body>
 
 </html>
