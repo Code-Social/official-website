@@ -907,6 +907,26 @@ body.dark-mode #theme-switch {
     color: #6b7280;
     font-family: 'Arial', sans-serif;
   }
+
+/* Light Mode Footer */
+.light-mode-footer {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+/* Dark Mode Footer */
+.dark-mode-footer {
+  background-color: #2E2E2E;
+  color: #fff;
+}
+
+.dark-text {
+  color: #f1f1f1;
+}
+
+.light-text {
+  color: black;
+}
   
   .container {
     max-width: 1200px;
@@ -937,13 +957,11 @@ body.dark-mode #theme-switch {
   .website-name {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #111827;
   }
   
   .footer-about-text {
     margin-top: 15px;
     line-height: 1.6;
-    color: #000;
     font-style: italic;
   }
   
