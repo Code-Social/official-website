@@ -35,6 +35,91 @@
             z-index: 9999;
             transition: transform 0.1s ease-out;
         }
+    
+       button:disabled {
+       opacity: 0.5; /* Make it appear visually disabled */
+       pointer-events: none; /* Disable interaction */
+       }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    
+        body.dark-mode {
+            background-color: #333;
+            color: #ffffff;
+        }
+    
+        .top-btn {
+            display: none;
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 10px;
+            right: 0px;
+            background-color: #ab45e7;
+            color: #fff;
+            padding: 2px;
+            border: none;
+            margin-right: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    
+        .top-btn:hover {
+            background-color: #0056b3;
+        }
+    
+        video#background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            background-size: cover;
+        }
+    
+        .pagination-btns {
+            margin: 50px 0px;
+        }
+    
+        .pagination-btns button.btn {
+            border-radius: 5px;
+            outline: none;
+            margin: 5px 10px;
+            border: 1px solid rgb(146, 110, 110);
+        }
+    
+        .pagination-btns button.btn,
+        .pagination-btns button.btn i.bi {
+            font-size: 2rem;
+        }
+    
+    
+        #progress-container {
+            position: fixed;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            z-index: 99990;
+        }
+    
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 7px;
+            width: 0;
+            background: linear-gradient(90deg, rgb(0, 72, 255) 0%, rgb(153, 187, 255) 50%, rgb(0, 184, 250) 100%);
+            box-shadow: 0 0 4px rgba(0, 166, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+            transition: width 0.09s ease-in-out;
+            border-radius: 10px;
+        }
     </style>
     <style>
         html {
@@ -441,6 +526,9 @@
 
 
    <script>
+
+const addEventButton = document.getElementById('add-event');
+
     const events = [
         { date: '2024-10-06', eventdetails: [{ title: 'React Workshop', color: '#4CAF50' }, { title: 'JavaScript Talk', color: '#FF5733' }] },
         { date: '2024-10-14', eventdetails: [{ title: 'Node.js Webinar', color: '#FFC107' }] },
@@ -493,6 +581,22 @@
         }
     }
 
+function validate(date){
+  // date is a string  
+  const arr = date.split('-');
+  const selectedYear = parseInt(arr[0]);
+  const selectedMonth = parseInt(arr[1])-1;// Month is 0-based in JS Date
+  const selectedDay = parseInt(arr[2]);
+ 
+  const selectedDate = new Date(selectedYear, selectedMonth, selectedDay);
+  const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+  
+   // Ensure selected date is today or in the future
+   return selectedDate >= currentDate;
+
+}
+
     // Event listeners for month navigation
     document.getElementById('prev-month').addEventListener('click', () => {
         currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
@@ -505,6 +609,16 @@
         currentYear = (currentMonth === 0) ? currentYear + 1 : currentYear;
         generateCalendar();
     });
+
+document.getElementById('event-date').addEventListener('change', () => {
+    const date = document.getElementById('event-date').value;
+
+    if (validate(date)) {
+        addEventButton.disabled = false;
+    } else {
+        addEventButton.disabled = true;
+    }
+});
 
     document.getElementById('add-event').addEventListener('click', () => {
         const date = document.getElementById('event-date').value;
