@@ -270,9 +270,9 @@ body {
   border: 1px solid #ccc;
   padding: 10px; /* Adjusted padding */
   text-align: center;
-  position: relative;
+  /* position: relative; */
   /* /* background-color: #ffffff;   */
-  height: 100px; /* Fixed height for uniformity */
+  /* height: 100px; Fixed height for uniformity */
   border-radius: 8px; /* Rounded corners */
   transition: background-color 0.3s ease; /* Smooth transition */
 }
@@ -294,19 +294,21 @@ body.dark-mode .calendar-day:hover {
 /* Event Styles */
 .event {
   background-color: #4caf50;
-  /* color: white; */
-  padding: 5px; /* Adjusted padding */
+   padding: 0 5px;
   border-radius: 3px;
-  font-size: 14px; /* Increased font size */
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  right: 5px;
+  font-size: 12px; /* Increased font size */
   text-align: center;
+  vertical-align: middle;
+  height: 20px;
+  margin-bottom: 2px;
   cursor: pointer; /* Makes the event clickable */
   overflow: hidden; /* Prevents overflow of text */
   white-space: nowrap; /* Keeps text in a single line */
   text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 92px;
 }
 
 /* Responsive Adjustments */
