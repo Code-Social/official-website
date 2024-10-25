@@ -1,7 +1,7 @@
  /* General Styles */
  body {
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: rgb(220, 218, 218);
+   background-color: rgb(220, 218, 218); /* this color is being added  */
    margin: 0;
    padding: 0;
  }
