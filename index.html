@@ -10,17 +10,110 @@
     <script type="text/javascript" src="darkmode.js" defer></script>
     <link rel="icon" type="image/png" href="images/logo copy.png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+
     <style>
         .circle {
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        position: fixed;
-        background-color: black;  /* Default color of circles */
-        pointer-events: none;     /* Prevent interaction with circles */
-        z-index: 9999;
-        transition: transform 0.1s ease-out;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            position: fixed;
+            background-color: black;
+            /* Default color of circles */
+            pointer-events: none;
+            /* Prevent interaction with circles */
+            z-index: 9999;
+            transition: transform 0.1s ease-out;
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    
+        body.dark-mode {
+            background-color: #333;
+            color: #ffffff;
+        }
+    
+        .top-btn {
+            display: none;
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            bottom: 10px;
+            right: 0px;
+            background-color: #ab45e7;
+            color: #fff;
+            padding: 2px;
+            border: none;
+            margin-right: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    
+        .top-btn:hover {
+            background-color: #0056b3;
+        }
+    
+        video#background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            background-size: cover;
+        }
+    
+        .pagination-btns {
+            margin: 50px 0px;
+        }
+    
+        .pagination-btns button.btn {
+            border-radius: 5px;
+            outline: none;
+            margin: 5px 10px;
+            border: 1px solid rgb(146, 110, 110);
+        }
+    
+        .pagination-btns button.btn,
+        .pagination-btns button.btn i.bi {
+            font-size: 2rem;
+        }
+    
+    
+        #progress-container {
+            position: fixed;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            z-index: 99990;
+        }
+    
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 7px;
+            width: 0;
+            background: linear-gradient(90deg, rgb(0, 72, 255) 0%, rgb(153, 187, 255) 50%, rgb(0, 184, 250) 100%);
+            box-shadow: 0 0 4px rgba(0, 166, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+            transition: width 0.09s ease-in-out;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -51,59 +144,114 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    
+    <button class="top-btn" id="goToTopBtn" onclick="goToTop()">
+        <i class="fa-solid fa-chevron-up" style="color: #ffffff"></i>
+    </button>
+    <script>
+        // Get the button
+        var mybutton = document.getElementById("goToTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+            ) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function goToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    
+    <script>
+
+        window.addEventListener('scroll', function () {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+    </script>
     <script>
         // Store the mouse coordinates
-const coords = { x: 0, y: 0 };
+        const coords = { x: 0, y: 0 };
 
-// Select all circles (you can add more circles to HTML as needed)
-const circles = document.querySelectorAll(".circle");
+        // Select all circles (you can add more circles to HTML as needed)
+        const circles = document.querySelectorAll(".circle");
 
-// Customize the colors for the circles (optional)
-const colors = ["#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f", "#3d005e"];
+        // Customize the colors for the circles (optional)
+        const colors = ["#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d", "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d", "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060", "#680060", "#60005f", "#48005f", "#3d005e"];
 
-// Initialize circle positions
-circles.forEach((circle, index) => {
-    circle.x = 0;
-    circle.y = 0;
-    circle.style.backgroundColor = colors[index % colors.length];  // Assign colors
-});
+        // Initialize circle positions
+        circles.forEach((circle, index) => {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];  // Assign colors
+        });
 
-// Update mouse coordinates on move
-window.addEventListener("mousemove", (e) => {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
-});
+        // Update mouse coordinates on move
+        window.addEventListener("mousemove", (e) => {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+        });
 
-// Animation loop for circles
-function animateCircles() {
-    let x = coords.x;
-    let y = coords.y;
+        // Animation loop for circles
+        function animateCircles() {
+            let x = coords.x;
+            let y = coords.y;
 
-    circles.forEach((circle, index) => {
-        circle.style.left = `${x - 12}px`;   // Offset for center alignment
-        circle.style.top = `${y - 12}px`;
+            circles.forEach((circle, index) => {
+                circle.style.left = `${x - 12}px`;   // Offset for center alignment
+                circle.style.top = `${y - 12}px`;
 
-        circle.style.transform = `scale(${(circles.length - index) / circles.length})`;  // Shrink effect
+                circle.style.transform = `scale(${(circles.length - index) / circles.length})`;  // Shrink effect
 
-        circle.x = x;
-        circle.y = y;
+                circle.x = x;
+                circle.y = y;
 
-        const nextCircle = circles[index + 1] || circles[0];
-        x += (nextCircle.x - x) * 0.3;
-        y += (nextCircle.y - y) * 0.3;
-    });
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
 
-    requestAnimationFrame(animateCircles);
-}
+            requestAnimationFrame(animateCircles);
+        }
 
-// Start animation
-animateCircles();
+        // Start animation
+        animateCircles();
+
 
     </script>
 
     <nav class="navbar">
         <a href="index.html" class="flex"><img src="images/logo.png" class="logo">
-            <span class="website-name tracking-tight ">Code Social</span></a>
+
+            <div class="website-name tracking-tight ">
+                <!-- <div class="dynamic-text"> -->
+                <div class="static-text">
+                    CODE
+                </div>
+                <ul class="dynamic-text">
+                    <li> <span class="social">SOCIAL</span></li>
+                </ul>
+            </div>
+            
+        </a>
 
 
 
@@ -127,17 +275,15 @@ animateCircles();
             </li>
         
          <!-- blog section -->
+            <!-- blog section -->
             <ul class="navbar-links flex  ">
-            <li class="ml-20">
-                <a href="blog.html">Blogs</a>
-                </ul>
+                <li class="ml-20">
+                    <a href="blog.html">Blogs</a>
+            </ul>
             </li>
             <li class="community">
                 <a href="join_community.html">Join Our Community</a>
-                <ul class="dropdown">
-                    <li><a href="maintenance.html">WhatsApp</a></li>
-                    <li><a href="maintenance.html">Discord</a></li>
-                </ul>
+                
             </li>
             <li>
                 <a href="learning.html">Learning</a>
@@ -146,10 +292,12 @@ animateCircles();
                     <li><a href="#">Mentorship Programs</a></li>
                     <li><a href="#">Peer-to-Peer Sessions</a></li>
                 </ul>
-            </li> 
+            </li>
             <li class="hamburger-menu">
                 <div class="toggle-button">
-                    <span class="about-text">About us</span>
+                    <span class="about-text">
+                        <a href="maintenance.html">About us</a>
+                    </span>
                     <button class="bar"></button>
                     <button class="bar"></button>
                     <button class="bar"></button>
@@ -161,7 +309,7 @@ animateCircles();
                     <li><a href="#">Follow Us</a></li>
                 </ul>
             </li>
-            
+
             <li>
                 <a href="maintenance.html">Follow Us</a>
             </li>
@@ -179,13 +327,22 @@ animateCircles();
     <section class="about-community">
         <h2>About Community</h2>
         <p>
-            Code Social Community is a learning-focused community dedicated to providing individuals with resources, opportunities to learn, grow, and develop their skills in various technologies. The community helps individuals to explore their interests, expand their knowledge, and connect with like-minded people.
+            Code Social Community is a learning-focused community dedicated to providing individuals with resources,
+            opportunities to learn, grow, and develop their skills in various technologies. The community helps
+            individuals to explore their interests, expand their knowledge, and connect with like-minded people.
 
-            At Code Social Community, members have access to a wealth of resources and learning opportunities, including free learning sessions, mentorship programs, and peer-to-peer learning sessions. The community also provides opportunities for members to network and connect with others in the tech industry.
+            At Code Social Community, members have access to a wealth of resources and learning opportunities, including
+            free learning sessions, mentorship programs, and peer-to-peer learning sessions. The community also provides
+            opportunities for members to network and connect with others in the tech industry.
 
-            In addition to its learning and networking opportunities, Code Social Community also serves as a hub for resources, tools, and other materials that can help members enhance their skills and stay up-to-date with the latest trends and best practices in the tech industry.
+            In addition to its learning and networking opportunities, Code Social Community also serves as a hub for
+            resources, tools, and other materials that can help members enhance their skills and stay up-to-date with
+            the latest trends and best practices in the tech industry.
 
-            Whether you are just starting out in your career or are a seasoned professional looking to expand your knowledge and skills, this community offers something for everyone. With its focus on hands-on learning, mentorship, and networking opportunities, Code Social Community is an excellent place to connect with like-minded individuals, build your skills, and take your career to the next level.
+            Whether you are just starting out in your career or are a seasoned professional looking to expand your
+            knowledge and skills, this community offers something for everyone. With its focus on hands-on learning,
+            mentorship, and networking opportunities, Code Social Community is an excellent place to connect with
+            like-minded individuals, build your skills, and take your career to the next level.
         </p>
         <!-- Social Media Icons -->
         <div class="social-icons">
@@ -232,139 +389,150 @@ animateCircles();
 <hr>
     <footer class="footer-section">
         <div class="container">
-          <!-- Logo and About Section -->
-          <div class="footer-logo-about">
-            <a href="index.html" class="footer-logo-link">
-              <img src="/images/logo.png" alt="Code Social Logo" class="footer-logo">
-              <span class="website-name">Code Social</span>
-            </a>
-            <p class="footer-about-text">
-              Code Social Community is a vibrant and inclusive space for tech enthusiasts <br> to learn, grow, and connect. Founded in 2023, our mission is to empower individuals <br> with resources, mentorship, and opportunities to cultivate their skills, explore their interests, and <br>collaborate with like-minded peers.
-            </p>
-            <div class="social-icons">
-              <a href="https://wa.me/your-whatsapp-number" target="_blank"><img src="./images/whatsapp-icon.png" alt="WhatsApp"></a>
-              <a href="https://discord.gg/MSTNyRSPYW" target="_blank"><img src="./images/discord-icon.png" alt="Discord"></a>
-              <a href="https://www.linkedin.com/company/code-social/" target="_blank"><img src="./images/linkedin-icon.png" alt="LinkedIn"></a>
+            <!-- Logo and About Section -->
+            <div class="footer-logo-about">
+                <a href="index.html" class="footer-logo-link">
+                    <img src="/images/logo.png" alt="Code Social Logo" class="footer-logo">
+                    <span class="website-name">Code Social</span>
+                </a>
+                <p class="footer-about-text">
+                    Code Social Community is a vibrant and inclusive space for tech enthusiasts <br> to learn, grow, and
+                    connect. Founded in 2023, our mission is to empower individuals <br> with resources, mentorship, and
+                    opportunities to cultivate their skills, explore their interests, and <br>collaborate with
+                    like-minded peers.
+                </p>
+                <div class="social-icons">
+                    <a href="https://wa.me/your-whatsapp-number" target="_blank"><img src="./images/whatsapp-icon.png"
+                            alt="WhatsApp"></a>
+                    <a href="https://discord.gg/MSTNyRSPYW" target="_blank"><img src="./images/discord-icon.png"
+                            alt="Discord"></a>
+                    <a href="https://www.linkedin.com/company/code-social/" target="_blank"><img
+                            src="./images/linkedin-icon.png" alt="LinkedIn"></a>
+                </div>
             </div>
-          </div>
-      
-          <!-- Links Section -->
-          <div class="footer-links">
-            <div class="footer-column">
-              <p class="footer-title">Quick Links</p>
-              <ul class="footer-list">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Community Guidelines</a></li>
-                <li><a href="#">Careers</a></li>
-              </ul>
+
+            <!-- Links Section -->
+            <div class="footer-links">
+                <div class="footer-column">
+                    <p class="footer-title">Quick Links</p>
+                    <ul class="footer-list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <p class="footer-title">Help</p>
+                    <ul class="footer-list">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Volunteer Opportunities</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-column">
-              <p class="footer-title">Help</p>
-              <ul class="footer-list">
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Volunteer Opportunities</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
-      
+
         <!-- Footer Bottom -->
         <hr class="footer-divider">
         <p class="footer-bottom-text">© Copyright 2024, All Rights Reserved by Code Social</p>
-      </footer>
+    </footer>
 
 
-        <script>
-           const events = [
-    { date: '2024-10-06', title: 'React Workshop', color: '#4CAF50' },
-    { date: '2024-10-14', title: 'Node.js Webinar', color: '#FFC107' },
-    { date: '2024-10-21', title: 'CSS Masterclass', color: '#2196F3' },
-];
+   <script>
+    const events = [
+        { date: '2024-10-06', eventdetails: [{ title: 'React Workshop', color: '#4CAF50' }, { title: 'JavaScript Talk', color: '#FF5733' }] },
+        { date: '2024-10-14', eventdetails: [{ title: 'Node.js Webinar', color: '#FFC107' }] },
+        { date: '2024-10-21', eventdetails: [{ title: 'CSS Masterclass', color: '#2196F3' }, { title: 'Advanced CSS', color: '#FF5722' }] },
+    ];
 
-let currentMonth = new Date().getMonth();
-let currentYear = new Date().getFullYear();
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
 
-function generateCalendar() {
-    const calendarGrid = document.getElementById('calendar-grid');
-    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    function generateCalendar() {
+        const calendarGrid = document.getElementById('calendar-grid');
+        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-    document.getElementById('current-month').innerText = new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long', year: 'numeric' });
+        document.getElementById('current-month').innerText = new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long', year: 'numeric' });
 
-    calendarGrid.innerHTML = '';
+        calendarGrid.innerHTML = '';
 
-    for (let day = 1; day <= daysInMonth; day++) {
-        const dayElement = document.createElement('div');
-        dayElement.className = 'calendar-day';
-        dayElement.innerText = day;
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'calendar-day';
+            dayElement.innerText = day;
 
-        const event = events.filter(e => 
-            new Date(e.date).getDate() === day && 
-            new Date(e.date).getMonth() === currentMonth && 
-            new Date(e.date).getFullYear() === currentYear // Keep this check to match the exact date
-        );
+            const event = events.filter(e =>
+                new Date(e.date).getDate() === day &&
+                new Date(e.date).getMonth() === currentMonth &&
+                new Date(e.date).getFullYear() === currentYear
+            );
 
-        if (event.length) {
-            event.forEach(ev => {
-                const eventElement = document.createElement('div');
-                eventElement.className = 'event';
-                eventElement.style.backgroundColor = ev.color || '#4CAF50';
-                eventElement.innerText = ev.title;
-                eventElement.addEventListener('click', () => alert(ev.title)); // Simple alert for now, can be modal or tooltip.
-                dayElement.appendChild(eventElement);
-            });
+            if (event.length) {
+                event.forEach(ev => {
+                    ev.eventdetails.forEach(detail => {
+                        const eventElement = document.createElement('div');
+                        eventElement.className = 'event';
+                        eventElement.style.backgroundColor = detail.color || '#4CAF50';
+                        eventElement.innerText = detail.title;
+                        eventElement.addEventListener('click', (e) => {
+                            e.stopPropagation(); 
+                            alert(detail.title);
+                        });
+                        dayElement.appendChild(eventElement);
+                    });
+                });
+            }
+
+            if (new Date().getDate() === day && new Date().getMonth() === currentMonth && new Date().getFullYear() === currentYear) {
+                dayElement.style.backgroundColor = '#d1ecf1';
+            }
+
+            calendarGrid.appendChild(dayElement);
         }
-
-        // Highlight today
-        if (new Date().getDate() === day && new Date().getMonth() === currentMonth && new Date().getFullYear() === currentYear) {
-            dayElement.style.backgroundColor = '#d1ecf1';
-        }
-
-        calendarGrid.appendChild(dayElement);
     }
-}
 
-// Event listeners for month navigation
-document.getElementById('prev-month').addEventListener('click', () => {
-    currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
-    currentYear = (currentMonth === 11) ? currentYear - 1 : currentYear;
-    generateCalendar();
-});
-
-document.getElementById('next-month').addEventListener('click', () => {
-    currentMonth = (currentMonth === 11) ? 0 : currentMonth + 1;
-    currentYear = (currentMonth === 0) ? currentYear + 1 : currentYear;
-    generateCalendar();
-});
-
-document.getElementById('add-event').addEventListener('click', () => {
-    const date = document.getElementById('event-date').value;
-    const title = document.getElementById('event-title').value;
-    const color = document.getElementById('event-color').value;
-
-    if (date && title) {
-        events.push({ date, title, color });
+    // Event listeners for month navigation
+    document.getElementById('prev-month').addEventListener('click', () => {
+        currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+        currentYear = (currentMonth === 11) ? currentYear - 1 : currentYear;
         generateCalendar();
-        document.getElementById('event-title').value = '';
-    }
-});
+    });
 
-document.addEventListener('DOMContentLoaded', generateCalendar);
+    document.getElementById('next-month').addEventListener('click', () => {
+        currentMonth = (currentMonth === 11) ? 0 : currentMonth + 1;
+        currentYear = (currentMonth === 0) ? currentYear + 1 : currentYear;
+        generateCalendar();
+    });
 
-        </script>
-        <script>
-            window.embeddedChatbotConfig = {
+    document.getElementById('add-event').addEventListener('click', () => {
+        const date = document.getElementById('event-date').value;
+        const title = document.getElementById('event-title').value;
+        const color = document.getElementById('event-color').value;
+
+        if (date && title) {
+            const existingEventIndex = events.findIndex(e => e.date === date);
+            if (existingEventIndex !== -1) {
+                events[existingEventIndex].eventdetails.push({ title, color });
+            } else {
+                events.push({ date, eventdetails: [{ title, color }] });
+            }
+            generateCalendar();
+            document.getElementById('event-title').value = '';
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', generateCalendar);
+</script>
+    <script>
+        window.embeddedChatbotConfig = {
             chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
             domain: "www.chatbase.co"
-            }
-            </script>
-            <script
-            src="https://www.chatbase.co/embed.min.js"
-            chatbotId="j2Uy2CrJfZueGX7wNtJT_"
-            domain="www.chatbase.co"
-            defer>
-            </script>
+        }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" chatbotId="j2Uy2CrJfZueGX7wNtJT_" domain="www.chatbase.co" defer>
+    </script>
+
 </body>
 
 </html>
