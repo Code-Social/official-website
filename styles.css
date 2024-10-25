@@ -28,29 +28,73 @@ body {
 }
 
 /* Dark mode */
-.dark-mode {
-  background-color: #2e2e2e;
-  color: white;
-}
-
+/* Main Toggle Button */
 .theme-toggle-btn {
-  padding: 10px 20px;
-  margin: 20px;
-  cursor: pointer;
-}
-.theme-toggle-btn img {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.theme-toggle-btn img:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
-}
-
-#theme-toggle-icon {
-  width: 40px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 80px;
   height: 40px;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
+
+/* Toggle Slider (Circle) */
+.theme-slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Sun and Moon Icons */
+.theme-icon {
+  position: absolute;
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+}
+
+.theme-icon-light {
+  left: 10px;
+  color: #ffd700;
+  opacity: 1;
+}
+
+.theme-icon-dark {
+  right: 10px;
+  color: #4a4a4a;
+  opacity: 0;
+}
+
+/* Dark Mode Active */
+body.dark-mode .theme-toggle-btn {
+  background: linear-gradient(135deg, #2c3e50, #4a4a4a);
+}
+
+body.dark-mode .theme-slider {
+  transform: translateX(40px);
+}
+
+body.dark-mode .theme-icon-light {
+  opacity: 0;
+}
+
+body.dark-mode .theme-icon-dark {
+  opacity: 1;
+}
+
+
+
 /* Dark Mode Styles   */
 /* body.dark-mode {
     background-color: #121212;
