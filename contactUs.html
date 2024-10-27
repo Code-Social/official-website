@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Code Socials</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <script src="script.js" defer></script>
+  <script type="text/javascript" src="darkmode.js" defer></script>
+  <link rel="icon" type="image/png" href="images/logo copy.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+
+  <style>
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.intro {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #999;
+}
+
+.contact-form button {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #000;
+}
+
+.thank-you-message {
+  display: none;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="flex"><img src="images/logo.png" class="logo">
+
+            <div class="website-name tracking-tight ">
+                <!-- <div class="dynamic-text"> -->
+                <div class="static-text">
+                    CODE
+                </div>
+                <ul class="dynamic-text">
+                    <li> <span class="social">SOCIAL</span></li>
+                </ul>
+            </div>
+            
+        </a>
+
+
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger-menu">
+            <div class="toggle-button">
+                <img src="/images/hamburger.png" alt="open" id="hamburger-img">
+
+            </div>
+        </div>
+
+        <!-- Navbar Links -->
+        <ul class="navbar-links flex  ">
+            <li class="ml-20">
+                <a href="events.html">Live Events</a>
+                <ul class="dropdown  ">
+                    <li><a href="register.html">Register Now</a></li>
+                    <li><a href="maintenance.html">Why don't you react?</a></li>
+                </ul>
+            </li>
+            <li class="community">
+                <a href="maintenance.html">Join Our Community</a>
+                <ul class="dropdown">
+                    <li><a href="maintenance.html">WhatsApp</a></li>
+                    <li><a href="maintenance.html">Discord</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="learning.html">Learning</a>
+                <ul class="dropdown">
+                    <li><a href="./Resources.html">Free Learning Resources</a></li>
+                    <li><a href="#">Mentorship Programs</a></li>
+                    <li><a href="#">Peer-to-Peer Sessions</a></li>
+                </ul>
+            </li>
+            <li class="hamburger-menu">
+                <div class="toggle-button">
+                    <span class="about-text">
+                        <a href="maintenance.html">About us</a>
+                    </span>
+                    <button class="bar"></button>
+                    <button class="bar"></button>
+                    <button class="bar"></button>
+                </div>
+                <ul class="dropdown">
+                    <li><a href="mentorship.html">Meet Our Team</a></li>
+                    <li><a href="#">Join Our Team</a></li>
+                    <li><a href="contactUs.html">Contact Us</a></li>
+                    <li><a href="#">Follow Us</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="maintenance.html">Follow Us</a>
+            </li>
+            <!-- Dark Mode Toggle -->
+            <li>
+                <button id="theme-toggle" class="theme-toggle-btn">
+                    <img src="images/dark-mode.png" alt="theme-mode" id="theme-toggle-icon">
+                </button>
+                <!-- when light mode is active -> use "dark-mode.png" and when dark mode is active -> use "light-mode.png" -->
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Contact Us Section -->
+
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <p class="intro">We’d Love to Hear From You! Whether you have questions about our community, need assistance, or want to share feedback, we're here to help. Reach out to us using the form below, and we’ll get back to you as soon as possible.</p>
+
+    <form id="contactForm" class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required placeholder="Your Name">
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="Your Email">
+      
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+      
+      <button type="submit">Submit</button>
+    </form>
+    
+    <div id="thankYouMessage" class="thank-you-message">
+      Thank you for reaching out! We will get back to you shortly.
+    </div>
+
+    <!-- Other content sections as above, omitted for brevity -->
+  </div>
+
+  <footer class="footer-section">
+    <div class="container">
+        <!-- Logo and About Section -->
+        <div class="footer-logo-about">
+            <a href="index.html" class="footer-logo-link">
+                <img src="images/logo.png" alt="Code Social Logo" class="footer-logo">
+                <span class="website-name">Code Social</span>
+            </a>
+            <p class="footer-about-text">
+                Code Social Community is a vibrant and inclusive space for tech enthusiasts <br> to learn, grow, and
+                connect. Founded in 2023, our mission is to empower individuals <br> with resources, mentorship, and
+                opportunities to cultivate their skills, explore their interests, and <br>collaborate with
+                like-minded peers.
+            </p>
+            <div class="social-icons">
+                <a href="https://wa.me/your-whatsapp-number" target="_blank"><img src="./images/whatsapp-icon.png"
+                        alt="WhatsApp"></a>
+                <a href="https://discord.gg/MSTNyRSPYW" target="_blank"><img src="./images/discord-icon.png"
+                        alt="Discord"></a>
+                <a href="https://www.linkedin.com/company/code-social/" target="_blank"><img
+                        src="./images/linkedin-icon.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+
+        <!-- Links Section -->
+        <div class="footer-links">
+            <div class="footer-column">
+                <p class="footer-title">Quick Links</p>
+                <ul class="footer-list">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="#">Community Guidelines</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <p class="footer-title">Help</p>
+                <ul class="footer-list">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Volunteer Opportunities</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <hr class="footer-divider">
+    <p class="footer-bottom-text">© Copyright 2024, All Rights Reserved by Code Social</p>
+</footer>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  const thankYouMessage = document.getElementById("thankYouMessage");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Validate form fields
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Show thank you message and hide the form
+    form.style.display = "none";
+    thankYouMessage.style.display = "block";
+  });
+
+  function validateEmail(email) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  }
+});
+
+  </script>
+</body>
+</html>
