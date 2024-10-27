@@ -350,6 +350,9 @@ body.dark-mode .calendar-day:hover {
   color: white; /* Text color for dark mode */
 }
 
+.dark-mode a span{
+ color: white;
+}
 .content {
   height: 2000px; /* Just for scrolling */
   padding: 20px;
@@ -370,6 +373,7 @@ body.dark-mode .calendar-day:hover {
   display: flex;
   align-items: center;
   cursor: pointer;
+  gap: 1rem;
 }
 
 /* Logo Styling */
@@ -464,7 +468,6 @@ body.dark-mode .calendar-day:hover {
 .hamburger-menu .toggle-button {
   display: flex;
   position: relative;
-  flex-direction: column;
   justify-content: space-between;
   width: 40px;
   height: 40px;
@@ -754,10 +757,14 @@ body.dark-mode #theme-switch {
 /* Social Icons */
 .social-icons {
   margin-top: 30px; /* Increased margin for better spacing */
+  display: flex;
+  flex-direction: column;
 }
-
+/* .social-icons div{
+  display: block;
+} */
 .social-icons a {
-  margin: 0 15px;
+  margin-right: 16px;
   display: inline-block;
 }
 
@@ -801,8 +808,7 @@ body.dark-mode #theme-switch {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: space-between;
   }
   
   .footer-logo-about {
@@ -855,13 +861,14 @@ body.dark-mode #theme-switch {
   /* Footer Links Styling */
   .footer-links {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     gap: 2rem;
     flex: 1;
     min-width: 250px;
   }
   
   .footer-column {
+    flex-direction: column;
     flex: 1;
   }
   
@@ -892,8 +899,9 @@ body.dark-mode #theme-switch {
   
   /* Footer Bottom Styling */
   .footer-divider {
-    border-top: 1px solid #e5e7eb;
-    margin: 2rem 0;
+    border-top: 1px solid white;
+    margin-top: 2rem;
+    padding: 1rem;
   }
   
   .footer-bottom-text {
