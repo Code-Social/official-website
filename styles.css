@@ -839,7 +839,7 @@ body.dark-mode #theme-switch {
   text-align: center;
   margin: 20px auto;
   max-width: 1400px;
-  height: calc(100vh - 100px); 
+  height: 600px; 
   border-radius: 20px;
   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
