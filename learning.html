@@ -80,25 +80,49 @@
             color: #2196F3;
         }
 
-        footer {
+        /* footer{
             text-align: center;
             padding: 20px;
             background-color: #333;
             color: white;
             margin-top: 40px;
+        } */
+        a{
+            text-decoration: none;
+            color: black;
+        }
+            /* General Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+        /* Navbar Dark Mode */
+        body.dark-mode .navbar a,
+        body.dark-mode .navbar span,
+        body.dark-mode .navbar ul li a {
+            color: #f5f5f5;
+        }
+
+        /* Dropdown in Dark Mode */
+        body.dark-mode .dropdown {
+            background-color: #333;
+        }
+        /* Blockquote Style */
+        body.dark-mode blockquote {
+            border-left: 4px solid #888;
+        }
+        body.dark-mode .footer-divider {
+            background-color: #222;
+            color: #ddd;
+        }
+
+        body.dark-mode .learning-section{
+            color: black;
         }
     </style>
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header>
-        <button id="theme-switch">
-            <img src="file:///C:/Users/Dell/Downloads/dark_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark Mode">
-            <img src="file:///C:/Users/Dell/Downloads/light_mode_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Light Mode">
-        </button>
-    </header>
-
     <!-- Navbar Section -->
     <nav class="navbar">
         <a href="index.html"><img src="images/logo.png" class="logo" alt="Code Social logo"></a>
@@ -115,19 +139,24 @@
             </li>
             <li><a href="#">Live Events</a></li>
             <li><a href="#">Join our Community</a></li>
-            <li class="hamburger-menu">
-                <a href="javascript:void(0);" class="toggle-button">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </a>
-                <ul class="dropdown">
-                    <li><a href="#">Meet Our Team</a></li>
-                    <li><a href="#">Join Our Team</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Follow Us</a></li>
-                </ul>
+            <li>
+                <div class="hamburger-menu" style="display: list-item;">
+                    <img src="images/hamburger.png" alt="hamburger">
+                    <ul class="dropdown">
+                        <li><a href="#">Meet Our Team</a></li>
+                        <li><a href="#">Join Our Team</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Follow Us</a></li>
+                    </ul>
+                </div>
             </li>
+            <!-- Dark Mode Toggle -->
+            <li>
+                <button id="theme-toggle" class="theme-toggle-btn">
+                    <img src="images/dark-mode.png" alt="theme-mode" id="theme-toggle-icon">
+                </button>
+                <!-- when light mode is active -> use "dark-mode.png" and when dark mode is active -> use "light-mode.png" -->
+            </li>     
         </ul>
     </nav>
 
@@ -189,22 +218,21 @@
     </section>
 
     <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Code Social. All rights reserved.</p>
+    <footer class="footer-divider">
+        <p class="footer-bottom-text">&copy; 2024 Code Social. All rights reserved.</p>
     </footer>
     <script>
         window.embeddedChatbotConfig = {
         chatbotId: "j2Uy2CrJfZueGX7wNtJT_",
         domain: "www.chatbase.co"
         }
-        </script>
-        <script
+    </script>
+    <script
         src="https://www.chatbase.co/embed.min.js"
         chatbotId="j2Uy2CrJfZueGX7wNtJT_"
         domain="www.chatbase.co"
         defer>
-        </script>
-
+    </script>
 </body>
 
 </html>
