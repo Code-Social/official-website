@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script src="common.js" defer></script>
     <script src="script.js" defer></script>
-    <script type="text/javascript" src="darkmode.js" defer></script>
+    <script src="common.js" defer></script>
+    <script src="darkmode.js" defer></script>
     <link rel="icon" type="image/png" href="images/logo copy.png">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
@@ -322,89 +324,7 @@
 
 
     </script>
-
-    <nav class="navbar">
-        <a href="index.html" class="flex"><img src="images/logo.png" class="logo">
-
-            <div class="website-name tracking-tight ">
-                <!-- <div class="dynamic-text"> -->
-                <div class="static-text">
-                    CODE
-                </div>
-                <ul class="dynamic-text">
-                    <li> <span class="social">SOCIAL</span></li>
-                </ul>
-            </div>
-            
-        </a>
-
-
-
-        <!-- Hamburger Menu -->
-        <div class="hamburger-menu">
-            <div class="toggle-button">
-                <img src="/images/hamburger.png" alt="open" id="hamburger-img">
-
-            </div>
-        </div>
-
-        <!-- Navbar Links -->
-        <ul class="navbar-links flex  ">
-            <li class="ml-20">
-                <a href="events.html">Live Events</a>
-                <ul class="dropdown  ">
-                    <li><a href="register.html">Register Now</a></li>
-                    <li><a href="maintenance.html">Why don't you react?</a></li>
-                </ul>
-            </li>
-            <li class="community">
-                <a href="maintenance.html">Join Our Community</a>
-                <ul class="dropdown">
-                    <li><a href="maintenance.html">WhatsApp</a></li>
-                    <li><a href="maintenance.html">Discord</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="learning.html">Learning</a>
-                <ul class="dropdown">
-                    <li><a href="./Resources.html">Free Learning Resources</a></li>
-                    <li><a href="#">Mentorship Programs</a></li>
-                    <li><a href="#">Peer-to-Peer Sessions</a></li>
-                </ul>
-            </li>
-            <li class="hamburger-menu">
-                <div class="toggle-button">
-                    <span class="about-text">
-                        <a href="maintenance.html">About us</a>
-                    </span>
-                    <button class="bar"></button>
-                    <button class="bar"></button>
-                    <button class="bar"></button>
-                </div>
-                <ul class="dropdown">
-                    <li><a href="mentorship.html">Meet Our Team</a></li>
-                    <li><a href="#">Join Our Team</a></li>
-                    <li><a href="contactUs.html">Contact Us</a></li>
-                    <li><a href="#">Follow Us</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="maintenance.html">Follow Us</a>
-            </li>
-            <!-- Dark Mode Toggle -->
-            <button id="theme-toggle" class="theme-toggle-btn">
-                <span class="theme-icon theme-icon-light" style="opacity: 1;">☀️</span>
-                <span class="theme-icon theme-icon-dark" style="opacity: 0;">🌙</span>
-                <span class="theme-slider"></span>
-            </button>
-            
-              
-              
-        </ul>
-    </nav>
-
-
+  <div id="navbar"></div>
     <section class="about-community">
         <h2>About Community</h2>
         <p>
@@ -468,59 +388,10 @@
         </div>
     </section>
 <hr>
-    <footer class="footer-section">
-        <div class="container">
-            <!-- Logo and About Section -->
-            <div class="footer-logo-about">
-                <a href="index.html" class="footer-logo-link">
-                    <img src="images/logo.png" alt="Code Social Logo" class="footer-logo">
-                    <span class="website-name">Code Social</span>
-                </a>
-                <p class="footer-about-text">
-                    Code Social Community is a vibrant and inclusive space for tech enthusiasts <br> to learn, grow, and
-                    connect. Founded in 2023, our mission is to empower individuals <br> with resources, mentorship, and
-                    opportunities to cultivate their skills, explore their interests, and <br>collaborate with
-                    like-minded peers.
-                </p>
-                <div class="social-icons">
-                    <a href="https://wa.me/your-whatsapp-number" target="_blank"><img src="./images/whatsapp-icon.png"
-                            alt="WhatsApp"></a>
-                    <a href="https://discord.gg/MSTNyRSPYW" target="_blank"><img src="./images/discord-icon.png"
-                            alt="Discord"></a>
-                    <a href="https://www.linkedin.com/company/code-social/" target="_blank"><img
-                            src="./images/linkedin-icon.png" alt="LinkedIn"></a>
-                </div>
-            </div>
 
-            <!-- Links Section -->
-            <div class="footer-links">
-                <div class="footer-column">
-                    <p class="footer-title">Quick Links</p>
-                    <ul class="footer-list">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="#">Community Guidelines</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <p class="footer-title">Help</p>
-                    <ul class="footer-list">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Volunteer Opportunities</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<div id="footer"></div>
 
-        <!-- Footer Bottom -->
-        <hr class="footer-divider">
-        <p class="footer-bottom-text">© Copyright 2024, All Rights Reserved by Code Social</p>
-    </footer>
-
-
-   <script>
+<script>
 
 const addEventButton = document.getElementById('add-event');
 
