@@ -1,13 +1,10 @@
 // Check for saved dark mode preference in localStorage
 let darkmode = localStorage.getItem("darkmode");
 const themeToggleBtn = document.getElementById("theme-toggle");
-const themeIcon = document.getElementById("theme-toggle-icon");
 const body = document.body;
-const footer = document.querySelector("footer"); // Select the footer element
-const footerSpan = footer.querySelector(".website-name"); // Select the span inside the footer
+const footer = document.querySelector("footer");
+const footerSpan = footer.querySelector(".website-name");
 const footerParagraph = footer.querySelector(".footer-about-text");
-
-// Enable Dark Mode
 // Select all resource cards
 const resourceCards = document.querySelectorAll(".resource-card");
 
@@ -25,9 +22,14 @@ const enableDarkMode = () => {
   footerParagraph.classList.add("dark-text");
   footerParagraph.classList.remove("light-text");
 
-  resourceCards.forEach(card => {
-    card.classList.add("dark-mode-card"); // Add dark mode to each resource card
+  // Add dark mode styles to each resource card
+  resourceCards.forEach((card) => {
+    card.classList.add("dark-mode-card");
   });
+
+  // Set the theme icons
+  themeToggleBtn.querySelector(".theme-icon-light").style.opacity = "0";
+  themeToggleBtn.querySelector(".theme-icon-dark").style.opacity = "1";
 
   localStorage.setItem("darkmode", "active");
   themeIcon.src = "images/light-mode.png";
@@ -47,14 +49,18 @@ const disableDarkMode = () => {
   footerParagraph.classList.add("light-text");
   footerParagraph.classList.remove("dark-text");
 
-  resourceCards.forEach(card => {
-    card.classList.remove("dark-mode-card"); // Remove dark mode from each resource card
+  // Remove dark mode styles from each resource card
+  resourceCards.forEach((card) => {
+    card.classList.remove("dark-mode-card");
   });
+
+  // Set the theme icons
+  themeToggleBtn.querySelector(".theme-icon-light").style.opacity = "1";
+  themeToggleBtn.querySelector(".theme-icon-dark").style.opacity = "0";
 
   localStorage.setItem("darkmode", "inactive");
   themeIcon.src = "images/dark-mode.png";
 };
-
 
 // Apply the saved theme on page load
 if (darkmode === "active") {
