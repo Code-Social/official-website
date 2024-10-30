@@ -20,11 +20,11 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #ffff;
+        background-color: #f9f9f9;
         display: flex;
         flex-direction: column;
         align-items: center;
-        color: black;
+        color: #333;
       }
 
       header {
@@ -32,53 +32,47 @@
         background-color: white;
         color: black;
         padding: 1em 0;
-        text-align: center;
-        margin-top: 300px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      .navbar-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .navbar a {
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .navbar a:hover {
+        color: #0073e6;
       }
 
       main {
-        padding: 1em;
         width: 100%;
         max-width: 800px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 100px;
-        margin-bottom: 100px;
-      }
-
-      .confirmation {
-        margin-top: 20px;
-        display: none; /* Initially hidden */
-        color: green; /* Style for confirmation message */
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: "Arial", sans-serif;
-        background-color: #f9f9f9;
-        color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-
-      .footer-section {
-        width: 100%;
+        padding: 1em;
+        margin: 50px auto;
       }
 
       .container {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        height: 100%;
       }
 
       .registration-form {
@@ -88,15 +82,12 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         width: 100%;
         max-width: 400px;
-        border: 1px solid #000;
       }
 
       .registration-form h2 {
         text-align: center;
-        color: #000;
+        color: #333;
         margin-bottom: 30px;
-        font-size: 32px;
-        font-weight: 700;
       }
 
       .form-group {
@@ -106,7 +97,7 @@
       .form-group label {
         display: block;
         font-weight: bold;
-        color: #000;
+        color: #333;
         margin-bottom: 8px;
       }
 
@@ -114,35 +105,28 @@
       .form-group select {
         width: 100%;
         padding: 12px;
-        border: 1px solid #000;
+        border: 1px solid #ddd;
         border-radius: 4px;
-        font-size: 16px;
-        background-color: #fff;
-        color: #000;
-      }
-
-      .form-group input:focus,
-      .form-group select:focus {
-        outline: none;
-        border-color: #333;
       }
 
       .form-group input[type="submit"] {
-        background-color: #000;
+        background-color: #0073e6;
         color: #fff;
-        font-size: 18px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        font-size: 18px;
         border: none;
         padding: 14px;
       }
 
       .form-group input[type="submit"]:hover {
-        background-color: #333;
+        background-color: #005bb5;
       }
 
-      .form-group select {
-        height: 50px;
+      .confirmation {
+        margin-top: 20px;
+        display: none;
+        color: green;
+        text-align: center;
       }
 
       /* For small screens */
@@ -157,75 +141,17 @@
   <body>
     <header>
       <nav class="navbar">
-        <a href="index.html" class="flex"
-          ><img src="images/logo.png" class="logo" />
-          <span class="website-name tracking-tight">Code Social</span></a
-        >
+        <a href="index.html" class="flex">
+          <img src="images/logo.png" class="logo" alt="Code Social Logo" />
+          <span class="website-name tracking-tight ml-2">Code Social</span>
+        </a>
 
-        <!-- Hamburger Menu -->
-        <div class="hamburger-menu">
-          <div class="toggle-button">
-            <img src="/images/hamburger.png" alt="open" id="hamburger-img" />
-          </div>
-        </div>
-
-        <!-- Navbar Links -->
         <ul class="navbar-links flex">
-          <li class="ml-20">
-            <a href="maintenance.html">Live Events</a>
-            <ul class="dropdown" style="display: none">
-              <li><a href="booking.html">Book Tickets</a></li>
-              <li><a href="maintenance.html">Why don't you react?</a></li>
-            </ul>
-          </li>
-          <!-- blog section -->
-          <ul class="navbar-links flex">
-            <li class="ml-20">
-              <a href="blog.html">Blogs</a>
-            </li>
-          </ul>
-
-          <li class="community">
-            <a href="maintenance.html">Join Our Community</a>
-            <ul class="dropdown" style="display: none">
-              <li><a href="maintenance.html">WhatsApp</a></li>
-              <li><a href="maintenance.html">Discord</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="learning.html">Learning</a>
-            <ul class="dropdown" style="display: none">
-              <li><a href="./Resources.html">Free Learning Resources</a></li>
-              <li><a href="#">Mentorship Programs</a></li>
-              <li><a href="#">Peer-to-Peer Sessions</a></li>
-            </ul>
-          </li>
-          <li class="hamburger-menu">
-            <div class="toggle-button">
-              <span class="about-text">About us</span>
-            </div>
-            <ul class="dropdown">
-              <li><a href="mentorship.html">Meet Our Team</a></li>
-              <li><a href="#">Join Our Team</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Follow Us</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="maintenance.html">Follow Us</a>
-          </li>
-          <!-- Dark Mode Toggle -->
-          <li>
-            <button id="theme-toggle" class="theme-toggle-btn">
-              <img
-                src="images/dark-mode.png"
-                alt="theme-mode"
-                id="theme-toggle-icon"
-              />
-            </button>
-            <!-- when light mode is active -> use "dark-mode.png" and when dark mode is active -> use "light-mode.png" -->
-          </li>
+          <li><a href="maintenance.html">Live Events</a></li>
+          <li><a href="blog.html">Blogs</a></li>
+          <li><a href="community.html">Join Our Community</a></li>
+          <li><a href="learning.html">Learning</a></li>
+          <li><a href="about.html">About Us</a></li>
         </ul>
       </nav>
     </header>
@@ -278,87 +204,16 @@
         </div>
       </div>
     </main>
+
     <script>
-      // Get the form and confirmation message elements
       const form = document.getElementById("registrationForm");
-      const confirmationMessage = document.getElementById(
-        "confirmationMessage"
-      );
+      const confirmationMessage = document.getElementById("confirmationMessage");
 
-      // Add an event listener for form submission
       form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        // Display the confirmation message
+        event.preventDefault();
         confirmationMessage.style.display = "block";
-
-        // Optionally, you can clear the form fields if needed
         form.reset();
       });
     </script>
-    <footer class="footer-section">
-      <div class="container">
-        <!-- Logo and About Section -->
-        <div class="footer-logo-about">
-          <a href="index.html" class="footer-logo-link">
-            <img
-              src="/images/logo.png"
-              alt="Code Social Logo"
-              class="footer-logo"
-            />
-            <span class="website-name">Code Social</span>
-          </a>
-          <p class="footer-about-text">
-            Code Social Community is a vibrant and inclusive space for tech
-            enthusiasts <br />
-            to learn, grow, and connect. Founded in 2023, our mission is to
-            empower individuals <br />
-            with resources, mentorship, and opportunities to cultivate their
-            skills, explore their interests, and <br />collaborate with
-            like-minded peers.
-          </p>
-          <div class="social-icons">
-            <a href="https://wa.me/your-whatsapp-number" target="_blank"
-              ><img src="./images/whatsapp-icon.png" alt="WhatsApp"
-            /></a>
-            <a href="https://discord.gg/MSTNyRSPYW" target="_blank"
-              ><img src="./images/discord-icon.png" alt="Discord"
-            /></a>
-            <a
-              href="https://www.linkedin.com/company/code-social/"
-              target="_blank"
-              ><img src="./images/linkedin-icon.png" alt="LinkedIn"
-            /></a>
-          </div>
-        </div>
-
-        <!-- Links Section -->
-        <div class="footer-links">
-          <div class="footer-column">
-            <p class="footer-title">Quick Links</p>
-            <ul class="footer-list">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Community Guidelines</a></li>
-              <li><a href="#">Careers</a></li>
-            </ul>
-          </div>
-          <div class="footer-column">
-            <p class="footer-title">Help</p>
-            <ul class="footer-list">
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Volunteer Opportunities</a></li>
-              <li><a href="#">Terms &amp; Conditions</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer Bottom -->
-      <hr class="footer-divider" />
-      <p class="footer-bottom-text">
-        © Copyright 2024, All Rights Reserved by Code Social
-      </p>
-    </footer>
   </body>
 </html>
