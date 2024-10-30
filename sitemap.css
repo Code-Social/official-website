@@ -1,0 +1,93 @@
+.sitemap-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: rgba(255, 240, 240, 0.7); /* More transparency */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    text-align: center; /* Center align text */
+  }
+ 
+ /* Headings styling */
+ .sitemap-container h1 {
+    font-size: 36px;
+    color: #ff9b5c;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .sitemap-container h2 {
+    font-size: 22px;
+    color: #ff9b5c;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* Paragraph styling */
+  .sitemap-container p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #5a5a5a;
+  }
+
+  /* Styling the unordered lists */
+  .sitemap-container ul {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #4a4a4a;
+    list-style: none; /* Remove default bullet points */
+    padding-left: 20px; /* Indentation */
+  }
+
+  /* Styling list items with custom bullets */
+  .sitemap-container ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 17px; /* Font size for the list text */
+    font-weight: 500; /* Slightly bolder font */
+    color: #444; /* Darker text color */
+    line-height: 1.6; /* Better line spacing */
+    transition: color 0.2s ease-in-out;
+  }
+
+  .sitemap-container ul li:before {
+    content: "\2022"; /* Bullet point */
+    color: #ff9b5c;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  /* Hover effect for headings */
+  .sitemap-container h1:hover,
+  .sitemap-container h2:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  /* Button-like effect for each section */
+  .sitemap-container h2 {
+    background-color: rgba(255, 153, 153, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .sitemap-container ul li:hover {
+    color: #ff4a4a; /* Change text color on hover */
+  }
+  /* Paragraph styling */
+  .sitemap-container p {
+    font-size: 17px; /* Font size for paragraph text */
+    font-weight: 500; /* Slightly bolder text */
+    color: #444; /* Darker text color */
+    line-height: 1.7; /* More space between lines */
+    margin-bottom: 20px; /* Space below each paragraph */
+    transition: color 0.2s ease-in-out;
+  }
+
+  /* Hover effect for paragraph */
+  .sitemap-container p:hover {
+    color: #ff4a4a; /* Change text color on hover */
+  }
