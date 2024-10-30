@@ -115,10 +115,38 @@
     z-index: 9999;
     transition: transform 0.1s ease-out;
     }
+    /* <!-- scroll to top button  --> */
+    .go-top-btn {
+  position: fixed;
+  bottom: 75px;
+  right: 25px;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background:#ab45e7;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.go-top-btn:hover {
+  background-color: #2578d1;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+
     </style>
   </head>
 
   <body>
+    <!-- scroll to top button  -->
+    <button class="go-top-btn">
+      <img   width="25px" src="up-arrow.png" alt="go top">
+  </button>
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
@@ -144,6 +172,24 @@
     <div class="circle"></div>
     <div class="circle"></div>
     <script>
+
+      
+//scroll to top button 
+const goTopBtn = document.querySelector('.go-top-btn');
+    window.addEventListener('scroll', checkHeight)
+    function checkHeight() {
+      if (window.scrollY > 200) {
+        goTopBtn.style.display = "flex"
+      } else {
+        goTopBtn.style.display = "none"
+      }
+    }
+    goTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      })
+    })
         // Store the mouse coordinates
 const coords = { x: 0, y: 0 };
 
