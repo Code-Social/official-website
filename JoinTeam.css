@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    background-color: #f3f4f6;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.header p {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-top: 0.5rem;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.benefit-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.benefit-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4f46e5;
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-top: 0.75rem;
+}
+
+.benefit-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Join Form Link */
+.join-link {
+    text-align: center;
+}
+
+.join-link a {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.join-link a:hover {
+    background-color: #4338ca;
+}
