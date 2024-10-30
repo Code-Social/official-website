@@ -564,9 +564,6 @@ body.dark-mode .calendar-day:hover {
 .navbar ul li .dropdown {
   display: none;
 }
-.navbar ul a {
-    color: white;
-}
 
 /* Show the dropdown on hover */
 .navbar ul li:hover .dropdown {
