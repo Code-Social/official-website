@@ -9,20 +9,27 @@
 
 Welcome to the official repository for the Code Social Community website! This repository includes the code and content for our community-driven website. As an open-source project, we welcome contributions from anyone interested in enhancing our platform.
 
-## 🌟 About Code Social
+## Table of Contents
+- [About Code Social](#about-code-social)
+- [Tech Stack](#tech-stack)
+- [Contributing to Our Website](#contributing-to-our-website)
+- [Getting Started](#getting-started)
+- [Our Valuable Contributors](#our-valuable-contributors)
+
+## About Code Social
 
 Code Social Community is a vibrant and inclusive space for tech enthusiasts to learn, grow, and connect. Founded in 2023, our mission is to empower individuals with resources, mentorship, and opportunities to cultivate their skills, explore their interests, and collaborate with like-minded peers. Join us on our journey to create something extraordinary together!
 
 ![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
 * 🤝 Join the Code Social Community : [Click here to join](https://discord.gg/MSTNyRSPYW) 
 
-## ⚙️ Tech Stack
+## Tech Stack
 ![HTML5](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white) 
 ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white) 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 
-##  🤗 Contributing to Our Website
+## Contributing to Our Website
 
 We believe in the power of community and open-source collaboration. Our website is a reflection of this, and we invite community members to contribute to its development. Here's how you can get involved:
 
@@ -49,7 +56,7 @@ We believe in the power of community and open-source collaboration. Our website 
 - Provide detailed descriptions in your pull requests.
 - Be respectful and collaborative in your interactions with other contributors.
 
-##  🚀 Getting Started
+## Getting Started
 
 To set up the project locally, follow these steps:
 
@@ -70,12 +77,12 @@ To set up the project locally, follow these steps:
    npm start
    ```
 
-##  🎊 For GSSOC and Hacktober Fest participants :
+## For GSSOC and Hacktober Fest participants :
 
 Please read the Contribution Guidelines and if you have any doubts ,feel free to connect with the project admins or mentors. We have set up a discord channel in our community server for the event to answer queries,foster discussions and enhance collaboration on the project. [Click here to join](https://discord.com/channels/1049667734025289729/1291810957563134105)
 
 
-## Our Valuable Contributors ❤️✨
+## Our Valuable Contributors
 [![Contributors](https://contrib.rocks/image?repo=Code-Social/official-website)]((https://github.com/Code-Social/official-website/graphs/contributors))
 
 
