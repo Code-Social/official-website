@@ -388,14 +388,25 @@ body.dark-mode .calendar-day:hover {
   position: sticky;
 }
 .light-mode .navbar {
-  background-color: white; /* White background for light mode */
+  background: rgb(213,214,211);
+  background: linear-gradient(0deg, rgba(213,214,211,1) 55%, rgba(249,248,245,1) 97%); /* White background for light mode */
   color: black; /* Text color for light mode */
 }
 
 .dark-mode .navbar {
-  background-color: #333; /* Dark background for dark mode */
-  color: white; /* Text color for dark mode */
+  background-color: #0b0b0b; /* Dark background for dark mode */
+  color: rgb(255, 255, 255); /* Text color for dark mode */
 }
+ /* changed the colors for dark mode */
+ .dark-mode .navbar ul a {
+  color: rgb(235 228 228);
+}
+
+.dark-mode .navbar ul a:hover{
+  background-color: white ;
+  color: black ;
+  transition: background-color 0.3s ease, color 0.3s ease;
+} 
 
 .content {
   height: 2000px; /* Just for scrolling */
@@ -485,7 +496,8 @@ body.dark-mode .calendar-day:hover {
   height: 100%;
   width: 100%;
   left: 0;
-  background:white ;
+  background: rgb(213,214,211);
+background: linear-gradient(0deg, rgba(213,214,211,1) 55%, rgba(249,248,245,1) 97%);
   border-left: 2px solid black;
   top: 0;
   /* left: 0; */
@@ -553,6 +565,7 @@ body.dark-mode .calendar-day:hover {
   display: flex;
   align-items: center;
   gap: 4vw;
+  color: black;
   list-style: none;
 }
 
@@ -565,7 +578,7 @@ body.dark-mode .calendar-day:hover {
   display: none;
 }
 .navbar ul a {
-    color: white;
+    color: rgb(12, 12, 12);
 }
 
 /* Show the dropdown on hover */
@@ -581,8 +594,10 @@ body.dark-mode .calendar-day:hover {
 
 
 .navbar-links a:hover {
-  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.5);;
- 
+  background-color: black ;
+  color: white;
+  padding: 7px;
+  border-radius: 4px ;
 }
 
 .center-links li a {
@@ -637,7 +652,6 @@ body.dark-mode .calendar-day:hover {
   padding: 10px;
   border-radius: 4px;
   z-index: 1;
-
   top: 100%;
   right:0;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -647,7 +661,6 @@ body.dark-mode .calendar-day:hover {
 
 .center-links li:hover .dropdown {
   display: block;
-
   top: 27px;
   right: 0%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -659,9 +672,9 @@ body.dark-mode .calendar-day:hover {
 .dark-mode .navbar ul li:hover .dropdown {
   display: block;
   opacity: 1;
-  background-color: #504c4c;
+  background-color: #2f2f2f;
   color: #fff;
-
+  transition: background-color 0.3s ease, color 0.3s ease;
   transform: translateY(0);
 }
 .light-mode .navbar ul li:hover .dropdown {
@@ -1059,14 +1072,19 @@ body.dark-mode #theme-switch {
 
 /* Light Mode Footer */
 .light-mode-footer {
-  background-color: #f8f9fa;
+  background: linear-gradient(0deg, rgba(213, 214, 211, 1) 55%, rgba(249, 248, 245, 1) 97%);
   color: #000;
 }
 
 /* Dark Mode Footer */
 .dark-mode-footer {
-  background-color: #2E2E2E;
+  background-color: #0a0a0a;
   color: #fff;
+}
+.dark-mode .footer-bottom-text {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #fafcff;
 }
 
 .dark-text {
@@ -1086,7 +1104,11 @@ body.dark-mode #theme-switch {
   }
   
   .footer-logo-about {
-    flex: 1;
+    display: flex;
+    width: 55%;
+    margin: 1.2rem;
+    flex-direction: column;
+    align-items: center;
     min-width: 300px;
     text-align: left;
   }
@@ -1111,6 +1133,7 @@ body.dark-mode #theme-switch {
   .footer-about-text {
     margin-top: 15px;
     line-height: 1.6;
+    width: 77%;
     font-style: italic;
   }
   
@@ -1141,6 +1164,10 @@ body.dark-mode #theme-switch {
   
   .footer-column {
     flex: 1;
+    margin: 1.2rem;
+    padding: 1.2rem;
+    height: 70%;
+
   }
   
   .footer-title {
@@ -1177,5 +1204,5 @@ body.dark-mode #theme-switch {
   .footer-bottom-text {
     text-align: center;
     font-size: 0.875rem;
-    color: #6b7280;
+    color: #000000;
   }
