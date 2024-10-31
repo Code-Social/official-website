@@ -111,3 +111,8 @@ We are excited to build and improve this website with the help of our community.
 
 For any questions or further discussions, feel free to reach out to us on our Discord server: [Click here to join](https://discord.gg/MSTNyRSPYW)💬
 
+<div align="center">
+    <a href="#top">
+        <img src="https://img.shields.io/badge/Back%20to%20Top-000000?style=for-the-badge&logo=github&logoColor=white" alt="Back to Top">
+    </a>
+</div>
