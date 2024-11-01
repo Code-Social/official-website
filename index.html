@@ -41,7 +41,7 @@
        pointer-events: none; /* Disable interaction */
        }
     </style>
-    <!-- <style>
+     <!-- <style>
         html {
             scroll-behavior: smooth;
         }
@@ -49,8 +49,8 @@
         body.dark-mode {
             background-color: #333;
             color: #ffffff;
-        }
-    
+        } -->
+    <style>
         .top-btn {
             display: none;
             width: 50px;
@@ -70,8 +70,9 @@
         .top-btn:hover {
             background-color: #0056b3;
         }
+    </style>
     
-        video#background-video {
+       <!-- video#background-video {
             position: fixed;
             top: 0;
             left: 0;
@@ -233,7 +234,7 @@
         <div id="progress-bar"></div>
     </div>
     
-    <button class="top-btn" id="goToTopBtn" onclick="goToTop()">
+    <button class="top-btn" id="goToTopBtn" onclick="goToTop()" style="height: 50px;"> 
         <i class="fa-solid fa-chevron-up" style="color: #ffffff"></i>
     </button>
     <script>
