@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-pic {
+    width: 100px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it fits within the parent element */
+    max-height: 100%; /* Ensure it fits within the parent element */
+    object-fit: cover; /* This will help maintain the aspect ratio while covering the box */
+}
+
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.bio {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.links .link-btn {
+    display: block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.links .link-btn:hover {
+    background-color: #45a049;
+}
+
+.theme-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.theme-btn:hover {
+    background-color: #555;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #121212;
+}
+
+.dark-mode .container {
+    background-color: #1e1e1e;
+}
+
+.dark-mode h1 {
+    color: #f1f1f1;
+}
+
+.dark-mode .bio {
+    color: #aaa;
+}
+
+.dark-mode .link-btn {
+    background-color: #bb86fc;
+}
+
+.dark-mode .link-btn:hover {
+    background-color: #9d69e3;
+}
+
+.dark-mode .theme-btn {
+    background-color: #bb86fc;
+}
+
+.dark-mode .theme-btn:hover {
+    background-color: #9d69e3;
+}
