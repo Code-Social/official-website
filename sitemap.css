@@ -1,7 +1,7 @@
 .sitemap-container {
     max-width: 900px;
     margin: 50px auto;
-    background-color: rgba(255, 240, 240, 0.7); /* More transparency */
+    background-color: rgba(0, 0, 0, 0.85); /* More transparency */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
@@ -11,7 +11,7 @@
  /* Headings styling */
  .sitemap-container h1 {
     font-size: 36px;
-    color: #ff9b5c;
+    color: white;
     margin-bottom: 20px;
     text-align: center;
     font-weight: 700;
@@ -19,7 +19,7 @@
 
   .sitemap-container h2 {
     font-size: 22px;
-    color: #ff9b5c;
+    color: white;
     margin-bottom: 10px;
     text-align: center;
   }
@@ -29,14 +29,14 @@
     font-size: 18px;
     line-height: 1.8;
     margin-bottom: 20px;
-    color: #5a5a5a;
+    color: white;
   }
 
   /* Styling the unordered lists */
   .sitemap-container ul {
     font-size: 17px;
     line-height: 1.8;
-    color: #4a4a4a;
+    color: white;
     list-style: none; /* Remove default bullet points */
     padding-left: 20px; /* Indentation */
   }
@@ -48,7 +48,7 @@
     position: relative;
     font-size: 17px; /* Font size for the list text */
     font-weight: 500; /* Slightly bolder font */
-    color: #444; /* Darker text color */
+    color: white; /* Darker text color */
     line-height: 1.6; /* Better line spacing */
     transition: color 0.2s ease-in-out;
   }
@@ -69,7 +69,7 @@
 
   /* Button-like effect for each section */
   .sitemap-container h2 {
-    background-color: rgba(255, 153, 153, 0.2);
+    background-color: #ff8521;
     padding: 10px;
     border-radius: 5px;
   }
