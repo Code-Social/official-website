@@ -502,7 +502,7 @@ body.dark-mode .calendar-day:hover {
   color: orangered;
 }
 .dark-mode .website-name {
-  color: white;
+  color: rgb(20, 19, 19);
 }
 .dark-mode .website-name li{
   color: white;
@@ -1048,7 +1048,7 @@ body.dark-mode #theme-switch {
 /* Footer Styles */
 /* General Styling for Footer */
 .footer-section {
-    background-color: #f9fafb;
+    background-color: #0c0c0d;
     padding: 3rem 1rem;
     color: #6b7280;
     font-family: 'Arial', sans-serif;
@@ -1062,14 +1062,13 @@ body.dark-mode #theme-switch {
 
 /* Dark Mode Footer */
 .dark-mode-footer {
-  background-color: #2E2E2E;
+  background-color: #070707;
   color: #fff;
 }
 
 .dark-text {
-  color: #f1f1f1;
+  color: #070707;
 }
-
 .light-text {
   color: black;
 }
@@ -1176,3 +1175,228 @@ body.dark-mode #theme-switch {
     font-size: 0.875rem;
     color: #6b7280;
   }
+/* Footer Styling */
+.footer-section {
+  background-color: #faf9f9;
+  color: #eee;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-logo-about {
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #eee;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.footer-logo {
+  width: 50px;
+  transition: transform 0.3s ease;
+}
+
+.animated-logo:hover {
+  transform: rotate(360deg);
+}
+
+.website-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.footer-about-text {
+  max-width: 600px;
+  margin: 0.5rem auto;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-icon {
+  width: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon-link:hover .social-icon {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 5px #aaa;
+}
+
+/* Links Section */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.footer-column {
+  text-align: left;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #ffcc00;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-link {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #ffcc00;
+}
+
+/* Footer Bottom */
+.footer-divider {
+  margin: 1rem 0;
+  border: 0;
+  border-top: 1px solid #555;
+}
+
+.footer-bottom-text {
+  font-size: 0.9rem;
+  color: #888;
+  animation: fadeInUp 1.2s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* Link Hover Underline Effect */
+.footer-link {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #ffcc00;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.footer-link:hover {
+  color: #ffcc00;
+}
+
+.footer-link:hover::after {
+  transform: scaleX(1);
+}
+/* Footer Text Animations */
+.footer-about-text, .footer-bottom-text, .footer-title, .footer-link {
+  position: relative;
+  display: inline-block;
+  animation: fadeInUp 1.2s ease;
+  transition: color 0.3s ease;
+}
+
+/* Wiggle Effect on Hover */
+.footer-about-text:hover,
+.footer-bottom-text:hover,
+.footer-title:hover,
+.footer-link:hover {
+  color: #ffcc00;
+  animation: wiggle 0.4s ease-in-out;
+}
+
+/* Keyframes for Wiggle */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(1deg); }
+}
+
+/* Fade-in Animation for Initial Load */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animated-newsletter {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.newsletter-input, .newsletter-btn {
+  transition: all 0.3s ease;
+}
+.newsletter-text {
+  color: black;
+}
+
+.newsletter-input:hover, .newsletter-btn:hover {
+  transform: scale(1.05);
+}
+
+.newsletter-input {
+  padding: 8px;
+  margin-right: 8px;
+}
+
+.newsletter-btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #121111;
+  border: none;
+  cursor: pointer;
+}
