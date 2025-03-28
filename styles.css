@@ -124,7 +124,7 @@ body.dark-mode .theme-icon-dark {
   padding: 20px;
   border: 1px solid #444444;
   border-radius: 8px;
-  background-color: #333333;
+  background-color: BLACK;
   color:#ffffff;
   margin-top: 45px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for more depth */
@@ -275,12 +275,31 @@ body.dark-mode .theme-icon-dark {
 
 /* Calendar Styles */
 .calendar {
-  flex-grow: 1; /* Allow calendar to take up available space */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px;
+   flex-grow: 1; /* Allow calendar to take up available space */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 20px;
+   padding: 20px; /* Add padding inside the box */
+   border: 2px solid #444444; /* Add a solid border */
+   border-radius: 16px; /* Make the border rounded */
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+   background-color: #f9f9f9; /* Light background for contrast */
 }
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .calendar {
+        background: linear-gradient(135deg, 
+            #e79758 0%,    /* Warm orange */
+            #e69a35 60%,   /* Slightly darker warm orange */
+            #f6d94f 100%   /* Yellow */
+        ); /* Gradient from warm orange to yellow */
+        border: 2px solid #888888; /* Lighten the border in dark mode */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow in dark mode */
+    }
+}
+
 
 /* Calendar Header */
 .calendar-header {
@@ -293,7 +312,7 @@ body.dark-mode .theme-icon-dark {
 .month-year-box {
   padding: 10px 20px;
   /* background-color: #f0f0f0; */
-  border: 1px solid #ccc;
+  border: 1px solid black;
   border-radius: 5px;
   font-weight: bold;
   margin: 0 10px;
@@ -311,12 +330,12 @@ body.dark-mode .theme-icon-dark {
 
 /* Calendar Day Styles */
 .calendar-day {
-  border: 1px solid #ccc;
+  border: 1px solid dimgrey;
   padding: 10px; /* Adjusted padding */
   text-align: center;
-  /* position: relative; */
+  position: relative;
   /* /* background-color: #ffffff;   */
-  /* height: 100px; Fixed height for uniformity */
+  height: 100px; /* Fixed height for uniformity */
   border-radius: 8px; /* Rounded corners */
   transition: background-color 0.3s ease; /* Smooth transition */
 }
@@ -339,20 +358,18 @@ body.dark-mode .calendar-day:hover {
 .event {
   background-color: #4caf50;
   /* color: white; */
-  padding: 0 5px; /* Adjusted padding */
+  padding: 5px; /* Adjusted padding */
   border-radius: 3px;
-  font-size: 12px; /* Increased font size */
+  font-size: 14px; /* Increased font size */
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
   text-align: center;
-  height: 20px;
-  margin-bottom: 2px;
   cursor: pointer; /* Makes the event clickable */
   overflow: hidden; /* Prevents overflow of text */
   white-space: nowrap; /* Keeps text in a single line */
   text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 92px;
 }
 
 /* Responsive Adjustments */
@@ -379,8 +396,7 @@ body.dark-mode .calendar-day:hover {
   transition: background-color 0.3s;
   width: 100%;
   height: 12vh;
-  font-weight: 750;
-  font-size: 18px;
+  font-weight: 400;
   top: 0;
   margin-top: 0px;
   z-index: 1000;
@@ -421,7 +437,7 @@ body.dark-mode .calendar-day:hover {
 
 /* Logo Styling */
 .logo {
-  height: 60px;
+  height: 40px;
   transition: transform 0.3s ease;
 }
 
@@ -437,97 +453,13 @@ body.dark-mode .calendar-day:hover {
     color: #401111;
 } */
 
-/* .website-name {
+.website-name {
   font-size: 1.8rem;
   /* color: #fff; */
-  /* font-weight: bold;
+  font-weight: bold;
   letter-spacing: 1.2px;
   margin-right: auto;
   margin-left: 15px;
-} */ 
-.website-name {
-  display: flex; /* Flexbox to align items horizontally */
-  align-items: center; /* Vertically center the items */
-  margin-left: 20px;
-  margin-bottom: 5px;
-}
- .website-name .static-text{
-  color:orangered;
-  font-size: 2.2rem;
-  font-weight: bold;
-  letter-spacing: 1.2px;
- }
- .website-name .dynamic-text {
-  margin-right: auto;
-  margin-left: 15px;
-   height: 50px;
-   line-height: 40px;
-   padding: 0;
-   /* overflow:hidden; */
-}
-.website-name li{
-  color: #000;
-  list-style: none;
-  font-size: 1.8rem;
-  font-weight: bold;
-  letter-spacing: 1.2px;
-  position: relative;
-  overflow: hidden;
-  width: fit-content;
-  /* display: inline-block; */
-  /* margin-right: 10px; */
-}
-
-
-.dynamic-text li span::after{
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  background:white ;
-  border-left: 2px solid black;
-  top: 0;
-  /* left: 0; */
-  animation: typing 1.5s steps(11) infinite;
- 
-}
-@keyframes typing{
-  100%{
-    left: 100%;
-    margin: 0 -35px 0 35px;
-  }
-}
-.dark-mode .website-name .static-text{
-  color: orangered;
-}
-.dark-mode .website-name {
-  color: white;
-}
-.dark-mode .website-name li{
-  color: white;
-  list-style: none;
-  font-size: 1.8rem;
-  font-weight: bold;
-  letter-spacing: 1.2px;
-  position: relative;
-  overflow: hidden;
-  width: fit-content;
-  /* display: inline-block; */
-  /* margin-right: 10px; */
-}
-.dark-mode .dynamic-text li span::after{
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  background:#333 ;
-  border-left: 2px solid white;
-  top: 0;
-  /* left: 0; */
-  animation: typing 1.5s steps(11) infinite;
- 
 }
 
 /* Center Links */
@@ -572,14 +504,10 @@ body.dark-mode .calendar-day:hover {
 
 .navbar ul li:hover {
   transform: scale(1.1);
-  color: red;
-  border-radius: 50px;
 }
 
-
 .navbar-links a:hover {
-  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.5);;
- 
+  color: red;
 }
 
 .center-links li a {
@@ -636,7 +564,7 @@ body.dark-mode .calendar-day:hover {
   z-index: 1;
 
   top: 100%;
-  right:0;
+  right: 0;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   max-width: calc(100vw - 40px);
   overflow: hidden;
@@ -649,7 +577,7 @@ body.dark-mode .calendar-day:hover {
   right: 0%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   opacity: 0;
-  transform: translateY(0);
+  transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -780,19 +708,12 @@ body.dark-mode #theme-switch {
   .navbar ul li a {
     padding: 10px 20px;
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  .navbar ul li a :hover{
-    background-color: #2563eb;
-    color:#000;
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
 
   .navbar ul li:hover .dropdown {
-    /* position: relative; */
-    top: 100%;
-    /* left: 0; */
+    position: relative;
+    top: 0;
+    left: 0;
   }
 
   .hamburger-menu.active + ul {
@@ -809,9 +730,6 @@ body.dark-mode #theme-switch {
 /* Fixing Hamburger Menu Display */
 .hamburger-menu {
   display: none;
-}
-.navbar-links .about-text :hover{
-  color: red;
 }
 
 @media (max-width: 768px) {
@@ -841,12 +759,14 @@ body.dark-mode #theme-switch {
     width: 100%;
   }
 
-
+  .navbar ul li a {
+    padding: 10px 20px;
+    width: 100%;
+  }
 
   /* Dropdown for Hamburger */
   .hamburger-menu .dropdown {
     display: none;
-    /* align-items: center; */
   }
 
   .hamburger-menu.active .dropdown {
@@ -856,13 +776,11 @@ body.dark-mode #theme-switch {
   /* Fixing the space for the dropdown */
   .hamburger-menu .dropdown li {
     padding-left: 0;
-    text-align: center;
   }
 
   .hamburger-menu .dropdown li a {
     padding: 10px 15px;
     display: block;
-    text-align: center;
   }
 }
 
@@ -894,7 +812,6 @@ body.dark-mode #theme-switch {
 
 .about-community:hover {
   transform: translateY(-5px);
-/* color: red; */
 }
 
 .about-community::before {
