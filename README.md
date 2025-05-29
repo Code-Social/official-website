@@ -97,32 +97,28 @@ To set up the project locally, follow these steps:
    npm start
    ```
 
-## For GSSOC and Hacktober Fest participants :
 
-Please read the Contribution Guidelines and if you have any doubts ,feel free to connect with the project admins or mentors. We have set up a discord channel in our community server for the event to answer queries,foster discussions and enhance collaboration on the project. [Click here to join](https://discord.com/channels/1049667734025289729/1291810957563134105)
+## 🚀 Maintainers
+  This repository is actively maintained by :
 
-
-## Our Valuable Contributors
-[![Contributors](https://contrib.rocks/image?repo=Code-Social/official-website)]((https://github.com/Code-Social/official-website/graphs/contributors))
-
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
-
-## Stargazers ❤️
-
-<div align='left'>
-
-[![Stargazers repo roster for @Code-Social/official-website](https://reporoster.com/stars/dark/Code-Social/official-website)](https://github.com/Code-Social/official-website/stargazers)
-
-</div>
-
-## Forkers ❤️
-
-[![Forkers repo roster for @Code-Social/official-website](https://reporoster.com/forks/dark/Code-Social/official-website)](https://github.com/Code-Social/official-website/network/members)
-
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Rizwan102003">
+        <img src="https://avatars.githubusercontent.com/u/90749649?v=4" width="100px;" alt="Rizwan102003"/>
+        <br />
+        <sub><b>Rizwan102003</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/arushi2610">
+        <img src="https://avatars.githubusercontent.com/u/91735359?v=4" width="100px;" alt="arushi2610"/>
+        <br />
+        <sub><b>arushi2610</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
 
 ##  🙌 Join Us
@@ -131,3 +127,28 @@ We are excited to build and improve this website with the help of our community.
 
 For any questions or further discussions, feel free to reach out to us on our Discord server: [Click here to join](https://discord.gg/MSTNyRSPYW)💬
 
+
+---------------------------------------------------------------------------------------------------------------------
+
+<br><br>
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+## GSSOC 2025 and Hacktober Fest participants :
+Please read the Contribution Guidelines and if you have any doubts ,feel free to connect with the project admins or mentors. We have set up a discord channel in our community server for the event to answer queries,foster discussions and enhance collaboration on the project. [Click here to join](https://discord.com/channels/1049667734025289729/1291810957563134105)
+
+## Our Valuable Contributors
+[![Contributors](https://contrib.rocks/image?repo=Code-Social/official-website)]((https://github.com/Code-Social/official-website/graphs/contributors))
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+## Stargazers ❤️
+<div align='left'>
+      
+[![Stargazers repo roster for @Code-Social/official-website](https://reporoster.com/stars/dark/Code-Social/official-website)](https://github.com/Code-Social/official-website/stargazers)
+
+</div>
+
+## Forkers ❤️
+[![Forkers repo roster for @Code-Social/official-website](https://reporoster.com/forks/dark/Code-Social/official-website)](https://github.com/Code-Social/official-website/network/members)
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
